@@ -111,6 +111,27 @@ body {
 }
 .nav-logo:hover { opacity: 0.7; text-decoration: none; }
 
+.nav-resume {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 5px 11px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  white-space: nowrap;
+  margin-left: 14px;
+  margin-right: auto;
+}
+.nav-resume:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+  background: rgba(0,0,0,0.03);
+  text-decoration: none;
+}
+[data-theme="dark"] .nav-resume:hover { background: rgba(255,255,255,0.05); }
+
 .nav-links {
   display: flex;
   gap: 6px;
