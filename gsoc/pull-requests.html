@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pull Requests and Issues | Prasanna Mishra</title>
+<meta name="description" content="Every pull request and issue opened during Google Summer of Code 2026 at omegaUp." />
+<link rel="icon" type="image/svg+xml" href="assets/gsoc-icon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Besley:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="quartz.css" />
+</head>
+<body>
+<div id="quartz-root" class="page"><div id="quartz-body">
+
+<div class="left sidebar">
+  <div>
+    <h2 class="page-title"><a href="index.html">Prasanna Mishra</a></h2>
+    <p class="site-tag">google summer of code 2026 &middot; omegaup</p>
+  </div>
+  <div class="sidebar-logos">
+    <img src="assets/gsoc-logo.svg" alt="Google Summer of Code" class="gsoc-mark" />
+    <img src="assets/omegaup-logo.png" alt="omegaUp" class="org-mark" />
+  </div>
+  <div class="explorer"><button type="button" class="explorer-toggle" data-fold="explorer-content"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="explorer-content" id="explorer-content"><ul class="explorer-ul"><li><button type="button" class="folder-container" data-fold="folder-gsoc"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">gsoc-2026-omegaup</span></button><ul id="folder-gsoc"><li><a href="index.html" data-for="index.html">GSoC 2026 with omegaUp: Summary</a></li><li><a href="report.html" data-for="report.html">Project Report: Cronjob Optimization</a></li><li><a href="pull-requests.html" class="active" data-for="pull-requests.html">Pull Requests and Issues</a></li></ul></li><li><button type="button" class="folder-container" data-fold="folder-elsewhere"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">elsewhere</span></button><ul id="folder-elsewhere"><li><a href="../index.html">Back to the portfolio</a></li><li><a href="https://github.com/omegaup/omegaup/pulls?q=is%3Apr+author%3APrasannaMishra001">All pull requests on GitHub</a></li><li><a href="https://github.com/omegaup/omegaup/issues/9992">The parent issue</a></li></ul></li></ul></div></div>
+</div>
+
+<div class="center">
+  <div class="page-header">
+    <nav class="breadcrumb-container" aria-label="breadcrumbs">
+      <div class="breadcrumb-element"><a href="../index.html">Home</a><p>&#10095;</p></div>
+      <div class="breadcrumb-element"><a href="index.html">gsoc 2026 omegaup</a><p>&#10095;</p></div>
+      <div class="breadcrumb-element"><a href="pull-requests.html">Pull Requests and Issues</a></div>
+    </nav>
+    <h1 class="article-title">Pull Requests and Issues</h1>
+    <p class="content-meta"><time datetime="2026-08-18">Aug 18, 2026</time><span>5 min read</span></p>
+  </div>
+  <article>
+<p>Thirty one pull requests between 26 May and 3 August, seventeen of which merged during the coding period. Each one had an issue written before it, so that the reason for a change existed in writing before the change did.</p>
+<p>The control plane pull requests are stacked, each built on the one before it, which means GitHub's diff for a later one still carries its unmerged predecessors and shrinks to just its own change the moment the one below it lands. That is deliberate. It is more work for me and far less to read for whoever is reviewing.</p>
+<h2 id="pull-requests">Pull requests<a role="anchor" aria-hidden="true" tabindex="-1" href="#pull-requests" class="anchor">#</a></h2>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+<th>Status</th>
+<th>PR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cron control plane</strong></td>
+<td>add cron control plane tables</td>
+<td>merged</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9995">#9995</a></td>
+</tr>
+<tr>
+<td></td>
+<td>add cron control plane dao</td>
+<td>merged</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9996">#9996</a></td>
+</tr>
+<tr>
+<td></td>
+<td>add cron runner library</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9998">#9998</a></td>
+</tr>
+<tr>
+<td></td>
+<td>add cron admin api</td>
+<td>merged</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10000">#10000</a></td>
+</tr>
+<tr>
+<td></td>
+<td>record update ranks runs</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10003">#10003</a></td>
+</tr>
+<tr>
+<td></td>
+<td>add cron admin dashboard</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10008">#10008</a></td>
+</tr>
+<tr>
+<td></td>
+<td>record badges and feedback runs</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10009">#10009</a></td>
+</tr>
+<tr>
+<td></td>
+<td>add ranking audit guardrail</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10011">#10011</a></td>
+</tr>
+<tr>
+<td></td>
+<td>add cron rerun</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10021">#10021</a></td>
+</tr>
+<tr>
+<td></td>
+<td>record remaining cron runs</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10022">#10022</a></td>
+</tr>
+<tr>
+<td></td>
+<td>add cron dashboard e2e</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10023">#10023</a></td>
+</tr>
+<tr>
+<td></td>
+<td>improve cron dashboard with health cards filters and auto refresh</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10048">#10048</a></td>
+</tr>
+<tr>
+<td><strong>Cron tests, queries and reliability</strong></td>
+<td>feat(cron): add unit test infrastructure and aggregate_feedback/utils tests</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9883">#9883</a></td>
+</tr>
+<tr>
+<td></td>
+<td>feat(cron): add update_ranks unit tests</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9889">#9889</a></td>
+</tr>
+<tr>
+<td></td>
+<td>fix(cron): parameterize coder_of_the_month queries</td>
+<td>merged</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9900">#9900</a></td>
+</tr>
+<tr>
+<td></td>
+<td>fix(cron): replace bare except clauses with typed except</td>
+<td>merged</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9901">#9901</a></td>
+</tr>
+<tr>
+<td></td>
+<td>fix(cron): merge user rank with upsert instead of full reinsert</td>
+<td>merged</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9903">#9903</a></td>
+</tr>
+<tr>
+<td></td>
+<td>add structured phase logging to crons</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9914">#9914</a></td>
+</tr>
+<tr>
+<td></td>
+<td>feat(cron): add assign_badges unit tests</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9920">#9920</a></td>
+</tr>
+<tr>
+<td></td>
+<td>refactor(cron): name acl/role magic numbers with constants</td>
+<td>merged</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9940">#9940</a></td>
+</tr>
+<tr>
+<td><strong>Recommendation model training</strong></td>
+<td>add recommendation model runs table</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10050">#10050</a></td>
+</tr>
+<tr>
+<td></td>
+<td>record and guard recommendation training</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10051">#10051</a></td>
+</tr>
+<tr>
+<td></td>
+<td>add recommendation model dao and dashboard</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10052">#10052</a></td>
+</tr>
+<tr>
+<td><strong>Problem health checks</strong></td>
+<td>add problem health checks table</td>
+<td>merged</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10065">#10065</a></td>
+</tr>
+<tr>
+<td></td>
+<td>add problem health check cron</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10066">#10066</a></td>
+</tr>
+<tr>
+<td></td>
+<td>show problem health findings for admins</td>
+<td>open</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10069">#10069</a></td>
+</tr>
+<tr>
+<td><strong>Alongside the main project</strong></td>
+<td>Extract NavbarItem component for help menu</td>
+<td>merged</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9871">#9871</a></td>
+</tr>
+<tr>
+<td></td>
+<td>add view unavailable component</td>
+<td>merged</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9919">#9919</a></td>
+</tr>
+<tr>
+<td></td>
+<td>extend navbar item style to remaining submenus</td>
+<td>closed</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9967">#9967</a></td>
+</tr>
+<tr>
+<td></td>
+<td>build navbar menus from a single configuration</td>
+<td>merged</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/9968">#9968</a></td>
+</tr>
+<tr>
+<td></td>
+<td>make view unavailable entrypoint generic</td>
+<td>merged</td>
+<td><a href="https://github.com/omegaup/omegaup/pull/10025">#10025</a></td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="issues">Issues<a role="anchor" aria-hidden="true" tabindex="-1" href="#issues" class="anchor">#</a></h2>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Title</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9868">#9868</a></td>
+<td>As a developer, I want a reusable NavbarItem component so that submenu entries are easier to maintain</td>
+<td>closed</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9869">#9869</a></td>
+<td>As a contributor, I want editable fields in the feature request form so that I can fill in the As a / I want / so that prompts directly</td>
+<td>closed</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9870">#9870</a></td>
+<td>Refactor navbar help submenu into a reusable NavbarItem component</td>
+<td>closed</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9882">#9882</a></td>
+<td>Add unit test infrastructure for cron scripts</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9888">#9888</a></td>
+<td>Add unit tests for update_ranks.py ranking logic</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9890">#9890</a></td>
+<td>Add unit tests for assign_badges.py</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9897">#9897</a></td>
+<td>Add a generic "View unavailable" component</td>
+<td>closed</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9899">#9899</a></td>
+<td>Parameterize string-built queries in coder_of_the_month.py</td>
+<td>closed</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9902">#9902</a></td>
+<td>Avoid full delete and reinsert of User_Rank in update_ranks</td>
+<td>closed</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9904">#9904</a></td>
+<td>Prevent and merge duplicate school profiles</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9913">#9913</a></td>
+<td>Emit structured per-phase logs from cron scripts</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9939">#9939</a></td>
+<td>Replace acl_id/role_id magic numbers in cron scripts with named constants</td>
+<td>closed</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9962">#9962</a></td>
+<td>Extend the navbar item style with icons and descriptions to remaining submenus</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9966">#9966</a></td>
+<td>Build the navbar menus from a single configuration with visibility rules</td>
+<td>closed</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9992">#9992</a></td>
+<td>Cron Control Plane : an observability and operational tooling for background jobs (parent issue)</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9993">#9993</a></td>
+<td>persistant cron execution history by registry and run tables</td>
+<td>closed</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9994">#9994</a></td>
+<td>DAOs for the cron tables</td>
+<td>closed</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9997">#9997</a></td>
+<td>Reusable cron runner that records runs and prevents overlap</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/9999">#9999</a></td>
+<td>Admin API for cron run history and health</td>
+<td>closed</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/10002">#10002</a></td>
+<td>Record update_ranks executions through the runner</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/10004">#10004</a></td>
+<td>Admin dashboard page for cron jobs</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/10007">#10007</a></td>
+<td>Record assign_badges and aggregate_feedback through the runner</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/10010">#10010</a></td>
+<td>Pre-publish guardrail for the ranking job</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/10017">#10017</a></td>
+<td>Make the view unavailable entrypoint generic and driven by the payload</td>
+<td>closed</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/10018">#10018</a></td>
+<td>Let admins safely rerun a cron job</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/10019">#10019</a></td>
+<td>Record the remaining crons through the runner</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/10020">#10020</a></td>
+<td>End to end test for the cron dashboard</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/10047">#10047</a></td>
+<td>Improve the cron dashboard with health cards, filters, relative times and auto refresh</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/10049">#10049</a></td>
+<td>Make the recommendation model training scheduled, recorded and guarded (parent issue)</td>
+<td>open</td>
+</tr>
+<tr>
+<td><a href="https://github.com/omegaup/omegaup/issues/10064">#10064</a></td>
+<td>Detect problems that silently stopped working (parent issue)</td>
+<td>open</td>
+</tr>
+</tbody>
+</table></div>
+  </article>
+  <footer>
+    <p>Written by Prasanna Mishra &middot; <a href="mailto:mishra.prasanna838@gmail.com">email</a> &middot; <a href="https://github.com/PrasannaMishra001">github</a> &middot; <a href="https://www.linkedin.com/in/prasanna-mishra-871269367">linkedin</a></p>
+  </footer>
+</div>
+
+<div class="right sidebar">
+  <div class="graph desktop-only">
+    <h3>Graph View</h3>
+    <div class="graph-container" id="graph-container" data-current="pull-requests.html" data-nodes='[{"href":"index.html","label":"Summary"},{"href":"report.html","label":"Report"},{"href":"pull-requests.html","label":"PRs"}]'></div>
+  </div>
+  <div class="toc desktop-only"><button type="button" class="toc-toggle" data-fold="toc-content"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul class="toc-content" id="toc-content"><li class="depth-0"><a href="#pull-requests">Pull requests</a></li><li class="depth-0"><a href="#issues">Issues</a></li></ul></div>
+</div>
+
+</div></div>
+<script src="quartz.js"></script>
+</body>
+</html>

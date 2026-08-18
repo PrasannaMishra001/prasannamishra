@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GSoC 2026 with omegaUp: Summary | Prasanna Mishra</title>
+<meta name="description" content="What Prasanna Mishra built for omegaUp during Google Summer of Code 2026: a control plane for background jobs, scheduled model training, and nightly problem health checks." />
+<link rel="icon" type="image/svg+xml" href="assets/gsoc-icon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Besley:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="quartz.css" />
+</head>
+<body>
+<div id="quartz-root" class="page"><div id="quartz-body">
+
+<div class="left sidebar">
+  <div>
+    <h2 class="page-title"><a href="index.html">Prasanna Mishra</a></h2>
+    <p class="site-tag">google summer of code 2026 &middot; omegaup</p>
+  </div>
+  <div class="sidebar-logos">
+    <img src="assets/gsoc-logo.svg" alt="Google Summer of Code" class="gsoc-mark" />
+    <img src="assets/omegaup-logo.png" alt="omegaUp" class="org-mark" />
+  </div>
+  <div class="explorer"><button type="button" class="explorer-toggle" data-fold="explorer-content"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="explorer-content" id="explorer-content"><ul class="explorer-ul"><li><button type="button" class="folder-container" data-fold="folder-gsoc"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">gsoc-2026-omegaup</span></button><ul id="folder-gsoc"><li><a href="index.html" class="active" data-for="index.html">GSoC 2026 with omegaUp: Summary</a></li><li><a href="report.html" data-for="report.html">Project Report: Cronjob Optimization</a></li><li><a href="pull-requests.html" data-for="pull-requests.html">Pull Requests and Issues</a></li></ul></li><li><button type="button" class="folder-container" data-fold="folder-elsewhere"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">elsewhere</span></button><ul id="folder-elsewhere"><li><a href="../index.html">Back to the portfolio</a></li><li><a href="https://github.com/omegaup/omegaup/pulls?q=is%3Apr+author%3APrasannaMishra001">All pull requests on GitHub</a></li><li><a href="https://github.com/omegaup/omegaup/issues/9992">The parent issue</a></li></ul></li></ul></div></div>
+</div>
+
+<div class="center">
+  <div class="page-header">
+    <nav class="breadcrumb-container" aria-label="breadcrumbs">
+      <div class="breadcrumb-element"><a href="../index.html">Home</a><p>&#10095;</p></div>
+      <div class="breadcrumb-element"><a href="index.html">gsoc 2026 omegaup</a><p>&#10095;</p></div>
+      <div class="breadcrumb-element"><a href="index.html">GSoC 2026 with omegaUp: Summary</a></div>
+    </nav>
+    <h1 class="article-title">GSoC 2026 with omegaUp: Summary</h1>
+    <p class="content-meta"><time datetime="2026-08-18">Aug 18, 2026</time><span>6 min read</span></p>
+  </div>
+  <article>
+<div class="factsheet">
+<div><span>contributor</span> Prasanna Mishra</div>
+<div><span>organisation</span> omegaUp</div>
+<div><span>project</span> Cronjob Optimization</div>
+<div><span>mentors</span> Juan Pablo Botero, Ankit Singh Sisodya</div>
+<div><span>project size</span> large, 350 hours</div>
+<div><span>coding period</span> 26 May 2026 to 24 August 2026</div>
+</div>
+
+<p>This is the short version of what I built for omegaUp over the summer. The long version, with
+the reasoning behind each decision and the parts that went wrong, is in the
+<a href="report.html">project report</a>, and every pull request and issue I opened is listed on the
+<a href="pull-requests.html">pull requests page</a>.</p>
+<h2 id="what-was-wrong">What was wrong<a role="anchor" aria-hidden="true" tabindex="-1" href="#what-was-wrong" class="anchor">#</a></h2>
+<p>omegaUp runs a small set of Python scripts on a schedule overnight. They recompute the
+rankings, hand out badges, aggregate the feedback students leave on problems, and train the
+model that suggests what to solve next. Nobody was watching any of it. There was no record
+that a job had run at all, so when one died halfway through, the first sign would be a student
+noticing days later that a problem they had solved had never counted. Nothing stopped two
+copies of the same job running at once either, and when that happens nothing raises an error.
+It quietly produces wrong data and carries on. An admin who wanted to rerun a job needed shell
+access to a production server to do it.</p>
+<p>While reading omegaUp's production deployment repository I found a commit from December 2021
+saying "Make update-ranks only run once a day for now". The "for now" had been holding for
+five years. In the same afternoon I found that the recommendation model is never trained in
+production at all, because that job was simply never added to the schedule.</p>
+<h2 id="what-i-built">What I built<a role="anchor" aria-hidden="true" tabindex="-1" href="#what-i-built" class="anchor">#</a></h2>
+<p>Three things, sharing one foundation.</p>
+<p><strong>A control plane for the cron jobs.</strong> Two new tables record every job the platform has and
+every time one of them ran. A shared runner wraps each job so that it writes itself into that
+history, takes a database lock so two copies can never overlap, times each step separately,
+and records how the run ended even when it crashed. An admin page at <code>/admin/crons</code> shows all
+of it, and a button there lets an admin rerun a job without touching a server.</p>
+<video controls preload="metadata">
+  <source src="https://github.com/user-attachments/assets/45588e28-e2d1-4c36-960f-100feff002f5" type="video/mp4">
+  <a href="https://github.com/omegaup/omegaup/pull/10048">Watch the dashboard walkthrough</a>
+</video>
+
+<p><strong>Scheduled training for the recommendation model.</strong> Every run now records how good the model
+it produced was, and a guardrail refuses to publish a model that falls below a floor or that
+is measurably worse than the one it would replace.</p>
+<p><img alt="The recommendation model quality table on the admin dashboard" src="assets/cron-dashboard-model-quality.png" /></p>
+<p><strong>Nightly problem health checks.</strong> A job that looks for problems which silently stopped
+working: submissions coming back as system errors, public problems with no submission
+languages enabled, problems nobody has ever solved, and retired problems still visible to
+students. This third project needed no dashboard code of its own. It runs through the same
+shared runner, so it appeared on the admin page by itself, which is the moment the foundation
+paid for building.</p>
+<p><img alt="The architecture of the cron control plane" src="assets/architecture.svg" /></p>
+<h2 id="where-it-stands">Where it stands<a role="anchor" aria-hidden="true" tabindex="-1" href="#where-it-stands" class="anchor">#</a></h2>
+<p>Thirty one pull requests between 26 May and 3 August, each with an issue written before it,
+and seventeen of them merged during the coding period. The whole foundation is on main: the
+registry and history tables, the data access layer, the admin API, the health checks table,
+and the reliability fixes to the scripts that were already there. The shared runner is
+approved and waiting to be merged, with four more pull requests sitting directly behind it,
+and the rest are stacked drafts that surface one at a time as the one below each of them
+lands.</p>
+<p>What sets the pace now is review time rather than code, which is a real constraint on a
+volunteer maintained project rather than a complaint. Nothing is half built and nothing is
+blocked on me.</p>
+<h2 id="in-one-paragraph">In one paragraph<a role="anchor" aria-hidden="true" tabindex="-1" href="#in-one-paragraph" class="anchor">#</a></h2>
+<p>Before this summer, if a background job on omegaUp failed at three in the morning, nobody
+found out until a student complained. Now the run is written down, it cannot collide with
+itself, an admin can see it and rerun it from a web page without server access, and the two
+jobs most likely to publish bad data check their own work before they publish it.</p>
+  </article>
+  <footer>
+    <p>Written by Prasanna Mishra &middot; <a href="mailto:mishra.prasanna838@gmail.com">email</a> &middot; <a href="https://github.com/PrasannaMishra001">github</a> &middot; <a href="https://www.linkedin.com/in/prasanna-mishra-871269367">linkedin</a></p>
+  </footer>
+</div>
+
+<div class="right sidebar">
+  <div class="graph desktop-only">
+    <h3>Graph View</h3>
+    <div class="graph-container" id="graph-container" data-current="index.html" data-nodes='[{"href":"index.html","label":"Summary"},{"href":"report.html","label":"Report"},{"href":"pull-requests.html","label":"PRs"}]'></div>
+  </div>
+  <div class="toc desktop-only"><button type="button" class="toc-toggle" data-fold="toc-content"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul class="toc-content" id="toc-content"><li class="depth-0"><a href="#what-was-wrong">What was wrong</a></li><li class="depth-0"><a href="#what-i-built">What I built</a></li><li class="depth-0"><a href="#where-it-stands">Where it stands</a></li><li class="depth-0"><a href="#in-one-paragraph">In one paragraph</a></li></ul></div>
+</div>
+
+</div></div>
+<script src="quartz.js"></script>
+</body>
+</html>
