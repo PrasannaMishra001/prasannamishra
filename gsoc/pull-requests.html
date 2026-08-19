@@ -37,7 +37,7 @@
     <p class="content-meta"><time datetime="2026-08-18">Aug 18, 2026</time><span>5 min read</span></p>
   </div>
   <article>
-<p>Thirty one pull requests between 26 May and 3 August, seventeen of which merged during the coding period. Each one had an issue written before it, so that the reason for a change existed in writing before the change did.</p>
+<p>I opened <span data-count="opened">31</span> pull requests between 26 May and 3 August, and <span data-count="merged-of-opened">13</span> of those have merged so far. Counting by merge date instead, <span data-count="merged-in-period">18</span> of my pull requests landed during the coding period, because five of them had been waiting since before it began. Each one had an issue written before it, so that the reason for a change existed in writing before the change did.</p>
 <p>The control plane pull requests are stacked, each built on the one before it, which means GitHub's diff for a later one still carries its unmerged predecessors and shrinks to just its own change the moment the one below it lands. That is deliberate. It is more work for me and far less to read for whoever is reviewing.</p>
 <h2 id="pull-requests">Pull requests<a role="anchor" aria-hidden="true" tabindex="-1" href="#pull-requests" class="anchor">#</a></h2>
 <div class="table-container"><table>
@@ -53,187 +53,187 @@
 <tr>
 <td><strong>Cron control plane</strong></td>
 <td>add cron control plane tables</td>
-<td>merged</td>
+<td data-state-for="pull/9995">merged</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9995">#9995</a></td>
 </tr>
 <tr>
 <td></td>
 <td>add cron control plane dao</td>
-<td>merged</td>
+<td data-state-for="pull/9996">merged</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9996">#9996</a></td>
 </tr>
 <tr>
 <td></td>
 <td>add cron runner library</td>
-<td>open</td>
+<td data-state-for="pull/9998">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9998">#9998</a></td>
 </tr>
 <tr>
 <td></td>
 <td>add cron admin api</td>
-<td>merged</td>
+<td data-state-for="pull/10000">merged</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10000">#10000</a></td>
 </tr>
 <tr>
 <td></td>
 <td>record update ranks runs</td>
-<td>open</td>
+<td data-state-for="pull/10003">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10003">#10003</a></td>
 </tr>
 <tr>
 <td></td>
 <td>add cron admin dashboard</td>
-<td>open</td>
+<td data-state-for="pull/10008">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10008">#10008</a></td>
 </tr>
 <tr>
 <td></td>
 <td>record badges and feedback runs</td>
-<td>open</td>
+<td data-state-for="pull/10009">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10009">#10009</a></td>
 </tr>
 <tr>
 <td></td>
 <td>add ranking audit guardrail</td>
-<td>open</td>
+<td data-state-for="pull/10011">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10011">#10011</a></td>
 </tr>
 <tr>
 <td></td>
 <td>add cron rerun</td>
-<td>open</td>
+<td data-state-for="pull/10021">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10021">#10021</a></td>
 </tr>
 <tr>
 <td></td>
 <td>record remaining cron runs</td>
-<td>open</td>
+<td data-state-for="pull/10022">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10022">#10022</a></td>
 </tr>
 <tr>
 <td></td>
 <td>add cron dashboard e2e</td>
-<td>open</td>
+<td data-state-for="pull/10023">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10023">#10023</a></td>
 </tr>
 <tr>
 <td></td>
 <td>improve cron dashboard with health cards filters and auto refresh</td>
-<td>open</td>
+<td data-state-for="pull/10048">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10048">#10048</a></td>
 </tr>
 <tr>
 <td><strong>Cron tests, queries and reliability</strong></td>
 <td>feat(cron): add unit test infrastructure and aggregate_feedback/utils tests</td>
-<td>open</td>
+<td data-state-for="pull/9883">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9883">#9883</a></td>
 </tr>
 <tr>
 <td></td>
 <td>feat(cron): add update_ranks unit tests</td>
-<td>open</td>
+<td data-state-for="pull/9889">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9889">#9889</a></td>
 </tr>
 <tr>
 <td></td>
 <td>fix(cron): parameterize coder_of_the_month queries</td>
-<td>merged</td>
+<td data-state-for="pull/9900">merged</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9900">#9900</a></td>
 </tr>
 <tr>
 <td></td>
 <td>fix(cron): replace bare except clauses with typed except</td>
-<td>merged</td>
+<td data-state-for="pull/9901">merged</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9901">#9901</a></td>
 </tr>
 <tr>
 <td></td>
 <td>fix(cron): merge user rank with upsert instead of full reinsert</td>
-<td>merged</td>
+<td data-state-for="pull/9903">merged</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9903">#9903</a></td>
 </tr>
 <tr>
 <td></td>
 <td>add structured phase logging to crons</td>
-<td>open</td>
+<td data-state-for="pull/9914">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9914">#9914</a></td>
 </tr>
 <tr>
 <td></td>
 <td>feat(cron): add assign_badges unit tests</td>
-<td>open</td>
+<td data-state-for="pull/9920">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9920">#9920</a></td>
 </tr>
 <tr>
 <td></td>
 <td>refactor(cron): name acl/role magic numbers with constants</td>
-<td>merged</td>
+<td data-state-for="pull/9940">merged</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9940">#9940</a></td>
 </tr>
 <tr>
 <td><strong>Recommendation model training</strong></td>
 <td>add recommendation model runs table</td>
-<td>open</td>
+<td data-state-for="pull/10050">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10050">#10050</a></td>
 </tr>
 <tr>
 <td></td>
 <td>record and guard recommendation training</td>
-<td>open</td>
+<td data-state-for="pull/10051">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10051">#10051</a></td>
 </tr>
 <tr>
 <td></td>
 <td>add recommendation model dao and dashboard</td>
-<td>open</td>
+<td data-state-for="pull/10052">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10052">#10052</a></td>
 </tr>
 <tr>
 <td><strong>Problem health checks</strong></td>
 <td>add problem health checks table</td>
-<td>merged</td>
+<td data-state-for="pull/10065">merged</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10065">#10065</a></td>
 </tr>
 <tr>
 <td></td>
 <td>add problem health check cron</td>
-<td>open</td>
+<td data-state-for="pull/10066">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10066">#10066</a></td>
 </tr>
 <tr>
 <td></td>
 <td>show problem health findings for admins</td>
-<td>open</td>
+<td data-state-for="pull/10069">open</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10069">#10069</a></td>
 </tr>
 <tr>
 <td><strong>Alongside the main project</strong></td>
 <td>Extract NavbarItem component for help menu</td>
-<td>merged</td>
+<td data-state-for="pull/9871">merged</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9871">#9871</a></td>
 </tr>
 <tr>
 <td></td>
 <td>add view unavailable component</td>
-<td>merged</td>
+<td data-state-for="pull/9919">merged</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9919">#9919</a></td>
 </tr>
 <tr>
 <td></td>
 <td>extend navbar item style to remaining submenus</td>
-<td>closed</td>
+<td data-state-for="pull/9967">closed</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9967">#9967</a></td>
 </tr>
 <tr>
 <td></td>
 <td>build navbar menus from a single configuration</td>
-<td>merged</td>
+<td data-state-for="pull/9968">merged</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/9968">#9968</a></td>
 </tr>
 <tr>
 <td></td>
 <td>make view unavailable entrypoint generic</td>
-<td>merged</td>
+<td data-state-for="pull/10025">merged</td>
 <td><a href="https://github.com/omegaup/omegaup/pull/10025">#10025</a></td>
 </tr>
 </tbody>
@@ -251,152 +251,152 @@
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9868">#9868</a></td>
 <td>As a developer, I want a reusable NavbarItem component so that submenu entries are easier to maintain</td>
-<td>closed</td>
+<td data-state-for="issues/9868">closed</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9869">#9869</a></td>
 <td>As a contributor, I want editable fields in the feature request form so that I can fill in the As a / I want / so that prompts directly</td>
-<td>closed</td>
+<td data-state-for="issues/9869">closed</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9870">#9870</a></td>
 <td>Refactor navbar help submenu into a reusable NavbarItem component</td>
-<td>closed</td>
+<td data-state-for="issues/9870">closed</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9882">#9882</a></td>
 <td>Add unit test infrastructure for cron scripts</td>
-<td>open</td>
+<td data-state-for="issues/9882">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9888">#9888</a></td>
 <td>Add unit tests for update_ranks.py ranking logic</td>
-<td>open</td>
+<td data-state-for="issues/9888">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9890">#9890</a></td>
 <td>Add unit tests for assign_badges.py</td>
-<td>open</td>
+<td data-state-for="issues/9890">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9897">#9897</a></td>
 <td>Add a generic "View unavailable" component</td>
-<td>closed</td>
+<td data-state-for="issues/9897">closed</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9899">#9899</a></td>
 <td>Parameterize string-built queries in coder_of_the_month.py</td>
-<td>closed</td>
+<td data-state-for="issues/9899">closed</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9902">#9902</a></td>
 <td>Avoid full delete and reinsert of User_Rank in update_ranks</td>
-<td>closed</td>
+<td data-state-for="issues/9902">closed</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9904">#9904</a></td>
 <td>Prevent and merge duplicate school profiles</td>
-<td>open</td>
+<td data-state-for="issues/9904">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9913">#9913</a></td>
 <td>Emit structured per-phase logs from cron scripts</td>
-<td>open</td>
+<td data-state-for="issues/9913">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9939">#9939</a></td>
 <td>Replace acl_id/role_id magic numbers in cron scripts with named constants</td>
-<td>closed</td>
+<td data-state-for="issues/9939">closed</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9962">#9962</a></td>
 <td>Extend the navbar item style with icons and descriptions to remaining submenus</td>
-<td>open</td>
+<td data-state-for="issues/9962">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9966">#9966</a></td>
 <td>Build the navbar menus from a single configuration with visibility rules</td>
-<td>closed</td>
+<td data-state-for="issues/9966">closed</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9992">#9992</a></td>
 <td>Cron Control Plane : an observability and operational tooling for background jobs (parent issue)</td>
-<td>open</td>
+<td data-state-for="issues/9992">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9993">#9993</a></td>
 <td>persistant cron execution history by registry and run tables</td>
-<td>closed</td>
+<td data-state-for="issues/9993">closed</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9994">#9994</a></td>
 <td>DAOs for the cron tables</td>
-<td>closed</td>
+<td data-state-for="issues/9994">closed</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9997">#9997</a></td>
 <td>Reusable cron runner that records runs and prevents overlap</td>
-<td>open</td>
+<td data-state-for="issues/9997">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/9999">#9999</a></td>
 <td>Admin API for cron run history and health</td>
-<td>closed</td>
+<td data-state-for="issues/9999">closed</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/10002">#10002</a></td>
 <td>Record update_ranks executions through the runner</td>
-<td>open</td>
+<td data-state-for="issues/10002">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/10004">#10004</a></td>
 <td>Admin dashboard page for cron jobs</td>
-<td>open</td>
+<td data-state-for="issues/10004">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/10007">#10007</a></td>
 <td>Record assign_badges and aggregate_feedback through the runner</td>
-<td>open</td>
+<td data-state-for="issues/10007">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/10010">#10010</a></td>
 <td>Pre-publish guardrail for the ranking job</td>
-<td>open</td>
+<td data-state-for="issues/10010">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/10017">#10017</a></td>
 <td>Make the view unavailable entrypoint generic and driven by the payload</td>
-<td>closed</td>
+<td data-state-for="issues/10017">closed</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/10018">#10018</a></td>
 <td>Let admins safely rerun a cron job</td>
-<td>open</td>
+<td data-state-for="issues/10018">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/10019">#10019</a></td>
 <td>Record the remaining crons through the runner</td>
-<td>open</td>
+<td data-state-for="issues/10019">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/10020">#10020</a></td>
 <td>End to end test for the cron dashboard</td>
-<td>open</td>
+<td data-state-for="issues/10020">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/10047">#10047</a></td>
 <td>Improve the cron dashboard with health cards, filters, relative times and auto refresh</td>
-<td>open</td>
+<td data-state-for="issues/10047">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/10049">#10049</a></td>
 <td>Make the recommendation model training scheduled, recorded and guarded (parent issue)</td>
-<td>open</td>
+<td data-state-for="issues/10049">open</td>
 </tr>
 <tr>
 <td><a href="https://github.com/omegaup/omegaup/issues/10064">#10064</a></td>
 <td>Detect problems that silently stopped working (parent issue)</td>
-<td>open</td>
+<td data-state-for="issues/10064">open</td>
 </tr>
 </tbody>
 </table></div>
@@ -416,5 +416,6 @@
 
 </div></div>
 <script src="quartz.js"></script>
+<script src="pr-status.js"></script>
 </body>
 </html>

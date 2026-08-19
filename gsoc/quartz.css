@@ -417,3 +417,10 @@ article > :first-child { margin-top: 0; }
   .desktop-only { display: none; }
   .mobile-only { display: initial; }
 }
+
+.status-note {
+  font-family: var(--headerFont);
+  font-size: 0.78rem;
+  color: var(--gray);
+  margin: 1.5rem 0 0;
+}
