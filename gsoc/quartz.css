@@ -424,3 +424,19 @@ article > :first-child { margin-top: 0; }
   color: var(--gray);
   margin: 1.5rem 0 0;
 }
+
+[data-state-for] {
+  font-family: var(--headerFont);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.pr-state-merged { color: var(--secondary); font-weight: 600; }
+.pr-state-approved {
+  color: #60746f;
+  color: color-mix(in srgb, var(--tertiary) 60%, var(--dark));
+  font-weight: 600;
+}
+.pr-state-draft, .pr-state-not-planned {
+  color: #727272;
+  color: color-mix(in srgb, var(--gray) 50%, var(--dark));
+}
