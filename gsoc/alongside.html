@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Work alongside the main project | Prasanna Mishra</title>
+<meta name="description" content="Three frontend pieces that merged during GSoC 2026 at omegaUp: navigation menus built from one configuration, a reusable view unavailable page, and a system settings feature." />
+<meta name="author" content="Prasanna Mishra" />
+<meta name="theme-color" content="#faf8f8" />
+<link rel="canonical" href="https://prasannamishra001.github.io/prasannamishra/gsoc/alongside.html" />
+<meta property="og:title" content="Work alongside the main project" />
+<meta property="og:description" content="Three frontend pieces that merged during GSoC 2026 at omegaUp: navigation menus built from one configuration, a reusable view unavailable page, and a system settings feature." />
+<meta property="og:type" content="article" />
+<link rel="icon" type="image/svg+xml" href="assets/gsoc-icon.svg" />
+<script>(function(){try{var t=localStorage.getItem('gsoc-theme');if(t!=='dark'&&t!=='light')t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Besley:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="quartz.css" />
+</head>
+<body data-page="alongside">
+<div class="progress" aria-hidden="true"><i></i></div>
+<div id="quartz-root" class="page"><div id="quartz-body">
+
+<div class="left sidebar">
+  <div>
+    <div class="site-head">
+      <h2 class="page-title"><a href="index.html">Prasanna Mishra</a></h2>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark" title="Switch between light and dark"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+    </div>
+    <p class="site-tag">google summer of code 2026 &middot; omegaup</p>
+  </div>
+  <div class="sidebar-logos">
+    <img src="assets/gsoc-logo.svg" alt="Google Summer of Code" class="gsoc-mark" />
+    <img src="assets/omegaup-logo.png" alt="omegaUp" class="org-mark" />
+  </div>
+  <div class="explorer"><button type="button" class="explorer-toggle" data-fold="explorer-content"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="explorer-content" id="explorer-content"><ul class="explorer-ul"><li><button type="button" class="folder-container" data-fold="folder-gsoc-2026"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">gsoc-2026</span></button><ul id="folder-gsoc-2026"><li><a href="index.html">Summary</a></li><li><a href="control-plane.html">Cron control plane</a></li><li><a href="model-training.html">Model training</a></li><li><a href="health-checks.html">Problem health checks</a></li><li><a href="groundwork.html">Tests and query fixes</a></li><li><a href="alongside.html" class="active">Alongside the project</a></li><li><a href="lessons.html">What I learned</a></li></ul></li><li><button type="button" class="folder-container" data-fold="folder-journey"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">journey</span></button><ul id="folder-journey"><li><a href="before-gsoc.html">Before the summer</a></li><li><a href="after-gsoc.html">After the summer</a></li><li><a href="journey.html">Timeline</a></li></ul></li><li><button type="button" class="folder-container" data-fold="folder-records"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">records</span></button><ul id="folder-records"><li><a href="pull-requests.html">Pull requests</a></li><li><a href="issues.html">Issues</a></li><li><a href="reviews.html">Reviews</a></li></ul></li><li><button type="button" class="folder-container" data-fold="folder-elsewhere"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">elsewhere</span></button><ul id="folder-elsewhere"><li><a href="../index.html">Back to the portfolio</a></li><li><a href="https://github.com/omegaup/omegaup/pulls?q=is%3Apr+author%3APrasannaMishra001">My pull requests on GitHub</a></li><li><a href="https://github.com/omegaup/omegaup/issues/9992">The control plane issue</a></li><li><a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a></li></ul></li></ul></div></div>
+  <p class="sidebar-updated"><span class="pulse"></span>still going &middot; updated 8 Oct 2026</p>
+</div>
+
+<div class="center">
+  <div class="page-header">
+    <nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../index.html">Home</a><p>&#10095;</p></div><div class="breadcrumb-element"><a href="index.html">gsoc 2026 omegaup</a><p>&#10095;</p></div><div class="breadcrumb-element"><a href="alongside.html">alongside the project</a></div></nav>
+    <h1 class="article-title">Work alongside the main project</h1>
+    <p class="content-meta"><time datetime="2026-10-08">updated 8 Oct 2026</time><span>9 min read</span></p>
+  </div>
+  <article>
+<p class="lede">Three pieces of work ran next to the cron project during the summer. None of them was in my
+proposal. Each started as a small request in a review and turned into something the rest of the site can
+reuse.</p>
+
+<h2 id="navbar">The navigation menus<a role="anchor" aria-hidden="true" tabindex="-1" href="#navbar" class="anchor">#</a></h2>
+<p>This began in April as an issue about the Help menu, which was a list of plain links. I gave each entry an
+icon, a title, and one line saying what it is.</p>
+<div class="fig-row reveal"><div><span class="tag">before</span><figure class="zoomable l "><img src="assets/shot/help-before.jpg" alt="" width="1078" height="517" loading="lazy" decoding="async" /></figure></div><div><span class="tag">after</span><figure class="zoomable l "><img src="assets/shot/help-after.png" alt="" width="741" height="743" loading="lazy" decoding="async" /></figure></div><figcaption>The Help menu. The second line under each title was the point: it lets the menu stay short and still say where a link goes.</figcaption></div>
+
+<p>When Juan Pablo approved that, he listed what he would like next: a reusable component for one menu entry,
+the same treatment for the other menus, and eventually the menus built from a configuration file. I did them
+in that order.</p>
+<p><strong>One component.</strong> Eight menu entries were eight copies of the same markup. I extracted one component and
+rendered the menu from a list. In review I was asked to mark links that leave the site. I derive that from
+the address, so a new entry gets the marker without anyone remembering to ask for it. Doing that turned up a
+small inconsistency: some external links were missing the attributes that stop the new page reaching back
+into the old one, and some internal links had them. The component now decides.</p>
+<p><strong>One configuration.</strong> Every entry in every menu now lives in one file, with an optional rule for who sees
+it.</p>
+<div class="codeblock reveal"><div class="codeblock-head"><span class="file">frontend/www/js/omegaup/components/common/navbarMenus.ts</span><span class="lang">ts</span><button type="button">copy</button></div><pre class="hl"><code><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">visibleEntries</span><span class="p">(</span>
+<span class="w">  </span><span class="nx">entries</span><span class="o">:</span><span class="w"> </span><span class="kt">NavbarMenuEntry</span><span class="p">[],</span>
+<span class="w">  </span><span class="nx">access</span><span class="o">:</span><span class="w"> </span><span class="kt">NavbarAccess</span><span class="p">,</span>
+<span class="p">)</span><span class="o">:</span><span class="w"> </span><span class="nx">NavbarMenuEntry</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">entries</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">entry</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="o">!</span><span class="nx">entry</span><span class="p">.</span><span class="nx">visible</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">entry</span><span class="p">.</span><span class="nx">visible</span><span class="p">(</span><span class="nx">access</span><span class="p">));</span>
+<span class="p">}</span></code></pre></div>
+
+<p>That is the whole of the visibility logic. The template used to be full of conditions. Now it filters once
+and renders what is left.</p>
+<div class="gallery reveal"><figure class="zoomable l "><img src="assets/shot/menu-contests.png" alt="Contests" width="440" height="335" loading="lazy" decoding="async" /><figcaption>Contests</figcaption></figure><figure class="zoomable l "><img src="assets/shot/menu-courses.png" alt="Courses" width="330" height="212" loading="lazy" decoding="async" /><figcaption>Courses</figcaption></figure><figure class="zoomable l "><img src="assets/shot/menu-ranking.png" alt="Ranking" width="345" height="535" loading="lazy" decoding="async" /><figcaption>Ranking</figcaption></figure><figure class="zoomable l "><img src="assets/shot/menu-help.png" alt="Help" width="480" height="600" loading="lazy" decoding="async" /><figcaption>Help</figcaption></figure><figcaption>Four of the five menus, all rendered from the same file. Click any of them to look closer.</figcaption></div>
+
+<h3 id="navbar-review">What review changed<a role="anchor" aria-hidden="true" tabindex="-1" href="#navbar-review" class="anchor">#</a></h3>
+<p>The clearest example of what a review is for is the Problems menu. I had kept a collapsed "Create problem"
+submenu, and inside it two entries reading "Create zip file" and "I have a zip file". Those names make sense
+only if you already know what they do.</p>
+<div class="fig-row reveal"><div><span class="tag">with the submenu</span><figure class="zoomable l "><img src="assets/shot/menu-problems-submenu.png" alt="" width="335" height="440" loading="lazy" decoding="async" /></figure></div><div><span class="tag">what merged</span><figure class="zoomable l "><img src="assets/shot/problems-after.png" alt="" width="450" height="640" loading="lazy" decoding="async" /></figure></div><figcaption>Juan Pablo first asked whether the submenus could go, to keep the configuration simple. Then, once titles had a second line to explain them, he asked for names that tell the two ways of creating a problem apart.</figcaption></div>
+
+<h3 id="navbar-stack">A lesson about stacks<a role="anchor" aria-hidden="true" tabindex="-1" href="#navbar-stack" class="anchor">#</a></h3>
+<p>These were three pull requests stacked on each other. The middle one never got a review of its own. The top
+one was reviewed and squash merged first, which carried the middle one's changes into main with it, so I
+closed the middle one as having nothing left to merge.</p>
+<p>Nothing was lost. But it was the second time a stack of mine had merged out of order, and it is why every
+stacked pull request I open now starts with a note saying where it sits and what has to land first.</p>
+<h2 id="view-unavailable">A page for "this is switched off"<a role="anchor" aria-hidden="true" tabindex="-1" href="#view-unavailable" class="anchor">#</a></h2>
+<p>During the system settings review, Juan Pablo wrote that he would like a generic "view unavailable"
+component that the server could control, so that every disabled feature looked the same. The easy version
+would have been to write that message into the one page that needed it. I built the component.</p>
+<div class="fig-row reveal"><div><span class="tag">with its own message and icon</span><figure class="zoomable l "><img src="assets/shot/unavailable-in-page.png" alt="" width="1026" height="680" loading="lazy" decoding="async" /></figure></div><div><span class="tag">the default, in Spanish</span><figure class="zoomable l "><img src="assets/shot/unavailable-es.png" alt="" width="1280" height="800" loading="lazy" decoding="async" /></figure></div><figcaption>The heading and the message come from the translation files, so the page arrives in whatever language the reader is already using.</figcaption></div>
+
+<p>After it merged he noticed something I had missed. The way I had wired it in, with an entry file specific to
+the IDE and its message written inside, meant the next disabled page would need a copy of that file. A
+follow up made the entry generic and moved the message to the server. It merged seven hours after I opened
+it.</p>
+<h2 id="system-settings">System settings<a role="anchor" aria-hidden="true" tabindex="-1" href="#system-settings" class="anchor">#</a></h2>
+<p>This is the oldest thread on the page. In January I asked to work on an issue: let an admin switch the
+embedded IDE off without a redeploy.</p>
+<p>My first attempt was one pull request with a new table, its data access classes, two endpoints, an admin
+page and all the checks: 994 lines across 36 files. I was asked to split it, and it became four.</p>
+<figure class="video reveal l"><video controls muted playsinline preload="none" poster="assets/video/system-settings.jpg" width="1280" height="696"><source src="assets/video/system-settings.mp4" type="video/mp4" /></video><figcaption>Switching the IDE off as an admin, and what a user sees afterwards.</figcaption></figure>
+
+<p>The table merged in two days. The data access layer waited four months for a first review and then merged
+within a day of getting one. The admin page merged in July, during the coding period, five and a half months
+after I opened it.</p>
+<h3 id="out-of-order">The one that merged without merging<a role="anchor" aria-hidden="true" tabindex="-1" href="#out-of-order" class="anchor">#</a></h3>
+<p>The endpoints were the third piece. The admin page was built on top of that branch. I did not mark the page
+as a draft, so from the outside it looked ready on its own, and when it was approved and squash merged it
+carried the endpoints into main with it. The endpoint pull request was left open with nothing in it that
+main did not already have.</p>
+<p>That was my mistake and I said so on the pull request. A change that depends on another one should be a
+draft, and should say so in its first line. Everything I have stacked since does both.</p>
+<h3 id="settings-review">What I took from the reviews<a role="anchor" aria-hidden="true" tabindex="-1" href="#settings-review" class="anchor">#</a></h3>
+<p>Three things from this thread shaped how I wrote the cron project a few weeks later.</p>
+<p>Database access goes in the data access layer, with no exceptions, and a table merges before the code that
+reads it. That is why every table in the control plane is its own pull request.</p>
+<p>A value that is read on every page and changed almost never should be cached and exposed once, in the
+payload every view already receives, not fetched by each page that wants it.</p>
+<p>And a component should only announce what happened. The page script that owns the data makes the request.</p>
+<h2 id="pull-requests">The pull requests<a role="anchor" aria-hidden="true" tabindex="-1" href="#pull-requests" class="anchor">#</a></h2>
+<h3 id="navbar-prs">Navigation<a role="anchor" aria-hidden="true" tabindex="-1" href="#navbar-prs" class="anchor">#</a></h3>
+<section class="record" id="pr-9801"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/9801">#9801</a><h4>Icons and descriptions for the Help menu</h4><span class="pr-state pr-state-merged" data-state-for="pull/9801">merged</span></div><div class="record-meta"><span>opened 18 Apr 2026</span><span>merged 26 May 2026, after 38 days</span><span class="add">+267</span><span class="del">&minus;45</span><span>14 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/9781">#9781</a></span></div><p>The Help menu was a list of plain links. Each entry now has an icon, a title and a line saying what it is.
+In approving it Juan Pablo listed what should come next: a reusable item component, the same style on the
+other menus, and the menus built from a configuration file. Those became <a href="https://github.com/omegaup/omegaup/pull/9871">#9871</a> and <a href="https://github.com/omegaup/omegaup/pull/9968">#9968</a>.</p><div class="review"><p><span class="who">Juan Pablo</span> suggested the two book entries use the authors' names as the second line, to keep the menu compact.</p></div></section><section class="record" id="pr-9871"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/9871">#9871</a><h4>A reusable navbar item</h4><span class="pr-state pr-state-merged" data-state-for="pull/9871">merged</span></div><div class="record-meta"><span>opened 26 May 2026</span><span>merged 9 Jul 2026, after 44 days</span><span class="add">+352</span><span class="del">&minus;150</span><span>4 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/9870">#9870</a></span></div><p>Eight entries in the Help menu were eight copies of the same markup. This extracts one component and renders
+the menu from a list.</p><div class="review"><p><span class="who">Juan Pablo</span> asked for a marker on links that leave the site, and a Storybook story for each kind of icon the component accepts. I derive the marker from the address, so nobody has to remember to set a flag.</p></div><div class="gallery reveal"><figure class="zoomable l "><img src="assets/shot/navitem-1.png" alt="an external link" width="700" height="260" loading="lazy" decoding="async" /><figcaption>an external link</figcaption></figure><figure class="zoomable l "><img src="assets/shot/navitem-3.png" alt="a named icon" width="700" height="260" loading="lazy" decoding="async" /><figcaption>a named icon</figcaption></figure><figure class="zoomable l "><img src="assets/shot/navitem-4.png" alt="an icon from a set" width="700" height="260" loading="lazy" decoding="async" /><figcaption>an icon from a set</figcaption></figure></div></section><section class="record" id="pr-9967"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/9967">#9967</a><h4>The same style on the other menus</h4><span class="pr-state pr-state-closed" data-state-for="pull/9967">closed</span></div><div class="record-meta"><span>opened 4 Jul 2026</span><span>closed 8 Aug 2026</span><span class="add">+368</span><span class="del">&minus;67</span><span>14 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/9962">#9962</a></span></div><p>The Help menu's new style applied to Contests, Courses, Problems and Ranking. It was never reviewed on its
+own. <a href="https://github.com/omegaup/omegaup/pull/9968">#9968</a> was stacked on top of it and merged first, carrying this with it, so I closed this one.</p></section><section class="record" id="pr-9968"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/9968">#9968</a><h4>Build the menus from one configuration</h4><span class="pr-state pr-state-merged" data-state-for="pull/9968">merged</span></div><div class="record-meta"><span>opened 4 Jul 2026</span><span>merged 29 Jul 2026, after 25 days</span><span class="add">+676</span><span class="del">&minus;233</span><span>20 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/9966">#9966</a></span></div><p>Every menu entry now lives in one configuration file with a rule for who sees it. The template filters the
+list once and renders what is left.</p><div class="review"><p><span class="who">Juan Pablo</span> asked whether the "create" submenus could go, to keep the configuration simple, and then for clearer names on the two ways to create a problem: <q>Something like "Create Problem from ZIP" and "Create Problem from Scratch"</q>.</p></div></section>
+
+<h3 id="unavailable-prs">View unavailable<a role="anchor" aria-hidden="true" tabindex="-1" href="#unavailable-prs" class="anchor">#</a></h3>
+<section class="record" id="pr-9919"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/9919">#9919</a><h4>A generic &quot;view unavailable&quot; component</h4><span class="pr-state pr-state-merged" data-state-for="pull/9919">merged</span></div><div class="record-meta"><span>opened 21 Jun 2026</span><span>merged 9 Jul 2026, after 18 days</span><span class="add">+142</span><span class="del">&minus;0</span><span>15 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/9897">#9897</a></span></div><p>A single component for "this part of the site is switched off", with an icon, a title and an optional
+message, in every language the site supports.</p><div class="review"><p><span class="who">Juan Pablo</span> asked for it to sit inside a card and be centred vertically.</p></div></section><section class="record" id="pr-10025"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/10025">#10025</a><h4>Make the view unavailable page reusable</h4><span class="pr-state pr-state-merged" data-state-for="pull/10025">merged</span></div><div class="record-meta"><span>opened 16 Jul 2026</span><span>merged 17 Jul 2026, after 1 day</span><span class="add">+25</span><span class="del">&minus;6</span><span>4 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/10017">#10017</a></span></div><p>The disabled IDE page had its own entry file with its message written into it, so the next page to be
+disabled would have needed a copy. The file is now generic and takes its message from the server. Merged
+seven hours after I opened it.</p></section>
+
+<h3 id="settings-prs">System settings<a role="anchor" aria-hidden="true" tabindex="-1" href="#settings-prs" class="anchor">#</a></h3>
+<section class="record" id="pr-8891"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/8891">#8891</a><h4>System settings, as one large pull request</h4><span class="pr-state pr-state-closed" data-state-for="pull/8891">closed</span></div><div class="record-meta"><span>opened 26 Jan 2026</span><span>closed 16 Jul 2026</span><span class="add">+994</span><span class="del">&minus;3</span><span>36 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/8319">#8319</a></span></div><p>My first attempt at letting an admin switch the embedded IDE off: a table, its data access classes, two
+endpoints, an admin page and the checks, in one pull request of 994 lines across 36 files. It was too much
+to review and I was asked to split it, which became <a href="https://github.com/omegaup/omegaup/pull/8905">#8905</a>, <a href="https://github.com/omegaup/omegaup/pull/8918">#8918</a>, <a href="https://github.com/omegaup/omegaup/pull/8906">#8906</a> and <a href="https://github.com/omegaup/omegaup/pull/8938">#8938</a>.</p><div class="review"><p><span class="who">Juan Pablo</span> <q>Can you split this PR into smaller changes?</q> The same day I opened the first two pieces.</p></div></section><section class="record" id="pr-8905"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/8905">#8905</a><h4>System settings table</h4><span class="pr-state pr-state-merged" data-state-for="pull/8905">merged</span></div><div class="record-meta"><span>opened 29 Jan 2026</span><span>merged 31 Jan 2026, after 2 days</span><span class="add">+26</span><span class="del">&minus;0</span><span>2 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/8319">#8319</a></span></div><p>Part one of the split. The <code>System_Settings</code> table and its first row, and nothing else, because
+omegaUp deploys a schema change before the code that reads it. Approved the day I opened it.</p></section><section class="record" id="pr-8918"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/8918">#8918</a><h4>System settings data access layer</h4><span class="pr-state pr-state-merged" data-state-for="pull/8918">merged</span></div><div class="record-meta"><span>opened 30 Jan 2026</span><span>merged 3 Jun 2026, after 124 days</span><span class="add">+200</span><span class="del">&minus;0</span><span>2 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/8319">#8319</a></span></div><p>The data access layer for the settings table, with typed getters and setters. It waited four months for a
+first review, and was then fixed, approved and merged in a day.</p><div class="review"><p><span class="who">Juan Pablo</span> explained why <code>SELECT *</code> is avoided: during a deploy the code and the schema can be out of step for a moment, and an explicit column list survives that.</p></div></section><section class="record" id="pr-8906"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/8906">#8906</a><h4>System settings endpoints</h4><span class="pr-state pr-state-closed" data-state-for="pull/8906">closed</span></div><div class="record-meta"><span>opened 29 Jan 2026</span><span>closed 16 Jul 2026</span><span class="add">+288</span><span class="del">&minus;10</span><span>26 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/8319">#8319</a></span></div><p>The endpoints for reading and updating settings. My first version ran SQL from a helper class, and it was put
+on hold until that moved into a data access class, which became <a href="https://github.com/omegaup/omegaup/pull/8918">#8918</a>.</p><p>This one never merged under its own number. The admin page in <a href="https://github.com/omegaup/omegaup/pull/8938">#8938</a> was built on top of this branch, and
+when that was squash merged it carried this code into main with it. I closed this afterwards. The lesson was
+mine: a pull request that depends on another should be a draft, and should say so in its first line.</p><div class="review"><p><span class="who">Juan Pablo</span> <q>All database-related changes must live in the DAOs</q>. Later he suggested caching the value, since it is read on every page and changed almost never, and exposing it once through the payload every view already receives.</p></div></section><section class="record" id="pr-8938"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/8938">#8938</a><h4>System settings admin page</h4><span class="pr-state pr-state-merged" data-state-for="pull/8938">merged</span></div><div class="record-meta"><span>opened 1 Feb 2026</span><span>merged 14 Jul 2026, after 163 days</span><span class="add">+492</span><span class="del">&minus;19</span><span>36 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/8319">#8319</a></span></div><p>The admin page with the switch, and the checks that hide the IDE when it is off. This closed the feature that
+<a href="https://github.com/omegaup/omegaup/pull/8891">#8891</a> had started in January.</p><p>Juan Pablo wanted the "this is switched off" message to be a component the whole site could use, which I
+built separately in <a href="https://github.com/omegaup/omegaup/pull/9919">#9919</a> before finishing this one.</p><div class="review"><p><span class="who">Juan Pablo</span> asked for the component to only emit the change and leave the request to the page script, for a computed property in place of an inline condition, and on approving noted <q>For future changes, let's try to keep each PR focused on a single issue</q>.</p></div><figure class="video reveal m"><video controls muted playsinline preload="none" poster="assets/video/system-settings.jpg" width="1280" height="696"><source src="assets/video/system-settings.mp4" type="video/mp4" /></video><figcaption>Switching the IDE off as an admin, and what a user then sees.</figcaption></figure></section>
+<div class="next-prev"><a class="card" href="groundwork.html"><span class="k">previous</span><h4>&larr; Tests and query fixes</h4><p>The first half: the proposal, the tests, and the promise I took back.</p></a><a class="card" href="lessons.html"><span class="k">next</span><h4>What I learned &rarr;</h4><p>The bugs I wrote, the things I got wrong, and what I do differently now.</p></a></div>
+  </article>
+  <footer class="site-footer">
+    <p>Written by Prasanna Mishra &middot; <a href="mailto:mishra.prasanna838@gmail.com">email</a> &middot; <a href="https://github.com/PrasannaMishra001">github</a> &middot; <a href="https://www.linkedin.com/in/prasanna-mishra-871269367">linkedin</a></p>
+    <p>This page was last built on 8 Oct 2026. The work is not finished, so it will change.</p>
+  </footer>
+</div>
+
+<div class="right sidebar">
+  <div class="graph desktop-only">
+    <div class="graph-head"><h3>Graph View</h3><button type="button" class="icon-btn" id="graph-open" aria-label="Open the full graph" title="Open the full graph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
+    <div class="graph-container" id="graph-container"></div>
+  </div>
+  <div class="toc desktop-only"><button type="button" class="toc-toggle" data-fold="toc-content"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul class="toc-content" id="toc-content"><li class="depth-0"><a href="#navbar">The navigation menus</a></li><li class="depth-1"><a href="#navbar-review">What review changed</a></li><li class="depth-1"><a href="#navbar-stack">A lesson about stacks</a></li><li class="depth-0"><a href="#view-unavailable">A page for &quot;this is switched off&quot;</a></li><li class="depth-0"><a href="#system-settings">System settings</a></li><li class="depth-1"><a href="#out-of-order">The one that merged without merging</a></li><li class="depth-1"><a href="#settings-review">What I took from the reviews</a></li><li class="depth-0"><a href="#pull-requests">The pull requests</a></li><li class="depth-1"><a href="#navbar-prs">Navigation</a></li><li class="depth-1"><a href="#unavailable-prs">View unavailable</a></li><li class="depth-1"><a href="#settings-prs">System settings</a></li></ul></div>
+</div>
+
+</div></div>
+<script src="graph-data.js"></script><script src="quartz.js"></script><script src="pr-status.js"></script>
+</body>
+</html>

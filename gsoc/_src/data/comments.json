@@ -1,0 +1,275 @@
+[
+{
+"number": 7563,
+"type": "issue",
+"title": "[FEATURE] Como un usuario, quiero que al hacer un nuevo env\u00edo y pegar el c\u00f3digo, autom\u00e1ticamente se detecte el lenguaje que estoy utilizando para optimizar tiempo en competencia",
+"date": "2026-02-16",
+"what": "Marked the 2024 request for automatic language detection on paste as a duplicate of his own #9046, where the work was already in progress."
+},
+{
+"number": 7927,
+"type": "issue",
+"title": "[BUG] Saved changes on the Basic Information page revert after refresh.",
+"date": "2026-02-10",
+"what": "Asked to take over the bug where the date of birth on the Basic Information page reverts after refresh, noting the value toggles between old and new even after saving and logging in again."
+},
+{
+"number": 8207,
+"type": "issue",
+"title": "[FEATURE] Unify the content of `Google-Summer-of-Code` documents in the wiki",
+"date": "2026-02-06",
+"what": "In February 2026 he reviewed the linked PR #9000 and offered to co-work on the GSoC records feature. In September 2026, when a new contributor asked for the issue, he summarised the state (schema and DAO PRs merged, controller and two or three more PRs open with conflicts) and suggested reviewing the existing work and agreeing a plan first; the maintainer then said he was reviewing the existing work to define the remaining scope."
+},
+{
+"number": 8280,
+"type": "issue",
+"title": "[FEATURE][Refactor de SotM] Deestructuraci\u00f3n del query en la funci\u00f3n update_school_of_the_month_candidates",
+"date": "2025-08-31",
+"what": "His first proposal on a cron topic (August 2025): after studying how the Coder of the Month refactor was done, he proposed starting the same module split for School of the Month (a new school_of_the_month module with a helper returning the destructured query, called from update_ranks.py) and asked the maintainer to confirm the plan."
+},
+{
+"number": 8302,
+"type": "issue",
+"title": "Mejorar mensajes de error al  subir zip  de problemas",
+"date": "2026-02-20",
+"what": "Asked to take the stale issue about clearer error messages when uploading problem zips."
+},
+{
+"number": 8319,
+"type": "issue",
+"title": "[FEATURE] Permitir que se deshabilite el EphemeralGrader desde la configuraci\u00f3n del sitio",
+"date": "2026-01-23",
+"what": "Proposed how to let admins disable the EphemeralGrader: a config flag defaulting to true, enforced in the backend, with an admin toggle and the IDE hidden on the frontend, and asked to be assigned. This became his System Settings work."
+},
+{
+"number": 8321,
+"type": "issue",
+"title": "[BUG] Consulta demasiado cara al obtener concursos para participantes",
+"date": "2026-02-04",
+"what": "Benchmarked getAllContestsForIdentity() locally (about 5 ms on 50 contests and 1.5k participants; the idx_pp_contest_problemset index gave about 18%). He proposed applying the index and the UNION ALL refactor without denormalizing the contestant count, possibly with caching, and asked which direction the maintainer preferred."
+},
+{
+"number": 8381,
+"type": "issue",
+"title": "[BUG] The pattern of date for contests is not right .",
+"date": "2025-08-30",
+"what": "Asked to be assigned the contest date format bug after setting up the dev environment in August 2025, later unassigned himself, and in February 2026 asked for a review of PR #8412, which had the suggested changes applied."
+},
+{
+"number": 8393,
+"type": "issue",
+"title": "[FEATURE] Tester online para determinar memoria y tienpo",
+"date": "2026-01-22",
+"what": "Offered to build the online time and memory tester and laid out two options: a dedicated code tester page, or reusing the grader embedded in problem details and showing time and memory after a run. He noted the ephemeral grader already parses both values but the UI does not print them."
+},
+{
+"number": 8417,
+"type": "issue",
+"title": "[FEATURE] Como un [usuario], quiero [poder fusionar una misma escuela creada con diferentes perfiles] para [conocer realmente los estudiantes que est\u00e1n inscritos en una escuela y eventualmente se han registrado en un perfil de escuela err\u00f3neo]",
+"date": "2026-01-22",
+"what": "Asked to take the school merge request and pointed out it duplicates #6432."
+},
+{
+"number": 8514,
+"type": "issue",
+"title": "[DOCS] Mejorar la documentaci\u00f3n generada en el README de los controllers",
+"date": "2026-01-09",
+"what": "Asked to take over the stale issue on improving the generated controllers README."
+},
+{
+"number": 8551,
+"type": "issue",
+"title": "[BUG] Incorrect handling of ungrouped cases in ZIP to CDP conversion",
+"date": "2025-11-25",
+"what": "Diagnosed the ZIP to CDP conversion bug as a CdpBuilder problem (ungrouped cases should create independent groups with ungroupedCase = true) and offered follow-up improvements such as detecting orphaned .in/.out files and natural sorting of cases."
+},
+{
+"number": 8679,
+"type": "pr",
+"title": "Skeleton UI for UX Improvement",
+"date": "2026-02-20",
+"what": "Left a cross-reference so the skeleton UI PR is linked from issue #8362."
+},
+{
+"number": 8681,
+"type": "issue",
+"title": "[FEATURE]: Add a Configurable Timer While Solving Problems",
+"date": "2026-02-10",
+"what": "Asked to be reassigned the configurable problem timer feature if the original author was no longer available."
+},
+{
+"number": 8683,
+"type": "issue",
+"title": "[FEATURE]  Friends/Following System for Social Engagement",
+"date": "2026-02-04",
+"what": "Explained he had closed his own duplicate issue (#8972) and asked to continue the friends/following work; when another contributor said an implementation was almost ready, he stepped back and offered help."
+},
+{
+"number": 8712,
+"type": "pr",
+"title": "feat: add profile statistics UI components",
+"date": "2026-01-10",
+"what": "Commented on a profile statistics PR that the donut layout and colours were very close to another platform's progress charts and suggested a different visual style, with a screenshot; offered to try other design options."
+},
+{
+"number": 8717,
+"type": "issue",
+"title": "[BUG] Translation Issues in Lang Files",
+"date": "2026-01-09",
+"what": "Asked to work on the translation bug, opened a PR, and after the maintainer clarified the assignment he noted that he had found more translation problems than the nine listed, filed them as #8745 and fixed them in #8746."
+},
+{
+"number": 8728,
+"type": "issue",
+"title": "[FEATURE] Add a \"hide-tags\" toggle on the pages showing problems",
+"date": "2026-01-08",
+"what": "Told the thread he had opened a PR adding a toggle to hide problem filters on collection pages; after the original requester objected, he filed his own issue (#8763) for it and linked the PR there."
+},
+{
+"number": 8729,
+"type": "issue",
+"title": "Add a detailed CONTRIBUTING.md for clear contribution guidelines",
+"date": "2026-01-09",
+"what": "Suggested complementing the written CONTRIBUTING.md with a short screen-recorded setup walkthrough narrated in English and Spanish."
+},
+{
+"number": 8735,
+"type": "issue",
+"title": "[BUG] Fix check-issue-link workflow to support non-closing issue mentions (partial fixes)",
+"date": "2026-01-08",
+"what": "Proposed a regex-based fix for the check-issue-link workflow and opened a PR; stepped back after the issue author explained it was already being handled."
+},
+{
+"number": 8750,
+"type": "pr",
+"title": "fix: Improve unassign logic for issues",
+"date": "2026-01-10",
+"what": "Reviewed the unassign workflow change: hardcoding first:250 in the GraphQL query without cursor pagination can miss PRs on busy issues and cause wrong unassignments; asked for pagination with pageInfo.endCursor and confirmation that draft PRs count as open."
+},
+{
+"number": 8847,
+"type": "issue",
+"title": "[FEATURE] Add required field indicators (red asterisk) to course form",
+"date": "2026-01-23",
+"what": "Short reply clearing up a misunderstanding with the issue author about a comment he had deleted."
+},
+{
+"number": 8958,
+"type": "pr",
+"title": "fix: add --staged flag to lint.sh to lint only staged files",
+"date": "2026-02-16",
+"what": "Reported that he had opened the corresponding PR in omegaup-hook-tools to support the --staged lint flag and asked who maintains that repository."
+},
+{
+"number": 9000,
+"type": "pr",
+"title": "Feature 8207 , GSOC records implementation",
+"date": "2026-02-06",
+"what": "Reviewed the GSoC records PR from the CI logs: lint errors, unused variables, missing keys (which would also fix the status selector bug the author mentioned), missing .lang translations and a problem with the migration script."
+},
+{
+"number": 9085,
+"type": "issue",
+"title": "[FEATURE] Add  Community Blog System",
+"date": "2026-02-14",
+"what": "Pointed out that a community blog was already discussed and declined in #8680 for moderation and maintenance cost, and that omegaUp keeps community content in external repositories; asked the maintainer whether that still holds."
+},
+{
+"number": 9293,
+"type": "issue",
+"title": "[CLEANUP] Replace bare except: clauses with typed except Exception: in cron scripts",
+"date": "2026-06-12",
+"what": "Asked to take over the bare except cleanup in cron scripts because the linked PR #9294 had been failing lint for months; this became his PR #9901."
+},
+{
+"number": 9308,
+"type": "pr",
+"title": "Fix scroll-to-top behavior when selecting filter/sort options in the contest list.",
+"date": "2026-02-28",
+"what": "On a PR fixing his issue #9257, explained that the scroll jump comes from fetchInitialContests() clearing the list before the response arrives, tested the revised version locally, and reported with a video that loadMoreContests() awaits a fetchPage() that returns before the API responds."
+},
+{
+"number": 9340,
+"type": "pr",
+"title": "Add FULLTEXT index on Courses.name (Fixes #8270)",
+"date": "2026-02-28",
+"what": "Explained that the 62k extra lines in the PR came from a generated package-lock.json and a regenerated yarn.lock (the project uses yarn) and described how to restore them."
+},
+{
+"number": 9351,
+"type": "pr",
+"title": "Optimize course name search with FULLTEXT index and MATCH query",
+"date": "2026-03-01",
+"what": "Reviewed the follow-up course search PR: noted the dropped '*' prefix matching from the earlier version and unrelated file changes that belonged in another PR."
+},
+{
+"number": 9357,
+"type": "issue",
+"title": "[BUG] Course creation accepts missing objective due to incorrect validation requirement",
+"date": "2026-03-06",
+"what": "Confirmed the course objective validation bug, and said Form.vue and the testCreateSchoolCourse test also need updating."
+},
+{
+"number": 9460,
+"type": "issue",
+"title": "[BUG] [Urgent] After creating a problem, HTTP/1.1 400 - Bad Request",
+"date": "2026-03-07",
+"what": "Tried to reproduce the 400 error after creating a problem, got HTTP 200 locally, and pointed to a catch block added in PR #8613 that rethrows ApiException as the likely cause, with a suggested reordering."
+},
+{
+"number": 9694,
+"type": "pr",
+"title": "[docs] Update contest endpoint controller docstrings and align generated API docs",
+"date": "2026-04-01",
+"what": "Explained that the lint failure is because the controllers README is generated from PHP docstrings and gave the command to regenerate it."
+},
+{
+"number": 9713,
+"type": "pr",
+"title": "fix: add real-time date validation to course form to prevent end date before start date",
+"date": "2026-04-01",
+"what": "Gave the lint fix command for Form.vue and suggested applying the maintainer's review suggestions (a computed property) before running it."
+},
+{
+"number": 9716,
+"type": "pr",
+"title": "fix(login): associate 'over 13' checkbox label correctly",
+"date": "2026-04-01",
+"what": "Explained that the linter forbids id attributes in .vue files, suggested wrapping the input inside the label instead, with code, and pointed out a case mismatch between the id and the for attribute."
+},
+{
+"number": 9719,
+"type": "issue",
+"title": "[Discussion] Automated CI check to catch inefficient SQL queries before they break production",
+"date": "2026-04-01",
+"what": "On a proposal for a CI check that catches inefficient SQL: noted the test seed creates only 10 rows per resource, too few for EXPLAIN to be realistic, suggested a direct SQL seed script for the heavy tables, and proposed also flagging DEPENDENT SUBQUERY plans such as one in aggregate_feedback.py."
+},
+{
+"number": 9721,
+"type": "pr",
+"title": "Added contest problem change log table",
+"date": "2026-04-01",
+"what": "Explained that PHP CI fails because schema.sql must be regenerated after adding a migration, and gave the command."
+},
+{
+"number": 9731,
+"type": "pr",
+"title": "feat: add preferred programming language dropdown to user preferences",
+"date": "2026-04-06",
+"what": "Pointed out that the PR showed 162k changed lines because of line ending changes, making the actual change impossible to review, and that the issue belonged to another contributor; suggested closing it and picking another issue."
+},
+{
+"number": 10203,
+"type": "issue",
+"title": "[FEATURE] Personalized 'Recommended for You' problem feed",
+"date": "2026-09-17",
+"what": "Asked by the maintainer for context, he described the current state of the recommendation pipeline: the model and a recommend() method exist, the output is a SQLite file at the --output path, weekly training is not live in production, and no user-facing service calls it. He listed the next steps as choosing a serving/storage path and then a backend API; the maintainer marked the issue blocked on that."
+},
+{
+"number": 10215,
+"type": "issue",
+"title": "[FEATURE] Personalized problem recommendations feed for contestants",
+"date": "2026-09-27",
+"what": "Asked by the maintainer what the pipeline already supports, he confirmed another contributor's audit and added that the trainer is not running in production yet (the Cron_Jobs row is informational and the Kubernetes entry in omegaup/prod was not added), and that training uses only accepted practice submissions. He corrected the proposed MVP: syncing only the top n rows per problem can leave users with an empty feed because recommend() filters solved problems before taking k, so n must be well above the page size and the score must be kept. The plan was revised accordingly and the maintainer accepted the scope."
+}
+]

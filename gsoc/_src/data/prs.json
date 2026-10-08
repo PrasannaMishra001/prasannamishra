@@ -1,0 +1,1505 @@
+[
+{
+"number": 8412,
+"title": "feat(arena): Implement human-readable and relative contest dates",
+"created": "2025-08-31",
+"merged": "2026-02-27",
+"closed": null,
+"draft": false,
+"additions": 544,
+"deletions": 24,
+"files": 15,
+"issues": [
+8381
+],
+"area": "frontend, i18n"
+},
+{
+"number": 8426,
+"title": "Fix contest button alignment issues Fixes #8422",
+"created": "2025-09-04",
+"merged": "2025-09-09",
+"closed": null,
+"draft": false,
+"additions": 21,
+"deletions": 22,
+"files": 1,
+"issues": [
+8422
+],
+"area": "frontend"
+},
+{
+"number": 8599,
+"title": "Improve Navbar hover effects,dropdown behavior,profile progress display",
+"created": "2025-12-06",
+"merged": "2026-01-17",
+"closed": null,
+"draft": false,
+"additions": 109,
+"deletions": 6,
+"files": 1,
+"issues": [
+8598
+],
+"area": "frontend"
+},
+{
+"number": 8736,
+"title": "feat(problem): add toggle to hide problem filters in collections",
+"created": "2026-01-08",
+"merged": "2026-01-24",
+"closed": null,
+"draft": false,
+"additions": 88,
+"deletions": 5,
+"files": 13,
+"issues": [
+8763
+],
+"area": "frontend, i18n"
+},
+{
+"number": 8737,
+"title": "Fix check-issue-link workflow to support non-closing issue references",
+"created": "2026-01-08",
+"merged": "2026-01-13",
+"closed": null,
+"draft": false,
+"additions": 34,
+"deletions": 2,
+"files": 1,
+"issues": [
+8735
+],
+"area": "ci"
+},
+{
+"number": 8743,
+"title": "Fix navbar hover dropdown behavior and notification overflow",
+"created": "2026-01-09",
+"merged": null,
+"closed": "2026-01-09",
+"draft": true,
+"additions": 113,
+"deletions": 5,
+"files": 2,
+"issues": [],
+"area": "frontend"
+},
+{
+"number": 8744,
+"title": "Fix translation typos and incorrect strings in es.lang and pt.lang",
+"created": "2026-01-09",
+"merged": null,
+"closed": "2026-01-13",
+"draft": false,
+"additions": 108,
+"deletions": 108,
+"files": 6,
+"issues": [
+8717
+],
+"area": "i18n"
+},
+{
+"number": 8746,
+"title": "updated pt.lang language content problems",
+"created": "2026-01-09",
+"merged": "2026-01-24",
+"closed": null,
+"draft": false,
+"additions": 48,
+"deletions": 48,
+"files": 3,
+"issues": [
+8745
+],
+"area": "i18n"
+},
+{
+"number": 8775,
+"title": "Allow contestants to access printable problem statements",
+"created": "2026-01-14",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 45,
+"deletions": 2,
+"files": 2,
+"issues": [
+8754
+],
+"area": "php backend, frontend"
+},
+{
+"number": 8794,
+"title": "[FEATURE] GitHub Sign-In and OAuth flow (#8747)",
+"created": "2026-01-18",
+"merged": "2026-02-09",
+"closed": null,
+"draft": false,
+"additions": 713,
+"deletions": 9,
+"files": 25,
+"issues": [
+8747
+],
+"area": "php backend, frontend, i18n"
+},
+{
+"number": 8819,
+"title": "fix:#8802 fix localstorage and add safe draft persistence",
+"created": "2026-01-19",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 398,
+"deletions": 9,
+"files": 24,
+"issues": [
+8802
+],
+"area": "frontend, i18n"
+},
+{
+"number": 8843,
+"title": "feat: allow experienced issue creators to bypass assignment limit",
+"created": "2026-01-22",
+"merged": "2026-01-31",
+"closed": null,
+"draft": false,
+"additions": 112,
+"deletions": 3,
+"files": 2,
+"issues": [
+8842
+],
+"area": "ci"
+},
+{
+"number": 8846,
+"title": "[FEATURE] Enhance badge visuals with reusable 3D hover component",
+"created": "2026-01-22",
+"merged": "2026-01-24",
+"closed": null,
+"draft": false,
+"additions": 181,
+"deletions": 17,
+"files": 3,
+"issues": [
+8845
+],
+"area": "frontend"
+},
+{
+"number": 8851,
+"title": "fix(ui): Show full verdict names in profile pie chart tooltip",
+"created": "2026-01-22",
+"merged": "2026-01-24",
+"closed": null,
+"draft": false,
+"additions": 36,
+"deletions": 2,
+"files": 1,
+"issues": [
+8850
+],
+"area": "frontend"
+},
+{
+"number": 8874,
+"title": "Merge duplicate Universidad Fidelitas schools into official profile",
+"created": "2026-01-24",
+"merged": "2026-01-31",
+"closed": null,
+"draft": false,
+"additions": 37,
+"deletions": 0,
+"files": 1,
+"issues": [
+8417
+],
+"area": "database"
+},
+{
+"number": 8891,
+"title": "Allow EphemeralGrader to be enabled/disabled in admin settings",
+"created": "2026-01-26",
+"merged": null,
+"closed": "2026-07-16",
+"draft": false,
+"additions": 994,
+"deletions": 3,
+"files": 36,
+"issues": [
+8319
+],
+"area": "php backend, database, frontend"
+},
+{
+"number": 8894,
+"title": "Simplify local bootstrap by auto-configuring problem quality data",
+"created": "2026-01-26",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 111,
+"deletions": 1,
+"files": 1,
+"issues": [
+8795
+],
+"area": "python, dev environment"
+},
+{
+"number": 8905,
+"title": "Add System_Settings table and Migration",
+"created": "2026-01-29",
+"merged": "2026-01-31",
+"closed": null,
+"draft": false,
+"additions": 26,
+"deletions": 0,
+"files": 2,
+"issues": [
+8319
+],
+"area": "database"
+},
+{
+"number": 8906,
+"title": "Add backend API endpoints for system settings management",
+"created": "2026-01-29",
+"merged": null,
+"closed": "2026-07-16",
+"draft": false,
+"additions": 288,
+"deletions": 10,
+"files": 26,
+"issues": [
+8319
+],
+"area": "php backend"
+},
+{
+"number": 8918,
+"title": "Added DAO layer for System_Settings table",
+"created": "2026-01-30",
+"merged": "2026-06-03",
+"closed": null,
+"draft": false,
+"additions": 200,
+"deletions": 0,
+"files": 2,
+"issues": [
+8319
+],
+"area": "php backend"
+},
+{
+"number": 8938,
+"title": "feat: add admin ui, client gating for system settings",
+"created": "2026-02-01",
+"merged": "2026-07-14",
+"closed": null,
+"draft": false,
+"additions": 492,
+"deletions": 19,
+"files": 36,
+"issues": [
+8319
+],
+"area": "frontend, php backend"
+},
+{
+"number": 8959,
+"title": "[FEATURE] Improve discoverability of custom test case execution",
+"created": "2026-02-02",
+"merged": "2026-02-06",
+"closed": null,
+"draft": false,
+"additions": 117,
+"deletions": 40,
+"files": 14,
+"issues": [
+8896
+],
+"area": "frontend, grader ui, i18n"
+},
+{
+"number": 8983,
+"title": "Email verification UI",
+"created": "2026-02-05",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 370,
+"deletions": 35,
+"files": 15,
+"issues": [
+8982
+],
+"area": "php backend, email, i18n"
+},
+{
+"number": 9038,
+"title": "Fix #8393: Online code-tester : write, compile, and run to determine memory and time",
+"created": "2026-02-09",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 909,
+"deletions": 0,
+"files": 20,
+"issues": [
+8393
+],
+"area": "frontend, php backend, grader"
+},
+{
+"number": 9070,
+"title": "Add automatic programming language detection to the Ephemeral grader editor.",
+"created": "2026-02-13",
+"merged": "2026-05-29",
+"closed": null,
+"draft": false,
+"additions": 563,
+"deletions": 24,
+"files": 18,
+"issues": [
+9046
+],
+"area": "frontend, grader ui"
+},
+{
+"number": 9087,
+"title": "Add User_Code_Templates database migration",
+"created": "2026-02-14",
+"merged": null,
+"closed": "2026-02-14",
+"draft": false,
+"additions": 32,
+"deletions": 0,
+"files": 2,
+"issues": [
+9044
+],
+"area": "database"
+},
+{
+"number": 9088,
+"title": "Add User_Code_Templates database migration",
+"created": "2026-02-14",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 32,
+"deletions": 0,
+"files": 2,
+"issues": [
+9044
+],
+"area": "database"
+},
+{
+"number": 9089,
+"title": "Add UserCodeTemplates DAO layer",
+"created": "2026-02-14",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 588,
+"deletions": 0,
+"files": 5,
+"issues": [
+9044
+],
+"area": "php backend, database"
+},
+{
+"number": 9090,
+"title": "Add code templates controller and UI",
+"created": "2026-02-14",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 1728,
+"deletions": 14,
+"files": 25,
+"issues": [
+9044
+],
+"area": "php backend, frontend, grader ui"
+},
+{
+"number": 9103,
+"title": "Remove accidental it.only() call",
+"created": "2026-02-15",
+"merged": "2026-02-17",
+"closed": null,
+"draft": false,
+"additions": 2,
+"deletions": 1,
+"files": 2,
+"issues": [
+9102
+],
+"area": "ci, cypress e2e"
+},
+{
+"number": 9105,
+"title": "Use HTTPS for external links",
+"created": "2026-02-15",
+"merged": "2026-02-21",
+"closed": null,
+"draft": false,
+"additions": 95,
+"deletions": 41,
+"files": 9,
+"issues": [
+9104
+],
+"area": "frontend"
+},
+{
+"number": 9108,
+"title": "fix: use env vars for TA credentials in CI",
+"created": "2026-02-15",
+"merged": "2026-02-21",
+"closed": null,
+"draft": false,
+"additions": 44,
+"deletions": 8,
+"files": 4,
+"issues": [
+9107
+],
+"area": "ci, python, security"
+},
+{
+"number": 9127,
+"title": "[MAINTENANCE] Replace deprecated @babel/polyfill with core-js v3 entry (#9122)",
+"created": "2026-02-16",
+"merged": "2026-02-19",
+"closed": null,
+"draft": false,
+"additions": 3,
+"deletions": 2,
+"files": 2,
+"issues": [
+9122
+],
+"area": "frontend build, dependencies"
+},
+{
+"number": 9143,
+"title": "fix: profile basic info revert on refresh",
+"created": "2026-02-16",
+"merged": "2026-02-21",
+"closed": null,
+"draft": false,
+"additions": 26,
+"deletions": 8,
+"files": 3,
+"issues": [
+7927
+],
+"area": "frontend"
+},
+{
+"number": 9212,
+"title": "fix: pin alpine version in Dockerfile.frontend (#9207)",
+"created": "2026-02-20",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 1,
+"deletions": 1,
+"files": 1,
+"issues": [
+9207
+],
+"area": "docker"
+},
+{
+"number": 9214,
+"title": "fix: remove experimental flags from cypress config (#9209)",
+"created": "2026-02-20",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 0,
+"deletions": 2,
+"files": 1,
+"issues": [
+9209
+],
+"area": "ci, cypress"
+},
+{
+"number": 9215,
+"title": "fix: use parameterized query in assign_badges get_current_owners (#9196)",
+"created": "2026-02-20",
+"merged": null,
+"closed": "2026-02-27",
+"draft": false,
+"additions": 0,
+"deletions": 0,
+"files": 0,
+"issues": [
+9196
+],
+"area": "python cron, security"
+},
+{
+"number": 9216,
+"title": "fix: pin redis and rabbitmq image versions in docker-compose (#9206)",
+"created": "2026-02-20",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 2,
+"deletions": 2,
+"files": 1,
+"issues": [
+9206
+],
+"area": "docker"
+},
+{
+"number": 9217,
+"title": "fix: correct daily-release schedule comment and use notice annotations (#9201)",
+"created": "2026-02-20",
+"merged": "2026-03-10",
+"closed": null,
+"draft": false,
+"additions": 4,
+"deletions": 4,
+"files": 2,
+"issues": [
+9201
+],
+"area": "ci"
+},
+{
+"number": 9218,
+"title": "fix: lazy import boto3 in db-migrate.py",
+"created": "2026-02-20",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 1,
+"deletions": 2,
+"files": 1,
+"issues": [
+9198
+],
+"area": "python, tooling"
+},
+{
+"number": 9219,
+"title": "fix: relax mysql timeout values in docker-compose",
+"created": "2026-02-20",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 2,
+"deletions": 2,
+"files": 1,
+"issues": [
+9208
+],
+"area": "docker"
+},
+{
+"number": 9220,
+"title": "fix: use restart on-failure for all services",
+"created": "2026-02-20",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 41,
+"deletions": 16,
+"files": 1,
+"issues": [
+9210
+],
+"area": "docker"
+},
+{
+"number": 9222,
+"title": "fix: enable mysql slow query logging in docker-compose",
+"created": "2026-02-20",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 3,
+"deletions": 0,
+"files": 1,
+"issues": [
+9200
+],
+"area": "docker, database"
+},
+{
+"number": 9224,
+"title": "fix: parameterize IN-clause SQL in coder_of_the_month",
+"created": "2026-02-20",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 16,
+"deletions": 19,
+"files": 2,
+"issues": [
+9203
+],
+"area": "python cron, security"
+},
+{
+"number": 9248,
+"title": "fix: pre-create ephemeral dir in grader entrypoint",
+"created": "2026-02-21",
+"merged": "2026-02-28",
+"closed": null,
+"draft": false,
+"additions": 1,
+"deletions": 1,
+"files": 1,
+"issues": [
+9193
+],
+"area": "docker, grader"
+},
+{
+"number": 9249,
+"title": "fix: pin kustomize to v5.8.1 with sha256 checksum",
+"created": "2026-02-21",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 12,
+"deletions": 4,
+"files": 1,
+"issues": [
+9204
+],
+"area": "ci, security"
+},
+{
+"number": 9250,
+"title": "match schools by exact name and location",
+"created": "2026-02-21",
+"merged": "2026-10-07",
+"closed": null,
+"draft": false,
+"additions": 246,
+"deletions": 7,
+"files": 4,
+"issues": [
+9211
+],
+"area": "php backend, database"
+},
+{
+"number": 9298,
+"title": "fix: per-tab filter and sort state",
+"created": "2026-02-23",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 135,
+"deletions": 32,
+"files": 2,
+"issues": [
+9258
+],
+"area": "frontend, contest list"
+},
+{
+"number": 9301,
+"title": "fix: show more contests appends without resetting list",
+"created": "2026-02-23",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 19,
+"deletions": 21,
+"files": 1,
+"issues": [
+9260
+],
+"area": "frontend, contest list"
+},
+{
+"number": 9303,
+"title": "fix: button and input-group alignment inconsistencies",
+"created": "2026-02-23",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 12,
+"deletions": 12,
+"files": 2,
+"issues": [
+9302
+],
+"area": "frontend, css"
+},
+{
+"number": 9411,
+"title": "fix: block GET on mailingListBackfill endpoint",
+"created": "2026-03-03",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 17,
+"deletions": 4,
+"files": 2,
+"issues": [
+9389
+],
+"area": "php backend, security"
+},
+{
+"number": 9412,
+"title": "fix: include group-inherited roles in user system roles lookup",
+"created": "2026-03-03",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 71,
+"deletions": 5,
+"files": 2,
+"issues": [
+9388
+],
+"area": "php backend"
+},
+{
+"number": 9428,
+"title": "fix: validate page parameter with lowerBound across all endpoints",
+"created": "2026-03-05",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 27,
+"deletions": 27,
+"files": 8,
+"issues": [
+9387
+],
+"area": "php backend, validation"
+},
+{
+"number": 9429,
+"title": "fix: block GET for clone, open, and accept endpoints",
+"created": "2026-03-05",
+"merged": "2026-05-09",
+"closed": null,
+"draft": false,
+"additions": 62,
+"deletions": 6,
+"files": 2,
+"issues": [
+9385
+],
+"area": "php backend, security"
+},
+{
+"number": 9432,
+"title": "fix #9386: return contest_alias in clarification create response",
+"created": "2026-03-06",
+"merged": "2026-05-27",
+"closed": null,
+"draft": false,
+"additions": 2,
+"deletions": 2,
+"files": 2,
+"issues": [
+9386
+],
+"area": "php backend"
+},
+{
+"number": 9801,
+"title": "Add icons to navbar Help menu",
+"created": "2026-04-18",
+"merged": "2026-05-26",
+"closed": null,
+"draft": false,
+"additions": 267,
+"deletions": 45,
+"files": 14,
+"issues": [
+9781
+],
+"area": "frontend, navbar, i18n"
+},
+{
+"number": 9871,
+"title": "Extract NavbarItem component for help menu",
+"created": "2026-05-26",
+"merged": "2026-07-09",
+"closed": null,
+"draft": false,
+"additions": 352,
+"deletions": 150,
+"files": 4,
+"issues": [
+9870
+],
+"area": "frontend (vue navbar)"
+},
+{
+"number": 9883,
+"title": "feat(cron): add unit test infrastructure and aggregate_feedback/utils tests",
+"created": "2026-06-02",
+"merged": "2026-08-24",
+"closed": null,
+"draft": false,
+"additions": 599,
+"deletions": 24,
+"files": 12,
+"issues": [
+9882
+],
+"area": "python cron, tests"
+},
+{
+"number": 9889,
+"title": "feat(cron): add update_ranks unit tests",
+"created": "2026-06-07",
+"merged": "2026-08-25",
+"closed": null,
+"draft": false,
+"additions": 638,
+"deletions": 0,
+"files": 2,
+"issues": [
+9888
+],
+"area": "python cron, tests"
+},
+{
+"number": 9900,
+"title": "fix(cron): parameterize coder_of_the_month queries",
+"created": "2026-06-12",
+"merged": "2026-08-13",
+"closed": null,
+"draft": false,
+"additions": 22,
+"deletions": 30,
+"files": 2,
+"issues": [
+9899
+],
+"area": "python cron, sql"
+},
+{
+"number": 9901,
+"title": "fix(cron): replace bare except clauses with typed except",
+"created": "2026-06-12",
+"merged": "2026-07-29",
+"closed": null,
+"draft": false,
+"additions": 16,
+"deletions": 16,
+"files": 5,
+"issues": [
+9293
+],
+"area": "python cron"
+},
+{
+"number": 9903,
+"title": "fix(cron): merge user rank with upsert instead of full reinsert",
+"created": "2026-06-12",
+"merged": "2026-08-14",
+"closed": null,
+"draft": false,
+"additions": 38,
+"deletions": 2,
+"files": 1,
+"issues": [
+9902
+],
+"area": "python cron, sql"
+},
+{
+"number": 9914,
+"title": "add structured phase logging to crons",
+"created": "2026-06-19",
+"merged": "2026-08-25",
+"closed": null,
+"draft": false,
+"additions": 18,
+"deletions": 9,
+"files": 2,
+"issues": [
+9913
+],
+"area": "python cron, logging"
+},
+{
+"number": 9919,
+"title": "add view unavailable component",
+"created": "2026-06-21",
+"merged": "2026-07-09",
+"closed": null,
+"draft": false,
+"additions": 142,
+"deletions": 0,
+"files": 15,
+"issues": [
+9897
+],
+"area": "frontend (vue component), i18n"
+},
+{
+"number": 9920,
+"title": "feat(cron): add assign_badges unit tests",
+"created": "2026-06-21",
+"merged": "2026-08-26",
+"closed": null,
+"draft": false,
+"additions": 240,
+"deletions": 2,
+"files": 2,
+"issues": [
+9890
+],
+"area": "python cron, tests, sql"
+},
+{
+"number": 9940,
+"title": "refactor(cron): name acl/role magic numbers with constants",
+"created": "2026-06-26",
+"merged": "2026-07-03",
+"closed": null,
+"draft": false,
+"additions": 29,
+"deletions": 15,
+"files": 3,
+"issues": [
+9939
+],
+"area": "python cron"
+},
+{
+"number": 9967,
+"title": "extend navbar item style to remaining submenus",
+"created": "2026-07-04",
+"merged": null,
+"closed": "2026-08-08",
+"draft": false,
+"additions": 368,
+"deletions": 67,
+"files": 14,
+"issues": [
+9962
+],
+"area": "frontend (vue navbar), i18n"
+},
+{
+"number": 9968,
+"title": "build navbar menus from a single configuration",
+"created": "2026-07-04",
+"merged": "2026-07-29",
+"closed": null,
+"draft": false,
+"additions": 676,
+"deletions": 233,
+"files": 20,
+"issues": [
+9966
+],
+"area": "frontend (vue navbar), i18n"
+},
+{
+"number": 9995,
+"title": "add cron control plane tables",
+"created": "2026-07-13",
+"merged": "2026-07-28",
+"closed": null,
+"draft": false,
+"additions": 64,
+"deletions": 0,
+"files": 2,
+"issues": [
+9993,
+9992
+],
+"area": "database"
+},
+{
+"number": 9996,
+"title": "add cron control plane dao",
+"created": "2026-07-13",
+"merged": "2026-08-10",
+"closed": null,
+"draft": false,
+"additions": 1345,
+"deletions": 3,
+"files": 9,
+"issues": [
+9994,
+9992
+],
+"area": "php backend, database"
+},
+{
+"number": 9998,
+"title": "add cron runner library",
+"created": "2026-07-13",
+"merged": "2026-08-19",
+"closed": null,
+"draft": false,
+"additions": 497,
+"deletions": 0,
+"files": 2,
+"issues": [
+9997,
+9992
+],
+"area": "python cron"
+},
+{
+"number": 10000,
+"title": "add cron admin api",
+"created": "2026-07-13",
+"merged": "2026-08-14",
+"closed": null,
+"draft": false,
+"additions": 333,
+"deletions": 0,
+"files": 6,
+"issues": [
+9999,
+9992
+],
+"area": "php backend"
+},
+{
+"number": 10003,
+"title": "record update ranks runs",
+"created": "2026-07-14",
+"merged": "2026-08-19",
+"closed": null,
+"draft": false,
+"additions": 25,
+"deletions": 35,
+"files": 1,
+"issues": [
+10002,
+9992
+],
+"area": "python cron"
+},
+{
+"number": 10008,
+"title": "add cron admin dashboard",
+"created": "2026-07-14",
+"merged": "2026-08-29",
+"closed": null,
+"draft": false,
+"additions": 978,
+"deletions": 19,
+"files": 23,
+"issues": [
+10004,
+9992
+],
+"area": "frontend, php backend, i18n"
+},
+{
+"number": 10009,
+"title": "record badges and feedback runs",
+"created": "2026-07-14",
+"merged": "2026-08-21",
+"closed": null,
+"draft": false,
+"additions": 59,
+"deletions": 54,
+"files": 2,
+"issues": [
+10007,
+9992
+],
+"area": "python cron"
+},
+{
+"number": 10011,
+"title": "add ranking audit guardrail",
+"created": "2026-07-15",
+"merged": "2026-08-26",
+"closed": null,
+"draft": false,
+"additions": 207,
+"deletions": 0,
+"files": 2,
+"issues": [
+10010,
+9992
+],
+"area": "python cron"
+},
+{
+"number": 10021,
+"title": "run queued cron rerun requests",
+"created": "2026-07-16",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 2514,
+"deletions": 3,
+"files": 32,
+"issues": [
+10018,
+9992
+],
+"area": "python cron"
+},
+{
+"number": 10022,
+"title": "record remaining cron runs",
+"created": "2026-07-16",
+"merged": "2026-08-22",
+"closed": null,
+"draft": false,
+"additions": 57,
+"deletions": 43,
+"files": 2,
+"issues": [
+10019,
+9992
+],
+"area": "python cron"
+},
+{
+"number": 10023,
+"title": "add cron dashboard e2e",
+"created": "2026-07-16",
+"merged": null,
+"closed": "2026-08-29",
+"draft": true,
+"additions": 2558,
+"deletions": 1,
+"files": 40,
+"issues": [
+10020,
+9992
+],
+"area": "frontend, cypress"
+},
+{
+"number": 10025,
+"title": "make view unavailable entrypoint generic",
+"created": "2026-07-16",
+"merged": "2026-07-17",
+"closed": null,
+"draft": false,
+"additions": 25,
+"deletions": 6,
+"files": 4,
+"issues": [
+10017
+],
+"area": "php backend, frontend"
+},
+{
+"number": 10048,
+"title": "improve the cron dashboard",
+"created": "2026-07-26",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 3474,
+"deletions": 32,
+"files": 38,
+"issues": [
+10047,
+9992
+],
+"area": "frontend, php backend"
+},
+{
+"number": 10050,
+"title": "add recommendation model runs table",
+"created": "2026-07-27",
+"merged": "2026-08-29",
+"closed": null,
+"draft": false,
+"additions": 38,
+"deletions": 0,
+"files": 2,
+"issues": [
+10049
+],
+"area": "database"
+},
+{
+"number": 10051,
+"title": "record and guard recommendation training",
+"created": "2026-07-27",
+"merged": "2026-09-18",
+"closed": null,
+"draft": false,
+"additions": 846,
+"deletions": 55,
+"files": 5,
+"issues": [
+10049
+],
+"area": "python cron"
+},
+{
+"number": 10052,
+"title": "show recommendation model quality for admins",
+"created": "2026-07-27",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 1364,
+"deletions": 9,
+"files": 26,
+"issues": [
+10049
+],
+"area": "php backend, frontend"
+},
+{
+"number": 10065,
+"title": "add problem health checks table",
+"created": "2026-07-31",
+"merged": "2026-08-14",
+"closed": null,
+"draft": false,
+"additions": 34,
+"deletions": 0,
+"files": 2,
+"issues": [
+10064
+],
+"area": "database"
+},
+{
+"number": 10066,
+"title": "add problem health check cron",
+"created": "2026-08-01",
+"merged": "2026-09-17",
+"closed": null,
+"draft": false,
+"additions": 1300,
+"deletions": 1,
+"files": 4,
+"issues": [
+10064
+],
+"area": "python cron"
+},
+{
+"number": 10069,
+"title": "show problem health findings for admins",
+"created": "2026-08-03",
+"merged": "2026-10-07",
+"closed": null,
+"draft": false,
+"additions": 649,
+"deletions": 11,
+"files": 25,
+"issues": [
+10064
+],
+"area": "php backend, frontend"
+},
+{
+"number": 10149,
+"title": "add problem health checks dao",
+"created": "2026-08-29",
+"merged": "2026-08-29",
+"closed": null,
+"draft": false,
+"additions": 719,
+"deletions": 6,
+"files": 7,
+"issues": [
+10064
+],
+"area": "php backend, database"
+},
+{
+"number": 10150,
+"title": "add recommendation model runs dao",
+"created": "2026-08-29",
+"merged": "2026-09-09",
+"closed": null,
+"draft": false,
+"additions": 786,
+"deletions": 0,
+"files": 6,
+"issues": [
+10049
+],
+"area": "php backend, database"
+},
+{
+"number": 10153,
+"title": "return open health findings from the crons api",
+"created": "2026-08-29",
+"merged": null,
+"closed": "2026-08-29",
+"draft": false,
+"additions": 90,
+"deletions": 9,
+"files": 5,
+"issues": [
+10064
+],
+"area": "php backend"
+},
+{
+"number": 10154,
+"title": "return model quality from the crons api",
+"created": "2026-08-29",
+"merged": null,
+"closed": "2026-08-29",
+"draft": false,
+"additions": 985,
+"deletions": 9,
+"files": 11,
+"issues": [
+10049
+],
+"area": "php backend"
+},
+{
+"number": 10155,
+"title": "add cron run requests table",
+"created": "2026-08-29",
+"merged": "2026-09-17",
+"closed": null,
+"draft": false,
+"additions": 37,
+"deletions": 0,
+"files": 2,
+"issues": [
+10018,
+9992
+],
+"area": "database"
+},
+{
+"number": 10156,
+"title": "add cron run requests dao",
+"created": "2026-08-29",
+"merged": "2026-10-07",
+"closed": null,
+"draft": false,
+"additions": 1142,
+"deletions": 3,
+"files": 10,
+"issues": [
+10018,
+9992
+],
+"area": "php backend, database"
+},
+{
+"number": 10157,
+"title": "add cron rerun api",
+"created": "2026-08-29",
+"merged": null,
+"closed": "2026-08-29",
+"draft": true,
+"additions": 1712,
+"deletions": 1,
+"files": 20,
+"issues": [
+10018,
+9992
+],
+"area": "php backend"
+},
+{
+"number": 10158,
+"title": "add cron rerun dispatcher",
+"created": "2026-08-29",
+"merged": null,
+"closed": "2026-08-29",
+"draft": true,
+"additions": 2422,
+"deletions": 1,
+"files": 23,
+"issues": [
+10018,
+9992
+],
+"area": "python cron"
+},
+{
+"number": 10159,
+"title": "add cron job enable api",
+"created": "2026-08-29",
+"merged": null,
+"closed": "2026-08-29",
+"draft": false,
+"additions": 122,
+"deletions": 0,
+"files": 6,
+"issues": [
+10047,
+9992
+],
+"area": "php backend"
+},
+{
+"number": 10275,
+"title": "add an api to request a cron rerun",
+"created": "2026-10-03",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 1347,
+"deletions": 1,
+"files": 16,
+"issues": [
+10018,
+9992
+],
+"area": "php backend"
+},
+{
+"number": 10276,
+"title": "let admins request a cron rerun from the dashboard",
+"created": "2026-10-03",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 2575,
+"deletions": 3,
+"files": 35,
+"issues": [
+10018,
+9992
+],
+"area": "frontend, i18n"
+},
+{
+"number": 10277,
+"title": "cover the cron dashboard with cypress",
+"created": "2026-10-03",
+"merged": null,
+"closed": null,
+"draft": false,
+"additions": 2606,
+"deletions": 3,
+"files": 36,
+"issues": [
+10020,
+9992
+],
+"area": "frontend, cypress"
+}
+]

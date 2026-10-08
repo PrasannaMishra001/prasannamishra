@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Automated problem health checks | Prasanna Mishra</title>
+<meta name="description" content="A nightly job on omegaUp that finds published problems which quietly stopped working, records when each was first seen, and shows them to admins." />
+<meta name="author" content="Prasanna Mishra" />
+<meta name="theme-color" content="#faf8f8" />
+<link rel="canonical" href="https://prasannamishra001.github.io/prasannamishra/gsoc/health-checks.html" />
+<meta property="og:title" content="Automated problem health checks" />
+<meta property="og:description" content="A nightly job on omegaUp that finds published problems which quietly stopped working, records when each was first seen, and shows them to admins." />
+<meta property="og:type" content="article" />
+<link rel="icon" type="image/svg+xml" href="assets/gsoc-icon.svg" />
+<script>(function(){try{var t=localStorage.getItem('gsoc-theme');if(t!=='dark'&&t!=='light')t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Besley:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="quartz.css" />
+</head>
+<body data-page="health-checks">
+<div class="progress" aria-hidden="true"><i></i></div>
+<div id="quartz-root" class="page"><div id="quartz-body">
+
+<div class="left sidebar">
+  <div>
+    <div class="site-head">
+      <h2 class="page-title"><a href="index.html">Prasanna Mishra</a></h2>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark" title="Switch between light and dark"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+    </div>
+    <p class="site-tag">google summer of code 2026 &middot; omegaup</p>
+  </div>
+  <div class="sidebar-logos">
+    <img src="assets/gsoc-logo.svg" alt="Google Summer of Code" class="gsoc-mark" />
+    <img src="assets/omegaup-logo.png" alt="omegaUp" class="org-mark" />
+  </div>
+  <div class="explorer"><button type="button" class="explorer-toggle" data-fold="explorer-content"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="explorer-content" id="explorer-content"><ul class="explorer-ul"><li><button type="button" class="folder-container" data-fold="folder-gsoc-2026"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">gsoc-2026</span></button><ul id="folder-gsoc-2026"><li><a href="index.html">Summary</a></li><li><a href="control-plane.html">Cron control plane</a></li><li><a href="model-training.html">Model training</a></li><li><a href="health-checks.html" class="active">Problem health checks</a></li><li><a href="groundwork.html">Tests and query fixes</a></li><li><a href="alongside.html">Alongside the project</a></li><li><a href="lessons.html">What I learned</a></li></ul></li><li><button type="button" class="folder-container" data-fold="folder-journey"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">journey</span></button><ul id="folder-journey"><li><a href="before-gsoc.html">Before the summer</a></li><li><a href="after-gsoc.html">After the summer</a></li><li><a href="journey.html">Timeline</a></li></ul></li><li><button type="button" class="folder-container" data-fold="folder-records"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">records</span></button><ul id="folder-records"><li><a href="pull-requests.html">Pull requests</a></li><li><a href="issues.html">Issues</a></li><li><a href="reviews.html">Reviews</a></li></ul></li><li><button type="button" class="folder-container" data-fold="folder-elsewhere"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">elsewhere</span></button><ul id="folder-elsewhere"><li><a href="../index.html">Back to the portfolio</a></li><li><a href="https://github.com/omegaup/omegaup/pulls?q=is%3Apr+author%3APrasannaMishra001">My pull requests on GitHub</a></li><li><a href="https://github.com/omegaup/omegaup/issues/9992">The control plane issue</a></li><li><a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a></li></ul></li></ul></div></div>
+  <p class="sidebar-updated"><span class="pulse"></span>still going &middot; updated 8 Oct 2026</p>
+</div>
+
+<div class="center">
+  <div class="page-header">
+    <nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../index.html">Home</a><p>&#10095;</p></div><div class="breadcrumb-element"><a href="index.html">gsoc 2026 omegaup</a><p>&#10095;</p></div><div class="breadcrumb-element"><a href="health-checks.html">problem health checks</a></div></nav>
+    <h1 class="article-title">Automated problem health checks</h1>
+    <p class="content-meta"><time datetime="2026-10-08">updated 8 Oct 2026</time><span>6 min read</span></p>
+  </div>
+  <article>
+<p class="lede">A problem on omegaUp can stop working after it is published, and nothing errors loudly.
+Students hit a wall. This is the project that goes looking for those problems every night.</p>
+
+<h2 id="what-was-wrong">What was wrong<a role="anchor" aria-hidden="true" tabindex="-1" href="#what-was-wrong" class="anchor">#</a></h2>
+<p>The only signal that a problem had broken was somebody filing a report. That means the platform found out
+about broken problems from the people it had already failed, and only from the ones who bothered to say so.</p>
+<p>The cases are not exotic. A validator starts crashing after an update, so correct solutions come back as a
+system error, and to the student it looks like their fault. A problem is public but has no language enabled,
+so it is listed, browsable and impossible to submit to. A problem has had dozens of attempts and nobody has
+ever solved it, which usually means the test data is wrong.</p>
+<h2 id="the-four-checks">The four checks<a role="anchor" aria-hidden="true" tabindex="-1" href="#the-four-checks" class="anchor">#</a></h2>
+<div class="table-container"><table>
+<thead>
+<tr>
+<th>Check</th>
+<th>Severity</th>
+<th>What it looks for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>judge_errors</code></td>
+<td>error</td>
+<td>In the last 24 hours, at least three submissions to one public problem came back as a judge or validator error, and those were at least 30% of what was judged.</td>
+</tr>
+<tr>
+<td><code>no_languages</code></td>
+<td>error</td>
+<td>A public problem with no submission language enabled.</td>
+</tr>
+<tr>
+<td><code>never_solved</code></td>
+<td>warning</td>
+<td>A public problem at least a week old with twenty or more submissions and none accepted.</td>
+</tr>
+<tr>
+<td><code>deprecated_public</code></td>
+<td>warning</td>
+<td>A problem marked as retired that students can still see.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Every threshold is a command line argument, and each one is validated before the job starts.</p>
+<figure class="zoomable reveal l "><img src="assets/shot/health-findings.png" alt="The findings as an admin sees them, on a local database seeded with one case of each check." width="1286" height="332" loading="lazy" decoding="async" /><figcaption>The findings as an admin sees them, on a local database seeded with one case of each check.</figcaption></figure>
+
+<h2 id="remembering">Remembering when it started<a role="anchor" aria-hidden="true" tabindex="-1" href="#remembering" class="anchor">#</a></h2>
+<p>The useful part is in how findings are stored. There is one row per problem and check, and the job updates
+that row each night instead of adding a new one.</p>
+<figure class="diagram reveal"><div class="diagram-body"><svg viewBox="0 0 810 244" role="img" aria-label="The life of one health finding" style="--minw:700px" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="92" width="160" height="60" rx="6" class="d-box soft"/><text x="90.0" y="118.5" class="d-t" text-anchor="middle">nothing on record</text><text x="90.0" y="134.5" class="d-s" text-anchor="middle">this problem and check</text><rect x="300" y="92" width="220" height="60" rx="6" class="d-box key"/><text x="410.0" y="118.5" class="d-t" text-anchor="middle">open</text><text x="410.0" y="134.5" class="d-s" text-anchor="middle">first_detected_at is kept</text><rect x="650" y="92" width="150" height="60" rx="6" class="d-box tint"/><text x="725.0" y="118.5" class="d-t" text-anchor="middle">resolved</text><text x="725.0" y="134.5" class="d-s" text-anchor="middle">resolved_at is set</text><polyline points="170,122.0 300,122.0" class="d-line " stroke-linejoin="round" stroke-linecap="round"/><polygon points="300,122.0 293.6,124.9 293.6,119.1" class="d-head "/><text x="235.0" y="116.0" class="d-note" text-anchor="middle">the check finds it</text><polyline points="520,122.0 650,122.0" class="d-line " stroke-linejoin="round" stroke-linecap="round"/><polygon points="650,122.0 643.6,124.9 643.6,119.1" class="d-head "/><text x="585.0" y="116.0" class="d-note" text-anchor="middle">a run misses it</text><polyline points="365,92 365,50 455,50 455,92" class="d-line " stroke-linejoin="round" stroke-linecap="round"/><polygon points="455,92 452.1,85.6 457.9,85.6" class="d-head "/><text x="410" y="38" class="d-note" text-anchor="middle">seen again: only last_seen_at moves</text><polyline points="725,152 725,198 410,198 410,152" class="d-line " stroke-linejoin="round" stroke-linecap="round"/><polygon points="410,152 412.9,158.4 407.1,158.4" class="d-head "/><text x="568" y="218" class="d-note" text-anchor="middle">it comes back: reopened, first_detected_at starts again</text></svg></div><figcaption>One finding over time. The date it was first seen survives for as long as the problem stays broken.</figcaption></figure>
+
+<p>That is the difference between "this is broken" and "this has been broken for three weeks". A finding that
+stops appearing is marked resolved, not deleted, so the history stays.</p>
+<div class="codeblock reveal"><div class="codeblock-head"><span class="file">stuff/cron/problem_health_check.py</span><span class="lang">sql</span><button type="button">copy</button></div><pre class="hl"><code><span class="k">ON</span><span class="w"> </span><span class="n">DUPLICATE</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">UPDATE</span>
+<span class="w">    </span><span class="c1">-- Assigned before `resolved_at` is cleared, so it still</span>
+<span class="w">    </span><span class="c1">-- sees whether the finding had been resolved.</span>
+<span class="w">    </span><span class="o">`</span><span class="n">first_detected_at</span><span class="o">`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">CASE</span>
+<span class="w">        </span><span class="k">WHEN</span><span class="w"> </span><span class="o">`</span><span class="n">resolved_at</span><span class="o">`</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">THEN</span><span class="w"> </span><span class="o">`</span><span class="n">first_detected_at</span><span class="o">`</span>
+<span class="w">        </span><span class="k">ELSE</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="o">`</span><span class="n">last_seen_at</span><span class="o">`</span><span class="p">)</span>
+<span class="w">    </span><span class="k">END</span><span class="p">,</span>
+<span class="w">    </span><span class="o">`</span><span class="n">severity</span><span class="o">`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="o">`</span><span class="n">severity</span><span class="o">`</span><span class="p">),</span>
+<span class="w">    </span><span class="o">`</span><span class="n">detail</span><span class="o">`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="o">`</span><span class="n">detail</span><span class="o">`</span><span class="p">),</span>
+<span class="w">    </span><span class="o">`</span><span class="n">last_seen_at</span><span class="o">`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">VALUES</span><span class="p">(</span><span class="o">`</span><span class="n">last_seen_at</span><span class="o">`</span><span class="p">),</span>
+<span class="w">    </span><span class="o">`</span><span class="n">resolved_at</span><span class="o">`</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span></code></pre></div>
+
+<p>The order of those assignments matters. MySQL applies them top to bottom, so the first one has to read
+<code>resolved_at</code> before the last one clears it.</p>
+<h2 id="two-bugs">Two bugs I wrote, and how I found them<a role="anchor" aria-hidden="true" tabindex="-1" href="#two-bugs" class="anchor">#</a></h2>
+<p><strong>The clock.</strong> The step that closes findings which are no longer detected was reading the time after writing
+the new findings, not before. On a slow run, a finding written a moment earlier could be judged as "not
+seen this run" and closed immediately, so the job would report a problem as fixed at the instant it
+discovered it. The fix was to read the database clock once at the start and use that one timestamp
+everywhere. I found it because I wrote the test, and I trusted the fix because I put the bug back afterwards
+and watched the test go red.</p>
+<p><strong>The check that found nothing.</strong> On the first real run three of the four checks fired and <code>judge_errors</code>
+found nothing. My first reaction was relief, which was wrong. It found nothing because the development
+database had no submissions with that kind of error in it, so the check had never been exercised once. I
+seeded the failure case and watched it fire before I trusted it. "No results" and "not working" look the
+same from outside, and I now treat an empty result from a new check as unproven.</p>
+<h2 id="what-review-changed">What review changed<a role="anchor" aria-hidden="true" tabindex="-1" href="#what-review-changed" class="anchor">#</a></h2>
+<p>Juan Pablo asked whether the judge error check should count every submission. It should not. A problem
+setter testing a broken validator on their own problem could push it over both thresholds while ordinary
+users were unaffected. Both checks that count submissions now only count normal ones.</p>
+<p>He also asked that thresholds be validated before the job runs, and the reason is worth repeating. A
+negative window or a ratio above one makes a check return nothing. The job would then conclude that every
+open finding of that kind had been fixed and close them all. One typo by an operator would rewrite the
+history. For the same reason, if any single check raises, the whole run fails. Skipping a check is not safe
+here, because a skipped check looks like a clean one.</p>
+<p>On the admin view he asked for the labels of each check and severity to live in one place, since they mirror
+enums on the server.</p>
+<div class="codeblock reveal"><div class="codeblock-head"><span class="file">frontend/www/js/omegaup/admin/problem_health.ts</span><span class="lang">ts</span><button type="button">copy</button></div><pre class="hl"><code><span class="c1">// Keying on the enums makes a new check or severity a compile error here</span>
+<span class="c1">// instead of an untranslated cell on the dashboard.</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">CHECK_TYPE_LABELS</span><span class="o">:</span><span class="w"> </span><span class="kt">Record</span><span class="o">&lt;</span><span class="nx">ProblemHealthCheckType</span><span class="p">,</span><span class="w"> </span><span class="kt">string</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="p">[</span><span class="nx">ProblemHealthCheckType</span><span class="p">.</span><span class="nx">JudgeErrors</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nx">T</span><span class="p">.</span><span class="nx">problemHealthCheckJudgeErrors</span><span class="p">,</span>
+<span class="w">  </span><span class="p">[</span><span class="nx">ProblemHealthCheckType</span><span class="p">.</span><span class="nx">NoLanguages</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nx">T</span><span class="p">.</span><span class="nx">problemHealthCheckNoLanguages</span><span class="p">,</span>
+<span class="w">  </span><span class="p">[</span><span class="nx">ProblemHealthCheckType</span><span class="p">.</span><span class="nx">NeverSolved</span><span class="p">]</span><span class="o">:</span><span class="w"> </span><span class="nx">T</span><span class="p">.</span><span class="nx">problemHealthCheckNeverSolved</span><span class="p">,</span>
+<span class="w">  </span><span class="p">[</span><span class="nx">ProblemHealthCheckType</span><span class="p">.</span><span class="nx">DeprecatedPublic</span><span class="p">]</span><span class="o">:</span>
+<span class="w">    </span><span class="nx">T</span><span class="p">.</span><span class="nx">problemHealthCheckDeprecatedPublic</span><span class="p">,</span>
+<span class="p">};</span></code></pre></div>
+
+<h2 id="the-foundation">The foundation paying for itself<a role="anchor" aria-hidden="true" tabindex="-1" href="#the-foundation" class="anchor">#</a></h2>
+<p>This job needed no dashboard code to show that it ran. It goes through the
+<a href="control-plane.html#one-runner">shared runner</a>, with one phase per check, so it appeared on <code>/admin/crons</code>
+with its run history and timings the first time it executed.</p>
+<p>That was the moment the first project justified being built as a foundation instead of as one more feature.</p>
+<h2 id="where-it-stands">Where it stands<a role="anchor" aria-hidden="true" tabindex="-1" href="#where-it-stands" class="anchor">#</a></h2>
+<p>All of it is merged. The table landed on 14 August, the data access layer on 29 August, the job on 17
+September and the admin view on 7 October, which closed the parent issue. Juan Pablo asked me to add the job
+to the production schedule, and that change to omegaUp's deployment repository merged on 6 October, so it
+runs every day at 05:35.</p>
+<h2 id="pull-requests">The pull requests<a role="anchor" aria-hidden="true" tabindex="-1" href="#pull-requests" class="anchor">#</a></h2>
+<section class="record" id="pr-10065"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/10065">#10065</a><h4>The findings table</h4><span class="pr-state pr-state-merged" data-state-for="pull/10065">merged</span></div><div class="record-meta"><span>opened 31 Jul 2026</span><span>merged 14 Aug 2026, after 14 days</span><span class="add">+34</span><span class="del">&minus;0</span><span>2 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/10064">#10064</a></span></div><p>Where findings are stored. One row per problem and check, which is what lets a finding keep the date it was
+first seen.</p></section><section class="record" id="pr-10149"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/10149">#10149</a><h4>Data access for findings</h4><span class="pr-state pr-state-merged" data-state-for="pull/10149">merged</span></div><div class="record-meta"><span>opened 29 Aug 2026</span><span>merged 29 Aug 2026, after 0 days</span><span class="add">+719</span><span class="del">&minus;6</span><span>7 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/10064">#10064</a></span></div><p>Data access for findings, split out of <a href="https://github.com/omegaup/omegaup/pull/10069">#10069</a> when Juan Pablo asked. It merged thirty four minutes after I
+opened it.</p></section><section class="record" id="pr-10066"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/10066">#10066</a><h4>The nightly health check</h4><span class="pr-state pr-state-merged" data-state-for="pull/10066">merged</span></div><div class="record-meta"><span>opened 1 Aug 2026</span><span>merged 17 Sep 2026, after 47 days</span><span class="add">+1300</span><span class="del">&minus;1</span><span>4 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/10064">#10064</a></span></div><p>The nightly job and its four checks. It reads the clock once at the start and uses that one timestamp for
+everything, and if any single check fails the whole run fails, because skipping a check would mark its
+findings as fixed.</p><div class="review"><p><span class="who">Juan Pablo</span> asked whether submissions made by a problem setter testing their own problem should count as judge errors. They should not, and now only normal submissions do. He also asked that a mistyped threshold be rejected before the job runs, since a nonsense value makes a check find nothing and <q>an operator typo</q> would then rewrite the history.</p></div></section><section class="record" id="pr-10069"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/10069">#10069</a><h4>Show findings to admins</h4><span class="pr-state pr-state-merged" data-state-for="pull/10069">merged</span></div><div class="record-meta"><span>opened 3 Aug 2026</span><span>merged 7 Oct 2026, after 65 days</span><span class="add">+649</span><span class="del">&minus;11</span><span>25 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/10064">#10064</a></span></div><p>A "problems needing attention" table on the admin page, worst first, with the newest findings at the top of
+each group so a problem that broke last night is not buried under ones nobody has dealt with.</p><div class="review"><p><span class="who">Juan Pablo</span> asked for the labels to live in one place, since they mirror enums on the server. They are now a typed map, so adding a check without giving it a label fails the build.</p></div></section><section class="record" id="pr-10153"><div class="record-head"><a class="n" href="https://github.com/omegaup/omegaup/pull/10153">#10153</a><h4>Findings endpoint, first attempt</h4><span class="pr-state pr-state-closed" data-state-for="pull/10153">closed</span></div><div class="record-meta"><span>opened 29 Aug 2026</span><span>closed 29 Aug 2026</span><span class="add">+90</span><span class="del">&minus;9</span><span>5 files</span><span>issue <a href="https://github.com/omegaup/omegaup/issues/10064">#10064</a></span></div><p>The server half of <a href="https://github.com/omegaup/omegaup/pull/10069">#10069</a>, split out and folded back the same day.</p></section>
+
+<h2 id="issues">The issue<a role="anchor" aria-hidden="true" tabindex="-1" href="#issues" class="anchor">#</a></h2>
+<div class="table-container"><table><thead><tr><th>Issue</th><th>What it asks for</th><th>Status</th></tr></thead><tbody><tr><td><a href="https://github.com/omegaup/omegaup/issues/10064">#10064</a></td><td>Detect problems that silently stopped working</td><td class="pr-state pr-state-completed" data-state-for="issues/10064">completed</td></tr></tbody></table></div>
+<div class="next-prev"><a class="card" href="model-training.html"><span class="k">previous</span><h4>&larr; Model training</h4><p>The recommendation model, trained on a schedule and refused when it gets worse.</p></a><a class="card" href="groundwork.html"><span class="k">next</span><h4>Tests and query fixes &rarr;</h4><p>The first half: the proposal, the tests, and the promise I took back.</p></a></div>
+  </article>
+  <footer class="site-footer">
+    <p>Written by Prasanna Mishra &middot; <a href="mailto:mishra.prasanna838@gmail.com">email</a> &middot; <a href="https://github.com/PrasannaMishra001">github</a> &middot; <a href="https://www.linkedin.com/in/prasanna-mishra-871269367">linkedin</a></p>
+    <p>This page was last built on 8 Oct 2026. The work is not finished, so it will change.</p>
+  </footer>
+</div>
+
+<div class="right sidebar">
+  <div class="graph desktop-only">
+    <div class="graph-head"><h3>Graph View</h3><button type="button" class="icon-btn" id="graph-open" aria-label="Open the full graph" title="Open the full graph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
+    <div class="graph-container" id="graph-container"></div>
+  </div>
+  <div class="toc desktop-only"><button type="button" class="toc-toggle" data-fold="toc-content"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul class="toc-content" id="toc-content"><li class="depth-0"><a href="#what-was-wrong">What was wrong</a></li><li class="depth-0"><a href="#the-four-checks">The four checks</a></li><li class="depth-0"><a href="#remembering">Remembering when it started</a></li><li class="depth-0"><a href="#two-bugs">Two bugs I wrote, and how I found them</a></li><li class="depth-0"><a href="#what-review-changed">What review changed</a></li><li class="depth-0"><a href="#the-foundation">The foundation paying for itself</a></li><li class="depth-0"><a href="#where-it-stands">Where it stands</a></li><li class="depth-0"><a href="#pull-requests">The pull requests</a></li><li class="depth-0"><a href="#issues">The issue</a></li></ul></div>
+</div>
+
+</div></div>
+<script src="graph-data.js"></script><script src="quartz.js"></script><script src="pr-status.js"></script>
+</body>
+</html>

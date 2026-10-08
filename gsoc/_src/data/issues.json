@@ -1,0 +1,961 @@
+[
+{
+"number": 8421,
+"title": "[FEATURE] Add Option for Contest Organizers to Delete Contests",
+"created": "2025-09-02",
+"state": "completed",
+"kind": "feature",
+"one_line": "Asks for a way for contest organizers to delete contests they created, such as test contests.",
+"fixed_by": []
+},
+{
+"number": 8422,
+"title": "[BUG] The content of the past contests \"Enter\" button is misaligned",
+"created": "2025-09-02",
+"state": "completed",
+"kind": "bug",
+"one_line": "The 'Enter' button in the past contests list wraps onto three lines instead of one.",
+"fixed_by": [
+8426
+]
+},
+{
+"number": 8598,
+"title": "[UI/UX] Improve Navbar: hover-effects,dropdown etc",
+"created": "2025-12-06",
+"state": "completed",
+"kind": "feature",
+"one_line": "Proposes navbar improvements: dropdowns that open on hover and the profile completion percentage shown as text.",
+"fixed_by": [
+8599
+]
+},
+{
+"number": 8745,
+"title": "[BUG] Inconsistent translations and typos across ./templates lang files",
+"created": "2026-01-09",
+"state": "completed",
+"kind": "bug",
+"one_line": "Reports Spanish text, typos and grammar errors in pt.lang and other translation files, found while working on #8717.",
+"fixed_by": [
+8746
+]
+},
+{
+"number": 8747,
+"title": "[FEATURE] GitHub Sign-In and OAuth flow",
+"created": "2026-01-09",
+"state": "completed",
+"kind": "feature",
+"one_line": "Proposes GitHub sign-in by extending the existing Google OAuth flow in Login.vue and User.php.",
+"fixed_by": [
+8794
+]
+},
+{
+"number": 8748,
+"title": "[FEATURE]dynamic problem difficulty rating based on solver ratings (ELO-inspired)",
+"created": "2026-01-09",
+"state": "open",
+"kind": "feature",
+"one_line": "Proposes deriving problem difficulty dynamically from the ratings of the users who solve it, in the style of ELO.",
+"fixed_by": []
+},
+{
+"number": 8754,
+"title": "[FEATURE] Allow printable (PDF) problem export for users with view access",
+"created": "2026-01-11",
+"state": "open",
+"kind": "feature",
+"one_line": "Asks that the printable (PDF) problem export, currently limited to problem setters, be available to any user with view access.",
+"fixed_by": []
+},
+{
+"number": 8763,
+"title": "[FEATURE] Allow hiding problem filters sidebar on collection pages",
+"created": "2026-01-13",
+"state": "completed",
+"kind": "feature",
+"one_line": "Asks for a toggle to hide the filters sidebar (tags, difficulty, quality) on problem collection pages.",
+"fixed_by": [
+8736
+]
+},
+{
+"number": 8766,
+"title": "[DOCS] Add contributor onboarding walkthrough (navigating existing setup docs)",
+"created": "2026-01-13",
+"state": "open",
+"kind": "cleanup",
+"one_line": "Proposes a contributor onboarding walkthrough that guides newcomers through the existing setup docs, extending CONTRIBUTING.md.",
+"fixed_by": []
+},
+{
+"number": 8795,
+"title": "[FEATURE]Simplify Test Data Setup for Problems and Contests Loading for Developers",
+"created": "2026-01-18",
+"state": "open",
+"kind": "infra",
+"one_line": "Setting up realistic local test data is cumbersome (collections need quality_seal = 1, undocumented); proposes a simpler way to load problems and contests for developers.",
+"fixed_by": []
+},
+{
+"number": 8802,
+"title": "[BUG] Safely handle localStorage failures and draft restoration in problem statement editor",
+"created": "2026-01-18",
+"state": "open",
+"kind": "bug",
+"one_line": "The problem statement editor crashes when localStorage fails, and restored drafts are loaded into state but not shown in the Problem Creator UI.",
+"fixed_by": []
+},
+{
+"number": 8842,
+"title": "[FEATURE] Allow experienced contributors to self-assign their own issues beyond max-assignment limit",
+"created": "2026-01-22",
+"state": "completed",
+"kind": "infra",
+"one_line": "Proposes letting experienced contributors self-assign issues they created beyond the five-assignment limit of the assignment bot.",
+"fixed_by": [
+8843
+]
+},
+{
+"number": 8845,
+"title": "[FEATURE]Enhance badge visuals with reusable 3D hover component",
+"created": "2026-01-22",
+"state": "completed",
+"kind": "feature",
+"one_line": "Proposes a reusable 3D hover effect component for badges on the badge list, profile and badge detail pages.",
+"fixed_by": [
+8846
+]
+},
+{
+"number": 8850,
+"title": "[UI] Pie chart tooltip in profile statistics shows verdict codes instead of full names",
+"created": "2026-01-22",
+"state": "completed",
+"kind": "bug",
+"one_line": "The pie chart tooltip in profile statistics shows verdict codes (AC, WA, TLE) instead of full verdict names.",
+"fixed_by": [
+8851
+]
+},
+{
+"number": 8896,
+"title": "[FEATURE]Improve custom test case execution for problems",
+"created": "2026-01-27",
+"state": "completed",
+"kind": "feature",
+"one_line": "Custom test case execution in the ephemeral grader is hard to find at the bottom of the problem view; proposes making it more visible and easier to use.",
+"fixed_by": [
+8959
+]
+},
+{
+"number": 8972,
+"title": "[FEATURE] friend request and user relations system",
+"created": "2026-02-03",
+"state": "completed",
+"kind": "feature",
+"one_line": "Proposes a friend request system so users can connect with and follow their peers.",
+"fixed_by": []
+},
+{
+"number": 8982,
+"title": "[FEATURE] Improve Email UI and Email Flow Consistency Across omegaUp",
+"created": "2026-02-04",
+"state": "open",
+"kind": "feature",
+"one_line": "Proposes consistent, branded transactional emails (verification, password reset, account deletion) and a review of when each is triggered.",
+"fixed_by": []
+},
+{
+"number": 9044,
+"title": "[FEATURE] Save and load per-language code templates in the ephemeral grader",
+"created": "2026-02-10",
+"state": "open",
+"kind": "feature",
+"one_line": "Proposes saving and loading a default code template per language in the ephemeral grader.",
+"fixed_by": []
+},
+{
+"number": 9046,
+"title": "[FEATURE] Automatic language detection for pasted code in the ephemeral grader",
+"created": "2026-02-10",
+"state": "completed",
+"kind": "feature",
+"one_line": "Proposes detecting the programming language automatically when code is pasted into the ephemeral grader.",
+"fixed_by": [
+9070
+]
+},
+{
+"number": 9102,
+"title": "[BUG]Cypress test uses it.only() causing most E2E tests to be skipped",
+"created": "2026-02-15",
+"state": "completed",
+"kind": "bug",
+"one_line": "A stray it.only() in cypress/e2e/basic_commands.cy.ts made Cypress run 1 of 12 tests in the file and skip the other 11.",
+"fixed_by": [
+9103
+]
+},
+{
+"number": 9104,
+"title": "[BUG] External links use http:// instead of https:// in multiple Vue components",
+"created": "2026-02-15",
+"state": "completed",
+"kind": "bug",
+"one_line": "Several Vue components link to timeanddate.com, blog.omegaup.com and gravatar.com with http:// instead of https://.",
+"fixed_by": [
+9105
+]
+},
+{
+"number": 9107,
+"title": "[BUG] TA CI passes credentials via CLI arguments instead of env variables",
+"created": "2026-02-15",
+"state": "completed",
+"kind": "security",
+"one_line": "The Teaching Assistant CI job passes passwords and API keys as plaintext command line arguments instead of environment variables.",
+"fixed_by": [
+9108
+]
+},
+{
+"number": 9122,
+"title": "[DEPRECATED] Replace deprecated @babel/polyfill with core-js v3 entry",
+"created": "2026-02-16",
+"state": "completed",
+"kind": "cleanup",
+"one_line": "webpack still uses the deprecated @babel/polyfill entry, which pulls in core-js 2 alongside core-js 3.",
+"fixed_by": [
+9127
+]
+},
+{
+"number": 9193,
+"title": "[BUG] Grader container fails to initialize ephemeral run manager: permission denied on /var/lib/omegaup/ephemeral",
+"created": "2026-02-20",
+"state": "completed",
+"kind": "bug",
+"one_line": "On every fresh docker compose up the grader container fails to create /var/lib/omegaup/ephemeral (permission denied), silently breaking the ephemeral run manager.",
+"fixed_by": [
+9248
+]
+},
+{
+"number": 9194,
+"title": "[BUG] No Docker healthchecks in docker-compose.yml - race condition causes intermittent startup failures",
+"created": "2026-02-20",
+"state": "open",
+"kind": "infra",
+"one_line": "docker-compose.yml has no healthcheck blocks, so depends_on only orders container start and services race at startup.",
+"fixed_by": []
+},
+{
+"number": 9196,
+"title": "[BUG] assign_badges.py get_current_owners() uses f-string SQL interpolation instead of parameterized query",
+"created": "2026-02-20",
+"state": "completed",
+"kind": "security",
+"one_line": "assign_badges.py get_current_owners() builds its SQL with an f-string that interpolates the badge alias instead of using a parameter.",
+"fixed_by": [
+9286
+]
+},
+{
+"number": 9198,
+"title": "[BUG] db-migrate.py crashes on any command (including --help) if boto3 is not installed",
+"created": "2026-02-20",
+"state": "open",
+"kind": "bug",
+"one_line": "stuff/db-migrate.py imports boto3 unconditionally, so every command including --help crashes when boto3 is not installed.",
+"fixed_by": []
+},
+{
+"number": 9200,
+"title": "[BUG] MySQL slow_query_log is OFF in dev docker-compose \u2014 performance regressions go undetected locally",
+"created": "2026-02-20",
+"state": "open",
+"kind": "infra",
+"one_line": "MySQL slow_query_log is off in the dev docker-compose with long_query_time at 10s, so slow queries go unnoticed locally.",
+"fixed_by": []
+},
+{
+"number": 9201,
+"title": "[BUG] daily-release.yml runs weekly (Sundays) not daily \u2014 name and schedule are mismatched",
+"created": "2026-02-20",
+"state": "completed",
+"kind": "infra",
+"one_line": "The daily-release.yml workflow actually runs weekly on Sundays, a day before weekly-release.yml, and its skip conditions show as red failures.",
+"fixed_by": [
+9217
+]
+},
+{
+"number": 9203,
+"title": "[BUG] coder_of_the_month.py uses f-string SQL with dynamic problem/identity IDs - not parameterized",
+"created": "2026-02-20",
+"state": "completed",
+"kind": "security",
+"one_line": "coder_of_the_month.py builds several queries with f-strings that interpolate problem and identity id lists instead of using parameters.",
+"fixed_by": [
+9900
+]
+},
+{
+"number": 9204,
+"title": "[BUG] build-containers.yml installs kustomize via unversioned, unchecksumed curl | bash",
+"created": "2026-02-20",
+"state": "open",
+"kind": "security",
+"one_line": "build-containers.yml installs kustomize by piping an unversioned, unchecksummed script from master into bash.",
+"fixed_by": []
+},
+{
+"number": 9205,
+"title": "[BUG] karel.js release workflow uses end-of-life Node.js 16 and unpinned action refs",
+"created": "2026-02-20",
+"state": "open",
+"kind": "infra",
+"one_line": "The karel.js release workflow uses end-of-life Node.js 16 and action references pinned only by tag.",
+"fixed_by": []
+},
+{
+"number": 9206,
+"title": "[BUG] docker-compose.yml uses unpinned image versions for redis and rabbitmq",
+"created": "2026-02-20",
+"state": "open",
+"kind": "infra",
+"one_line": "docker-compose.yml uses unpinned image versions for redis and rabbitmq.",
+"fixed_by": []
+},
+{
+"number": 9207,
+"title": "[BUG] Dockerfile.frontend intermediate stage uses unpinned alpine:latest",
+"created": "2026-02-20",
+"state": "open",
+"kind": "infra",
+"one_line": "Dockerfile.frontend builds an intermediate stage from alpine:latest instead of a pinned version.",
+"fixed_by": []
+},
+{
+"number": 9208,
+"title": "[BUG] MySQL wait_timeout=20 and lock_wait_timeout=10 are too aggressive in dev docker-compose",
+"created": "2026-02-20",
+"state": "open",
+"kind": "infra",
+"one_line": "MySQL wait_timeout=20 and lock_wait_timeout=10 in the dev docker-compose are short enough to drop idle connections during development.",
+"fixed_by": []
+},
+{
+"number": 9209,
+"title": "[BUG] Cypress experimentalStudio and experimentalMemoryManagement flags enabled in CI config",
+"created": "2026-02-20",
+"state": "open",
+"kind": "infra",
+"one_line": "cypress.config.ts enables experimentalStudio and experimentalMemoryManagement unconditionally, including in CI.",
+"fixed_by": []
+},
+{
+"number": 9210,
+"title": "[BUG] all docker-compose services use restart: always with no failure limit \u2014 crash loops silently",
+"created": "2026-02-20",
+"state": "open",
+"kind": "infra",
+"one_line": "All docker-compose services use restart: always with no failure limit, so a misconfigured service crash-loops silently.",
+"fixed_by": []
+},
+{
+"number": 9211,
+"title": "[BUG] duplicate schools can be created for the same institution \u2014 school creation uses LIKE substring match instead of exact lookup",
+"created": "2026-02-20",
+"state": "completed",
+"kind": "bug",
+"one_line": "School creation deduplicates with a LIKE '%name%' substring match and returns the first hit, so users get attached to the wrong school or duplicates are created.",
+"fixed_by": [
+9250
+]
+},
+{
+"number": 9257,
+"title": "[BUG] filter/sort dropdown items use href=\"#\" causing page scroll-to-top on click in contest list",
+"created": "2026-02-21",
+"state": "open",
+"kind": "bug",
+"one_line": "Filter and sort dropdown items in ContestListv2.vue use href=\"#\", which scrolls the page to the top on click.",
+"fixed_by": []
+},
+{
+"number": 9258,
+"title": "[BUG] filter and sort-order selections are shared across all contest tabs (current / future / past)",
+"created": "2026-02-21",
+"state": "open",
+"kind": "bug",
+"one_line": "Filter and sort selections in the contest list are one shared state for the current, future and past tabs.",
+"fixed_by": []
+},
+{
+"number": 9259,
+"title": "[UX] no visual indicator on filter/sort buttons when a non-default option is active in contest list",
+"created": "2026-02-21",
+"state": "completed",
+"kind": "feature",
+"one_line": "The contest list filter and sort buttons give no visual sign that a non-default option is active.",
+"fixed_by": [
+9657
+]
+},
+{
+"number": 9260,
+"title": "[BUG] \"show more contests\" button causes full contest list to visually reset/reload instead of appending",
+"created": "2026-02-21",
+"state": "open",
+"kind": "bug",
+"one_line": "Clicking 'show more contests' makes the whole contest list visibly reset and reload instead of appending new items.",
+"fixed_by": []
+},
+{
+"number": 9302,
+"title": "fix: UI button and input-group alignment inconsistencies",
+"created": "2026-02-23",
+"state": "open",
+"kind": "bug",
+"one_line": "Lists button and input-group alignment problems on the contest list and login pages, such as a gap between the reset and search buttons.",
+"fixed_by": []
+},
+{
+"number": 9385,
+"title": "[BUG] isMutatingMethod() missing patterns \u2014 contest/clone and course/clone can be triggered via GET",
+"created": "2026-03-02",
+"state": "completed",
+"kind": "security",
+"one_line": "isMutatingMethod() in ApiCaller.php misses patterns, so GET /api/contest/clone/ and GET /api/course/clone/ return 200 and create real contests and courses instead of returning 405.",
+"fixed_by": [
+9429
+]
+},
+{
+"number": 9386,
+"title": "[BUG] Clarification::apiCreate always returns null for contest_alias",
+"created": "2026-03-02",
+"state": "completed",
+"kind": "bug",
+"one_line": "Clarification::apiCreate always returns contest_alias: null because the return array hardcodes null.",
+"fixed_by": [
+9432
+]
+},
+{
+"number": 9387,
+"title": "[BUG] page parameter accepts negative values in contest/list and problem/list without returning 400",
+"created": "2026-03-02",
+"state": "open",
+"kind": "bug",
+"one_line": "contest/list and problem/list accept a negative page parameter and treat it as page 1 instead of returning 400.",
+"fixed_by": []
+},
+{
+"number": 9388,
+"title": "[BUG] User system roles lookup ignores group-based roles (GroupRoles)",
+"created": "2026-03-02",
+"state": "open",
+"kind": "bug",
+"one_line": "User::apiExtraInformation only looks at direct UserRoles, so system roles granted through a group (GroupRoles) are not reported.",
+"fixed_by": []
+},
+{
+"number": 9389,
+"title": "[BUG] user/mailingListBackfill accessible via HTTP GET",
+"created": "2026-03-02",
+"state": "open",
+"kind": "security",
+"one_line": "GET /api/user/mailingListBackfill/ returns 200 and runs the backfill because 'backfill' is not in the mutating patterns list; same gap as #9385.",
+"fixed_by": []
+},
+{
+"number": 9458,
+"title": "[FEATURE] Show assignment deadline and overdue badge in student's AssignmentCard",
+"created": "2026-03-07",
+"state": "completed",
+"kind": "feature",
+"one_line": "Proposes showing each assignment's deadline and an overdue badge on the student's AssignmentCard, using finish_time the API already returns.",
+"fixed_by": [
+9522
+]
+},
+{
+"number": 9461,
+"title": "[FEATURE] Show per-problem solve count in contest arena Scoreboard",
+"created": "2026-03-07",
+"state": "open",
+"kind": "feature",
+"one_line": "Proposes showing how many contestants solved each problem in the contest scoreboard header.",
+"fixed_by": []
+},
+{
+"number": 9462,
+"title": "[BUG] Course arena assignment navigation shows '-' when no previous/next assignment exists",
+"created": "2026-03-07",
+"state": "completed",
+"kind": "bug",
+"one_line": "Course arena assignment navigation renders a disabled '-' button when there is no previous or next assignment.",
+"fixed_by": [
+9546
+]
+},
+{
+"number": 9661,
+"title": "[BUG] Edit button in MultiUserAddArea uses <span href=\"#\">, invalid HTML and not keyboard accessible",
+"created": "2026-03-26",
+"state": "completed",
+"kind": "bug",
+"one_line": "The Edit control in MultiUserAddArea.vue is a <span href=\"#\">, which is invalid HTML and not reachable by keyboard.",
+"fixed_by": [
+9671
+]
+},
+{
+"number": 9662,
+"title": "[BUG] Hardcoded strings bypass i18n in OutputOnlyDownload.vue and MultipleCasesInput.vue",
+"created": "2026-03-26",
+"state": "completed",
+"kind": "bug",
+"one_line": "OutputOnlyDownload.vue and MultipleCasesInput.vue contain hardcoded user-visible strings that bypass the translation system.",
+"fixed_by": [
+9666
+]
+},
+{
+"number": 9765,
+"title": "[FEATURE] Display API Tokens table as vertical card layout on mobile",
+"created": "2026-04-12",
+"state": "completed",
+"kind": "feature",
+"one_line": "Proposes showing the API Tokens table as stacked cards on mobile instead of a horizontally scrolling table.",
+"fixed_by": [
+9776
+]
+},
+{
+"number": 9766,
+"title": "[FEATURE] Import golden-layout CSS from node_modules instead of vendoring",
+"created": "2026-04-12",
+"state": "open",
+"kind": "cleanup",
+"one_line": "Proposes importing golden-layout CSS from node_modules instead of keeping a vendored copy that can drift from the installed package.",
+"fixed_by": []
+},
+{
+"number": 9781,
+"title": "[FEATURE] Modernize navbar Help menu with icon, title, and subtitle layout",
+"created": "2026-04-16",
+"state": "completed",
+"kind": "feature",
+"one_line": "Proposes a Help menu layout in the navbar where each entry has an icon, a title and a subtitle.",
+"fixed_by": [
+9801
+]
+},
+{
+"number": 9782,
+"title": "[FEATURE] Centralize entrypoint access control for lockdown mode and auth requirements",
+"created": "2026-04-16",
+"state": "open",
+"kind": "feature",
+"one_line": "Proposes declaring each entrypoint's lockdown and authentication requirements in one central map instead of per-controller guards.",
+"fixed_by": []
+},
+{
+"number": 9783,
+"title": "[BUG] arena/course.ts registers an anonymous hashchange listener with no cleanup",
+"created": "2026-04-16",
+"state": "open",
+"kind": "bug",
+"one_line": "arena/course.ts registers an anonymous hashchange listener that can never be removed, so remounts stack listeners.",
+"fixed_by": []
+},
+{
+"number": 9784,
+"title": "[FEATURE] Add cooldown period before a disabled user README can be re-enabled",
+"created": "2026-04-16",
+"state": "open",
+"kind": "feature",
+"one_line": "Proposes a cooldown before a user README that was disabled by a report can be re-enabled by saving it again.",
+"fixed_by": []
+},
+{
+"number": 9785,
+"title": "[FEATURE] Replace hand-written Rank interface in Rank.vue with auto-generated type from api_types",
+"created": "2026-04-16",
+"state": "open",
+"kind": "cleanup",
+"one_line": "Proposes replacing the hand-written Rank interface in Rank.vue with the generated type from api_types.ts.",
+"fixed_by": []
+},
+{
+"number": 9786,
+"title": "[FEATURE] Refactor ContestListv2 slot overrides in ContestCard to use a prop instead",
+"created": "2026-04-16",
+"state": "open",
+"kind": "cleanup",
+"one_line": "Proposes replacing the slot overrides ContestListv2 uses to customize ContestCard with a dedicated prop.",
+"fixed_by": []
+},
+{
+"number": 9787,
+"title": "[FEATURE] Course name search: add LIKE fallback when FULLTEXT BOOLEAN MODE returns no results",
+"created": "2026-04-16",
+"state": "completed",
+"kind": "feature",
+"one_line": "Proposed a LIKE fallback when a FULLTEXT BOOLEAN MODE course name search returns nothing.",
+"fixed_by": []
+},
+{
+"number": 9868,
+"title": "[FEATURE] As a developer, I want a reusable NavbarItem component so that submenu entries are easier to maintain",
+"created": "2026-05-26",
+"state": "completed",
+"kind": "cleanup",
+"one_line": "Proposes extracting a reusable NavbarItem component for navbar submenu entries.",
+"fixed_by": []
+},
+{
+"number": 9869,
+"title": "[FEATURE] As a contributor, I want editable fields in the feature request form so that I can fill in the As a / I want / so that prompts directly",
+"created": "2026-05-26",
+"state": "completed",
+"kind": "infra",
+"one_line": "The YAML feature request form shows the 'As a ... I want ...' user story as non-editable text; asks for editable fields.",
+"fixed_by": []
+},
+{
+"number": 9870,
+"title": "[FEATURE] Refactor navbar help submenu into a reusable NavbarItem component",
+"created": "2026-05-26",
+"state": "completed",
+"kind": "cleanup",
+"one_line": "Proposes extracting the Help submenu markup (icon, title, description) into a reusable NavbarItem component.",
+"fixed_by": [
+9871
+]
+},
+{
+"number": 9882,
+"title": "[FEATURE] Add unit test infrastructure for cron scripts",
+"created": "2026-06-02",
+"state": "completed",
+"kind": "infra",
+"one_line": "The cron scripts in stuff/cron have almost no Python unit tests; proposes shared test infrastructure (mock cursor and connection, fixtures) and first tests.",
+"fixed_by": [
+9883
+]
+},
+{
+"number": 9888,
+"title": "[FEATURE] Add unit tests for update_ranks.py ranking logic",
+"created": "2026-06-07",
+"state": "completed",
+"kind": "infra",
+"one_line": "Proposes unit tests for the pure ranking logic in update_ranks.py, the largest cron script, which had none.",
+"fixed_by": [
+9889
+]
+},
+{
+"number": 9890,
+"title": "[FEATURE] Add unit tests for assign_badges.py",
+"created": "2026-06-07",
+"state": "completed",
+"kind": "infra",
+"one_line": "Proposes unit tests for assign_badges.py and fixing how get_all_owners substitutes the timestamp into the SQL text.",
+"fixed_by": [
+9920
+]
+},
+{
+"number": 9897,
+"title": "[FEATURE] Add a generic \"View unavailable\" component",
+"created": "2026-06-11",
+"state": "completed",
+"kind": "feature",
+"one_line": "Proposes one reusable 'View unavailable' component for views that an admin has turned off, driven by a server flag.",
+"fixed_by": [
+9919
+]
+},
+{
+"number": 9899,
+"title": "[FEATURE] Parameterize string-built queries in coder_of_the_month.py",
+"created": "2026-06-12",
+"state": "completed",
+"kind": "security",
+"one_line": "Queries in coder_of_the_month.py paste values, including user-controlled usernames, into SQL strings; proposes parameterizing them.",
+"fixed_by": [
+9900
+]
+},
+{
+"number": 9902,
+"title": "[FEATURE] Avoid full delete and reinsert of User_Rank in update_ranks",
+"created": "2026-06-12",
+"state": "completed",
+"kind": "cleanup",
+"one_line": "update_user_rank deletes and reinserts the whole User_Rank table every run; proposes writing only what changed.",
+"fixed_by": [
+9903
+]
+},
+{
+"number": 9904,
+"title": "[FEATURE] Prevent and merge duplicate school profiles",
+"created": "2026-06-12",
+"state": "open",
+"kind": "feature",
+"one_line": "Schools are created implicitly from free text in the profile, so duplicates keep appearing; proposes preventing new duplicates and merging existing ones.",
+"fixed_by": []
+},
+{
+"number": 9913,
+"title": "[FEATURE] Emit structured per-phase logs from cron scripts",
+"created": "2026-06-19",
+"state": "completed",
+"kind": "infra",
+"one_line": "Cron scripts log their per-phase counts only inside message strings; proposes emitting them as structured fields as well.",
+"fixed_by": [
+9914
+]
+},
+{
+"number": 9939,
+"title": "[FEATURE] Replace acl_id/role_id magic numbers in cron scripts with named constants",
+"created": "2026-06-26",
+"state": "completed",
+"kind": "cleanup",
+"one_line": "Cron queries hardcode acl_id = 1 and role_id = 1; proposes named constants in a shared stuff/cron/constants.py.",
+"fixed_by": [
+9940
+]
+},
+{
+"number": 9961,
+"title": "duplicate",
+"created": "2026-07-03",
+"state": "not planned",
+"kind": "cleanup",
+"one_line": "Empty issue opened by mistake and titled 'duplicate'.",
+"fixed_by": []
+},
+{
+"number": 9962,
+"title": "[FEATURE] Extend the navbar item style with icons and descriptions to remaining submenus",
+"created": "2026-07-03",
+"state": "completed",
+"kind": "feature",
+"one_line": "Proposes extending the new navbar item style (icon, title, description) to the Contests, Courses, Problems and Ranking submenus.",
+"fixed_by": [
+9968
+]
+},
+{
+"number": 9966,
+"title": "[FEATURE] Build the navbar menus from a single configuration with visibility rules",
+"created": "2026-07-04",
+"state": "completed",
+"kind": "feature",
+"one_line": "Proposes building all navbar menus from one configuration with per-entry visibility rules instead of v-if conditions in the template.",
+"fixed_by": [
+9968
+]
+},
+{
+"number": 9992,
+"title": "[FEATURE] Cron Control Plane : an observability and operational tooling for background jobs",
+"created": "2026-07-13",
+"state": "open",
+"kind": "feature",
+"one_line": "Epic for the Cron Control Plane: run history, overlap protection, an admin health view, freshness signals and safe reruns for background jobs.",
+"fixed_by": [
+9995,
+9996,
+9998,
+10000,
+10003,
+10008,
+10009,
+10011,
+10022,
+10155,
+10156
+]
+},
+{
+"number": 9993,
+"title": "[FEATURE] persistant cron execution history by registry and run tables",
+"created": "2026-07-13",
+"state": "completed",
+"kind": "feature",
+"one_line": "Adds a cron job registry table and an execution history table so each run is recorded.",
+"fixed_by": [
+9995
+]
+},
+{
+"number": 9994,
+"title": "[FEATURE] DAOs for the cron tables",
+"created": "2026-07-13",
+"state": "completed",
+"kind": "feature",
+"one_line": "Adds generated and handwritten DAOs for the cron tables.",
+"fixed_by": [
+9996
+]
+},
+{
+"number": 9997,
+"title": "[FEATURE] Reusable cron runner that records runs and prevents overlap",
+"created": "2026-07-13",
+"state": "completed",
+"kind": "feature",
+"one_line": "Adds a shared cron runner that records each run and its phases and takes a MySQL advisory lock so two runs of the same job cannot overlap.",
+"fixed_by": [
+9998
+]
+},
+{
+"number": 9999,
+"title": "[FEATURE] Admin API for cron run history and health",
+"created": "2026-07-13",
+"state": "completed",
+"kind": "feature",
+"one_line": "Adds admin-only API endpoints for the cron job list, recent runs and one run's per-phase detail.",
+"fixed_by": [
+10000
+]
+},
+{
+"number": 10002,
+"title": "[FEATURE] Record update_ranks executions through the runner",
+"created": "2026-07-14",
+"state": "completed",
+"kind": "feature",
+"one_line": "Wraps update_ranks in the shared runner so its runs are recorded and cannot overlap.",
+"fixed_by": [
+10003
+]
+},
+{
+"number": 10004,
+"title": "[FEATURE] Admin dashboard page for cron jobs",
+"created": "2026-07-14",
+"state": "completed",
+"kind": "feature",
+"one_line": "Adds an admin page at /admin/crons showing each job's latest status, recent runs, per-phase timings and errors.",
+"fixed_by": [
+10008
+]
+},
+{
+"number": 10007,
+"title": "[FEATURE] Record assign_badges and aggregate_feedback through the runner",
+"created": "2026-07-14",
+"state": "completed",
+"kind": "feature",
+"one_line": "Adopts the runner in assign_badges and aggregate_feedback, and makes assign_badges report failure when any single badge fails.",
+"fixed_by": [
+10009
+]
+},
+{
+"number": 10010,
+"title": "[FEATURE] Pre-publish guardrail for the ranking job",
+"created": "2026-07-15",
+"state": "completed",
+"kind": "feature",
+"one_line": "Adds an in-transaction audit that rolls back the ranking job if the new ranking is empty, has negative scores or drops too many users.",
+"fixed_by": [
+10011
+]
+},
+{
+"number": 10017,
+"title": "[FEATURE] Make the view unavailable entrypoint generic and driven by the payload",
+"created": "2026-07-16",
+"state": "completed",
+"kind": "cleanup",
+"one_line": "Proposes making the grader-specific 'view unavailable' entrypoint generic and driven by the server payload.",
+"fixed_by": [
+10025
+]
+},
+{
+"number": 10018,
+"title": "[FEATURE] Let admins safely rerun a cron job",
+"created": "2026-07-16",
+"state": "open",
+"kind": "feature",
+"one_line": "Proposes an admin action that queues a cron rerun request for a trusted worker to execute, instead of needing shell access to a pod.",
+"fixed_by": [
+10155,
+10156
+]
+},
+{
+"number": 10019,
+"title": "[FEATURE] Record the remaining crons through the runner",
+"created": "2026-07-16",
+"state": "completed",
+"kind": "feature",
+"one_line": "Adopts the runner in the on-demand jobs build_problem_rec_model and plagiarism_detector.",
+"fixed_by": [
+10022
+]
+},
+{
+"number": 10020,
+"title": "[FEATURE] End to end test for the cron dashboard",
+"created": "2026-07-16",
+"state": "open",
+"kind": "infra",
+"one_line": "Proposes a Cypress end-to-end test for the cron dashboard and the rerun action.",
+"fixed_by": []
+},
+{
+"number": 10047,
+"title": "[FEATURE] Improve the cron dashboard with health cards, filters, relative times and auto refresh",
+"created": "2026-07-26",
+"state": "open",
+"kind": "feature",
+"one_line": "Proposes cron dashboard improvements: health cards per job, filters, relative times and auto refresh.",
+"fixed_by": []
+},
+{
+"number": 10049,
+"title": "[FEATURE] Make the recommendation model training scheduled, recorded and guarded",
+"created": "2026-07-26",
+"state": "open",
+"kind": "feature",
+"one_line": "Proposes making recommendation model training a scheduled job that records each run's quality and refuses to publish a model that is below a floor or worse than the last published one.",
+"fixed_by": [
+10050,
+10150,
+10051
+]
+},
+{
+"number": 10064,
+"title": "[FEATURE] Detect problems that silently stopped working",
+"created": "2026-07-31",
+"state": "completed",
+"kind": "feature",
+"one_line": "Proposes a nightly job that detects problems that stopped working (judge errors, no languages, never solved, deprecated but public) and lists them for admins.",
+"fixed_by": [
+10065,
+10149,
+10066,
+10069
+]
+}
+]

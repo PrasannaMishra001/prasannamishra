@@ -4,7 +4,7 @@
   var REPO = 'omegaup/omegaup';
   var AUTHOR = 'PrasannaMishra001';
   var SINCE = '2026-05-26';
-  var CACHE_KEY = 'gsoc-pr-status-v2';
+  var CACHE_KEY = 'gsoc-pr-status-v3';
   var CACHE_MS = 30 * 60 * 1000;
   var MAX_PAGES = 3;
   var ENDPOINT = 'https://api.github.com/search/issues';
@@ -90,7 +90,10 @@
   function collect(prs, issues, approved) {
     var data = { at: Date.now(), states: {}, extras: [], counts: {} };
     var tally = { merged: 0, approved: 0, 'in review': 0, draft: 0, closed: 0 };
+    var all = { opened: 0, merged: 0, open: 0, closed: 0 };
+    var issueTally = { all: 0, completed: 0, open: 0 };
     var opened = 0, mergedInPeriod = 0;
+    var UNTIL = '2026-08-25';
 
     function record(kind, item, state) {
       var key = kind + '/' + item.number;
@@ -104,8 +107,12 @@
       if (!item || !isInt(item.number)) return;
       var state = prState(item, approved);
       var merged = (item.pull_request || {}).merged_at;
-      if (isText(merged) && merged >= SINCE) mergedInPeriod++;
-      if (inPeriod(item)) {
+      if (isText(merged) && merged >= SINCE && merged < UNTIL) mergedInPeriod++;
+      all.opened++;
+      if (state === 'merged') all.merged++;
+      else if (state === 'closed') all.closed++;
+      else if (state) all.open++;
+      if (inPeriod(item) && item.created_at < UNTIL) {
         opened++;
         if (state && tally.hasOwnProperty(state)) tally[state]++;
       }
@@ -114,7 +121,11 @@
 
     issues.forEach(function (item) {
       if (!item || !isInt(item.number)) return;
-      record('issues', item, issueState(item));
+      var state = issueState(item);
+      issueTally.all++;
+      if (state === 'completed') issueTally.completed++;
+      if (state === 'open') issueTally.open++;
+      record('issues', item, state);
     });
 
     data.counts.opened = opened;
@@ -125,6 +136,13 @@
     data.counts['in-review'] = tally['in review'];
     data.counts.draft = tally.draft;
     data.counts.closed = tally.closed;
+    data.counts['all-opened'] = all.opened;
+    data.counts['all-merged'] = all.merged;
+    data.counts['all-open'] = all.open;
+    data.counts['all-closed'] = all.closed;
+    data.counts['issues-all'] = issueTally.all;
+    data.counts['issues-completed'] = issueTally.completed;
+    data.counts['issues-open'] = issueTally.open;
     data.extras.sort(function (a, b) { return a.number - b.number; });
     return data;
   }
@@ -163,7 +181,8 @@
   }
 
   function rowFor(kind) {
-    var cell = document.querySelector('[data-state-for^="' + kind + '/"]');
+    // New rows only go into the tables that list everything, never into a table about one project.
+    var cell = document.querySelector('table[data-live-rows="' + kind + '"] [data-state-for^="' + kind + '/"]');
     while (cell && cell.tagName !== 'TR') cell = cell.parentNode;
     return cell && cell.parentNode ? cell : null;
   }
@@ -246,7 +265,9 @@
   }
 
   function note(text) {
-    var spot = anchor();
+    // The line goes above the links to the next page, or after the last table if there are none.
+    var nav = document.querySelector('.next-prev');
+    var spot = nav ? nav.previousElementSibling : anchor();
     if (!spot) return;
     var old = document.querySelector('p.status-note[data-live]');
     if (old && old.parentNode) old.parentNode.removeChild(old);
@@ -257,28 +278,33 @@
     spot.parentNode.insertBefore(line, spot.nextSibling);
   }
 
+  function announce() {
+    try { document.dispatchEvent(new Event('gsoc:status')); } catch (e) { /* old browsers */ }
+  }
+
   function checkedOn(at) {
-    return 'Statuses above were checked against GitHub on ' +
+    return 'Statuses on this page were checked against GitHub on ' +
       new Date(at).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) + '.';
   }
 
   function start() {
     var cached = cacheRead();
     if (cached && !cached.stale) {
-      try { apply(cached); note(checkedOn(cached.at)); } catch (e) { warn(e); }
+      try { apply(cached); note(checkedOn(cached.at)); announce(); } catch (e) { warn(e); }
       return;
     }
     fetchFresh().then(function (data) {
       apply(data);
       note(checkedOn(data.at));
+      announce();
     }).catch(function (err) {
       warn(err);
       if (cached) {
         try { apply(cached); note(checkedOn(cached.at)); return; } catch (e) { warn(e); }
       }
       note(err && err.kind === 'ratelimit'
-        ? 'Statuses above could not be checked against GitHub just now, because of its rate limit, so they are the ones this page was published with.'
-        : 'Statuses above could not be checked against GitHub just now, so they are the ones this page was published with.');
+        ? 'Statuses on this page could not be checked against GitHub just now, because of its rate limit, so they are the ones this page was published with.'
+        : 'Statuses on this page could not be checked against GitHub just now, so they are the ones this page was published with.');
     });
   }
 

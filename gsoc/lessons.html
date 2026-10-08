@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>What I learned and what went wrong | Prasanna Mishra</title>
+<meta name="description" content="The bugs I wrote, the promise I withdrew, the weeks nothing merged, and what I do differently after a summer on omegaUp." />
+<meta name="author" content="Prasanna Mishra" />
+<meta name="theme-color" content="#faf8f8" />
+<link rel="canonical" href="https://prasannamishra001.github.io/prasannamishra/gsoc/lessons.html" />
+<meta property="og:title" content="What I learned and what went wrong" />
+<meta property="og:description" content="The bugs I wrote, the promise I withdrew, the weeks nothing merged, and what I do differently after a summer on omegaUp." />
+<meta property="og:type" content="article" />
+<link rel="icon" type="image/svg+xml" href="assets/gsoc-icon.svg" />
+<script>(function(){try{var t=localStorage.getItem('gsoc-theme');if(t!=='dark'&&t!=='light')t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&family=Besley:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="quartz.css" />
+</head>
+<body data-page="lessons">
+<div class="progress" aria-hidden="true"><i></i></div>
+<div id="quartz-root" class="page"><div id="quartz-body">
+
+<div class="left sidebar">
+  <div>
+    <div class="site-head">
+      <h2 class="page-title"><a href="index.html">Prasanna Mishra</a></h2>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch between light and dark" title="Switch between light and dark"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg></button>
+    </div>
+    <p class="site-tag">google summer of code 2026 &middot; omegaup</p>
+  </div>
+  <div class="sidebar-logos">
+    <img src="assets/gsoc-logo.svg" alt="Google Summer of Code" class="gsoc-mark" />
+    <img src="assets/omegaup-logo.png" alt="omegaUp" class="org-mark" />
+  </div>
+  <div class="explorer"><button type="button" class="explorer-toggle" data-fold="explorer-content"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="explorer-content" id="explorer-content"><ul class="explorer-ul"><li><button type="button" class="folder-container" data-fold="folder-gsoc-2026"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">gsoc-2026</span></button><ul id="folder-gsoc-2026"><li><a href="index.html">Summary</a></li><li><a href="control-plane.html">Cron control plane</a></li><li><a href="model-training.html">Model training</a></li><li><a href="health-checks.html">Problem health checks</a></li><li><a href="groundwork.html">Tests and query fixes</a></li><li><a href="alongside.html">Alongside the project</a></li><li><a href="lessons.html" class="active">What I learned</a></li></ul></li><li><button type="button" class="folder-container" data-fold="folder-journey"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">journey</span></button><ul id="folder-journey"><li><a href="before-gsoc.html">Before the summer</a></li><li><a href="after-gsoc.html">After the summer</a></li><li><a href="journey.html">Timeline</a></li></ul></li><li><button type="button" class="folder-container" data-fold="folder-records"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">records</span></button><ul id="folder-records"><li><a href="pull-requests.html">Pull requests</a></li><li><a href="issues.html">Issues</a></li><li><a href="reviews.html">Reviews</a></li></ul></li><li><button type="button" class="folder-container" data-fold="folder-elsewhere"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="9 18 15 12 9 6"></polyline></svg><span class="folder-title">elsewhere</span></button><ul id="folder-elsewhere"><li><a href="../index.html">Back to the portfolio</a></li><li><a href="https://github.com/omegaup/omegaup/pulls?q=is%3Apr+author%3APrasannaMishra001">My pull requests on GitHub</a></li><li><a href="https://github.com/omegaup/omegaup/issues/9992">The control plane issue</a></li><li><a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a></li></ul></li></ul></div></div>
+  <p class="sidebar-updated"><span class="pulse"></span>still going &middot; updated 8 Oct 2026</p>
+</div>
+
+<div class="center">
+  <div class="page-header">
+    <nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../index.html">Home</a><p>&#10095;</p></div><div class="breadcrumb-element"><a href="index.html">gsoc 2026 omegaup</a><p>&#10095;</p></div><div class="breadcrumb-element"><a href="lessons.html">what i learned</a></div></nav>
+    <h1 class="article-title">What I learned and what went wrong</h1>
+    <p class="content-meta"><time datetime="2026-10-08">updated 8 Oct 2026</time><span>9 min read</span></p>
+  </div>
+  <article>
+<p class="lede">This is the part of a project report that usually gets one polite paragraph. I think it is
+the most useful part, so it gets its own page.</p>
+
+<h2 id="break-it-first">I break my code before I trust a test<a role="anchor" aria-hidden="true" tabindex="-1" href="#break-it-first" class="anchor">#</a></h2>
+<p>The single biggest change is how I write tests. I used to write the test after the fix and move on the
+moment it went green. Now I break the code on purpose first and check that the test fails, because a test
+that passes against broken code is decoration.</p>
+<p>It costs about a minute. It caught two real bugs in my own work this summer, both in code I had written
+minutes earlier and was certain was correct.</p>
+<p>The first was in the <a href="health-checks.html#two-bugs">health checks</a>. The step that closes findings which are
+no longer detected was reading the clock after writing the new findings. On a slow run, a finding written
+moments earlier could be judged as "not seen this run" and closed, so the job would report a problem as
+fixed at the instant it discovered it. I found it because I wrote the test. I trusted the fix because I put
+the bug back and watched the test go red.</p>
+<p>The second I nearly shipped without noticing. Three of the four health checks fired on their first real run
+and one found nothing. My first reaction was relief. It found nothing because the development database
+contained no data that could trigger it, so the check had never run once against a real case. I seeded the
+failure and watched it fire before I trusted it.</p>
+<p>No results and not working look identical from the outside. I now treat an empty result from a new check as
+unproven.</p>
+<h2 id="agreeing-tests">My tests agreed with my code, and both were wrong<a role="anchor" aria-hidden="true" tabindex="-1" href="#agreeing-tests" class="anchor">#</a></h2>
+<p>Twice this summer a reviewer found something my own testing could not have found, because my tests encoded
+the same wrong idea as my code.</p>
+<p>Ankit found that the fake database cursor I had built for the cron tests never advanced, so reading two rows
+returned the first row twice. Every test standing on it was passing for a reason unrelated to the code under
+test. That is on <a href="groundwork.html#the-fake">Tests and query fixes</a>.</p>
+<p>Juan Pablo found that the score my model guardrail recorded as MAP was not MAP, and that it left out every
+user the model had no answer for. I had run the guardrail both ways in Docker and watched it refuse a weak
+model and publish a good one. It worked. It was working on the wrong number. That is on
+<a href="model-training.html#the-review">Model training</a>.</p>
+<p>What I took from both: testing tells you whether the code does what you meant. It cannot tell you whether
+what you meant was right. That second question needs another person.</p>
+<h2 id="the-promise">I withdrew a promise from my own proposal<a role="anchor" aria-hidden="true" tabindex="-1" href="#the-promise" class="anchor">#</a></h2>
+<p>I had committed to rebuilding the rankings in a second table and swapping it in. When I researched it
+properly I found five reasons it was a bad idea, and then found that the problem it was meant to solve had
+been fixed by someone else while I was writing the proposal.</p>
+<p>I wrote that up and posted it. The alternative was building something smaller and hoping nobody compared it
+with the document. It felt bad to do, and it was the easiest decision of the summer once I had the facts in
+front of me. The detail is on <a href="groundwork.html#the-promise-i-took-back">Tests and query fixes</a>.</p>
+<h2 id="waiting">Nothing merged for weeks<a role="anchor" aria-hidden="true" tabindex="-1" href="#waiting" class="anchor">#</a></h2>
+<p>The hardest part of the summer had nothing to do with code. At the midterm, one of my pull requests for the
+main project had merged. Every other one had green checks and was sitting in the queue, and there was no
+version of working harder that would change that.</p>
+<p>Up to then every problem I had hit was one I could solve by putting in more hours. My mentors were
+straightforward that review time was the constraint and told me to keep building, so I kept building.
+Seventeen of my pull requests merged in August.</p>
+<figure class="diagram reveal"><div class="legend"><span class="b"><i></i>opened to merged</span><span class="o"><i></i>still open</span><span class="w"><i></i>closed without merging</span><span class="band"><i></i>GSoC coding period</span></div><div class="diagram-body"><svg viewBox="0 0 800 705" role="img" aria-label="How long each pull request waited between being opened and being merged" style="--minw:640px" xmlns="http://www.w3.org/2000/svg"><line x1="231.4" y1="26" x2="231.4" y2="679" class="c-grid"/><text x="235.4014598540146" y="20" class="c-axis" text-anchor="start">Jun</text><line x1="358.4" y1="26" x2="358.4" y2="679" class="c-grid"/><text x="362.4087591240876" y="20" class="c-axis" text-anchor="start">Jul</text><line x1="489.6" y1="26" x2="489.6" y2="679" class="c-grid"/><text x="493.64963503649636" y="20" class="c-axis" text-anchor="start">Aug</text><line x1="620.9" y1="26" x2="620.9" y2="679" class="c-grid"/><text x="624.8905109489051" y="20" class="c-axis" text-anchor="start">Sep</text><line x1="747.9" y1="26" x2="747.9" y2="679" class="c-grid"/><text x="751.8978102189781" y="20" class="c-axis" text-anchor="start">Oct</text><rect x="206.0" y="26" width="381.0" height="653" class="c-band"/><text x="583.021897810219" y="697" class="c-axis" text-anchor="end">coding period ends, 24 Aug</text><a href="https://github.com/omegaup/omegaup/pull/9871" class="d-link"><text x="196" y="40.5" class="c-label" text-anchor="end">NavbarItem <tspan class="c-label dim">#9871</tspan></text></a><rect x="206.0" y="33" width="186.3" height="9" rx="3" class="c-mark c-b" data-mark="w0"/><rect x="206" y="30" width="580" height="15" class="c-hit" data-mark="w0" data-tip="#9871 NavbarItem
+opened 26 May
+merged after 44 days"/><a href="https://github.com/omegaup/omegaup/pull/9883" class="d-link"><text x="196" y="55.5" class="c-label" text-anchor="end">cron test infrastructure <tspan class="c-label dim">#9883</tspan></text></a><rect x="235.6" y="48" width="351.4" height="9" rx="3" class="c-mark c-b" data-mark="w1"/><rect x="206" y="45" width="580" height="15" class="c-hit" data-mark="w1" data-tip="#9883 cron test infrastructure
+opened 2 Jun
+merged after 83 days"/><a href="https://github.com/omegaup/omegaup/pull/9889" class="d-link"><text x="196" y="70.5" class="c-label" text-anchor="end">update_ranks tests <tspan class="c-label dim">#9889</tspan></text></a><rect x="256.8" y="63" width="334.5" height="9" rx="3" class="c-mark c-b" data-mark="w2"/><rect x="206" y="60" width="580" height="15" class="c-hit" data-mark="w2" data-tip="#9889 update_ranks tests
+opened 7 Jun
+merged after 79 days"/><a href="https://github.com/omegaup/omegaup/pull/9900" class="d-link"><text x="196" y="85.5" class="c-label" text-anchor="end">parameterized queries <tspan class="c-label dim">#9900</tspan></text></a><rect x="278.0" y="78" width="262.5" height="9" rx="3" class="c-mark c-b" data-mark="w3"/><rect x="206" y="75" width="580" height="15" class="c-hit" data-mark="w3" data-tip="#9900 parameterized queries
+opened 12 Jun
+merged after 62 days"/><a href="https://github.com/omegaup/omegaup/pull/9901" class="d-link"><text x="196" y="100.5" class="c-label" text-anchor="end">typed excepts <tspan class="c-label dim">#9901</tspan></text></a><rect x="278.0" y="93" width="199.0" height="9" rx="3" class="c-mark c-b" data-mark="w4"/><rect x="206" y="90" width="580" height="15" class="c-hit" data-mark="w4" data-tip="#9901 typed excepts
+opened 12 Jun
+merged after 47 days"/><a href="https://github.com/omegaup/omegaup/pull/9903" class="d-link"><text x="196" y="115.5" class="c-label" text-anchor="end">rank upsert <tspan class="c-label dim">#9903</tspan></text></a><rect x="278.0" y="108" width="266.7" height="9" rx="3" class="c-mark c-b" data-mark="w5"/><rect x="206" y="105" width="580" height="15" class="c-hit" data-mark="w5" data-tip="#9903 rank upsert
+opened 12 Jun
+merged after 63 days"/><a href="https://github.com/omegaup/omegaup/pull/9914" class="d-link"><text x="196" y="130.5" class="c-label" text-anchor="end">structured logs <tspan class="c-label dim">#9914</tspan></text></a><rect x="307.6" y="123" width="283.6" height="9" rx="3" class="c-mark c-b" data-mark="w6"/><rect x="206" y="120" width="580" height="15" class="c-hit" data-mark="w6" data-tip="#9914 structured logs
+opened 19 Jun
+merged after 67 days"/><a href="https://github.com/omegaup/omegaup/pull/9919" class="d-link"><text x="196" y="145.5" class="c-label" text-anchor="end">view unavailable <tspan class="c-label dim">#9919</tspan></text></a><rect x="316.1" y="138" width="76.2" height="9" rx="3" class="c-mark c-b" data-mark="w7"/><rect x="206" y="135" width="580" height="15" class="c-hit" data-mark="w7" data-tip="#9919 view unavailable
+opened 21 Jun
+merged after 18 days"/><a href="https://github.com/omegaup/omegaup/pull/9920" class="d-link"><text x="196" y="160.5" class="c-label" text-anchor="end">assign_badges tests <tspan class="c-label dim">#9920</tspan></text></a><rect x="316.1" y="153" width="279.4" height="9" rx="3" class="c-mark c-b" data-mark="w8"/><rect x="206" y="150" width="580" height="15" class="c-hit" data-mark="w8" data-tip="#9920 assign_badges tests
+opened 21 Jun
+merged after 66 days"/><a href="https://github.com/omegaup/omegaup/pull/9940" class="d-link"><text x="196" y="175.5" class="c-label" text-anchor="end">named constants <tspan class="c-label dim">#9940</tspan></text></a><rect x="337.2" y="168" width="29.6" height="9" rx="3" class="c-mark c-b" data-mark="w9"/><rect x="206" y="165" width="580" height="15" class="c-hit" data-mark="w9" data-tip="#9940 named constants
+opened 26 Jun
+merged after 7 days"/><a href="https://github.com/omegaup/omegaup/pull/9967" class="d-link"><text x="196" y="190.5" class="c-label" text-anchor="end">other menus <tspan class="c-label dim">#9967</tspan></text></a><rect x="371.1" y="183" width="148.2" height="9" rx="3" class="c-mark c-wait" data-mark="w10"/><rect x="206" y="180" width="580" height="15" class="c-hit" data-mark="w10" data-tip="#9967 other menus
+opened 4 Jul
+closed, not merged after 35 days"/><a href="https://github.com/omegaup/omegaup/pull/9968" class="d-link"><text x="196" y="205.5" class="c-label" text-anchor="end">menus from config <tspan class="c-label dim">#9968</tspan></text></a><rect x="371.1" y="198" width="105.8" height="9" rx="3" class="c-mark c-b" data-mark="w11"/><rect x="206" y="195" width="580" height="15" class="c-hit" data-mark="w11" data-tip="#9968 menus from config
+opened 4 Jul
+merged after 25 days"/><a href="https://github.com/omegaup/omegaup/pull/9995" class="d-link"><text x="196" y="220.5" class="c-label" text-anchor="end">tables <tspan class="c-label dim">#9995</tspan></text></a><rect x="409.2" y="213" width="63.5" height="9" rx="3" class="c-mark c-b" data-mark="w12"/><rect x="206" y="210" width="580" height="15" class="c-hit" data-mark="w12" data-tip="#9995 tables
+opened 13 Jul
+merged after 15 days"/><a href="https://github.com/omegaup/omegaup/pull/9996" class="d-link"><text x="196" y="235.5" class="c-label" text-anchor="end">data access <tspan class="c-label dim">#9996</tspan></text></a><rect x="409.2" y="228" width="118.5" height="9" rx="3" class="c-mark c-b" data-mark="w13"/><rect x="206" y="225" width="580" height="15" class="c-hit" data-mark="w13" data-tip="#9996 data access
+opened 13 Jul
+merged after 28 days"/><a href="https://github.com/omegaup/omegaup/pull/9998" class="d-link"><text x="196" y="250.5" class="c-label" text-anchor="end">runner <tspan class="c-label dim">#9998</tspan></text></a><rect x="409.2" y="243" width="156.6" height="9" rx="3" class="c-mark c-b" data-mark="w14"/><rect x="206" y="240" width="580" height="15" class="c-hit" data-mark="w14" data-tip="#9998 runner
+opened 13 Jul
+merged after 37 days"/><a href="https://github.com/omegaup/omegaup/pull/10000" class="d-link"><text x="196" y="265.5" class="c-label" text-anchor="end">admin api <tspan class="c-label dim">#10000</tspan></text></a><rect x="409.2" y="258" width="135.5" height="9" rx="3" class="c-mark c-b" data-mark="w15"/><rect x="206" y="255" width="580" height="15" class="c-hit" data-mark="w15" data-tip="#10000 admin api
+opened 13 Jul
+merged after 32 days"/><a href="https://github.com/omegaup/omegaup/pull/10003" class="d-link"><text x="196" y="280.5" class="c-label" text-anchor="end">update_ranks <tspan class="c-label dim">#10003</tspan></text></a><rect x="413.4" y="273" width="152.4" height="9" rx="3" class="c-mark c-b" data-mark="w16"/><rect x="206" y="270" width="580" height="15" class="c-hit" data-mark="w16" data-tip="#10003 update_ranks
+opened 14 Jul
+merged after 36 days"/><a href="https://github.com/omegaup/omegaup/pull/10008" class="d-link"><text x="196" y="295.5" class="c-label" text-anchor="end">dashboard <tspan class="c-label dim">#10008</tspan></text></a><rect x="413.4" y="288" width="194.7" height="9" rx="3" class="c-mark c-b" data-mark="w17"/><rect x="206" y="285" width="580" height="15" class="c-hit" data-mark="w17" data-tip="#10008 dashboard
+opened 14 Jul
+merged after 46 days"/><a href="https://github.com/omegaup/omegaup/pull/10009" class="d-link"><text x="196" y="310.5" class="c-label" text-anchor="end">badges, feedback <tspan class="c-label dim">#10009</tspan></text></a><rect x="413.4" y="303" width="160.9" height="9" rx="3" class="c-mark c-b" data-mark="w18"/><rect x="206" y="300" width="580" height="15" class="c-hit" data-mark="w18" data-tip="#10009 badges, feedback
+opened 14 Jul
+merged after 38 days"/><a href="https://github.com/omegaup/omegaup/pull/10011" class="d-link"><text x="196" y="325.5" class="c-label" text-anchor="end">ranking audit <tspan class="c-label dim">#10011</tspan></text></a><rect x="417.7" y="318" width="177.8" height="9" rx="3" class="c-mark c-b" data-mark="w19"/><rect x="206" y="315" width="580" height="15" class="c-hit" data-mark="w19" data-tip="#10011 ranking audit
+opened 15 Jul
+merged after 42 days"/><a href="https://github.com/omegaup/omegaup/pull/10021" class="d-link"><text x="196" y="340.5" class="c-label" text-anchor="end">dispatcher <tspan class="c-label dim">#10021</tspan></text></a><rect x="421.9" y="333" width="355.6" height="9" rx="3" class="c-mark c-open" data-mark="w20"/><rect x="206" y="330" width="580" height="15" class="c-hit" data-mark="w20" data-tip="#10021 dispatcher
+opened 16 Jul
+still open after 84 days"/><a href="https://github.com/omegaup/omegaup/pull/10022" class="d-link"><text x="196" y="355.5" class="c-label" text-anchor="end">other jobs <tspan class="c-label dim">#10022</tspan></text></a><rect x="421.9" y="348" width="156.6" height="9" rx="3" class="c-mark c-b" data-mark="w21"/><rect x="206" y="345" width="580" height="15" class="c-hit" data-mark="w21" data-tip="#10022 other jobs
+opened 16 Jul
+merged after 37 days"/><a href="https://github.com/omegaup/omegaup/pull/10023" class="d-link"><text x="196" y="370.5" class="c-label" text-anchor="end">dashboard e2e <tspan class="c-label dim">#10023</tspan></text></a><rect x="421.9" y="363" width="186.3" height="9" rx="3" class="c-mark c-wait" data-mark="w22"/><rect x="206" y="360" width="580" height="15" class="c-hit" data-mark="w22" data-tip="#10023 dashboard e2e
+opened 16 Jul
+closed, not merged after 44 days"/><a href="https://github.com/omegaup/omegaup/pull/10025" class="d-link"><text x="196" y="385.5" class="c-label" text-anchor="end">generic entrypoint <tspan class="c-label dim">#10025</tspan></text></a><rect x="421.9" y="378" width="4.2" height="9" rx="3" class="c-mark c-b" data-mark="w23"/><rect x="206" y="375" width="580" height="15" class="c-hit" data-mark="w23" data-tip="#10025 generic entrypoint
+opened 16 Jul
+merged after 1 days"/><a href="https://github.com/omegaup/omegaup/pull/10048" class="d-link"><text x="196" y="400.5" class="c-label" text-anchor="end">dashboard v2 <tspan class="c-label dim">#10048</tspan></text></a><rect x="464.2" y="393" width="313.3" height="9" rx="3" class="c-mark c-open" data-mark="w24"/><rect x="206" y="390" width="580" height="15" class="c-hit" data-mark="w24" data-tip="#10048 dashboard v2
+opened 26 Jul
+still open after 74 days"/><a href="https://github.com/omegaup/omegaup/pull/10050" class="d-link"><text x="196" y="415.5" class="c-label" text-anchor="end">model runs table <tspan class="c-label dim">#10050</tspan></text></a><rect x="468.5" y="408" width="139.7" height="9" rx="3" class="c-mark c-b" data-mark="w25"/><rect x="206" y="405" width="580" height="15" class="c-hit" data-mark="w25" data-tip="#10050 model runs table
+opened 27 Jul
+merged after 33 days"/><a href="https://github.com/omegaup/omegaup/pull/10051" class="d-link"><text x="196" y="430.5" class="c-label" text-anchor="end">guarded training <tspan class="c-label dim">#10051</tspan></text></a><rect x="468.5" y="423" width="224.4" height="9" rx="3" class="c-mark c-b" data-mark="w26"/><rect x="206" y="420" width="580" height="15" class="c-hit" data-mark="w26" data-tip="#10051 guarded training
+opened 27 Jul
+merged after 53 days"/><a href="https://github.com/omegaup/omegaup/pull/10052" class="d-link"><text x="196" y="445.5" class="c-label" text-anchor="end">model quality view <tspan class="c-label dim">#10052</tspan></text></a><rect x="468.5" y="438" width="309.1" height="9" rx="3" class="c-mark c-open" data-mark="w27"/><rect x="206" y="435" width="580" height="15" class="c-hit" data-mark="w27" data-tip="#10052 model quality view
+opened 27 Jul
+still open after 73 days"/><a href="https://github.com/omegaup/omegaup/pull/10065" class="d-link"><text x="196" y="460.5" class="c-label" text-anchor="end">findings table <tspan class="c-label dim">#10065</tspan></text></a><rect x="485.4" y="453" width="59.3" height="9" rx="3" class="c-mark c-b" data-mark="w28"/><rect x="206" y="450" width="580" height="15" class="c-hit" data-mark="w28" data-tip="#10065 findings table
+opened 31 Jul
+merged after 14 days"/><a href="https://github.com/omegaup/omegaup/pull/10066" class="d-link"><text x="196" y="475.5" class="c-label" text-anchor="end">health check job <tspan class="c-label dim">#10066</tspan></text></a><rect x="489.6" y="468" width="199.0" height="9" rx="3" class="c-mark c-b" data-mark="w29"/><rect x="206" y="465" width="580" height="15" class="c-hit" data-mark="w29" data-tip="#10066 health check job
+opened 1 Aug
+merged after 47 days"/><a href="https://github.com/omegaup/omegaup/pull/10069" class="d-link"><text x="196" y="490.5" class="c-label" text-anchor="end">findings view <tspan class="c-label dim">#10069</tspan></text></a><rect x="498.1" y="483" width="275.2" height="9" rx="3" class="c-mark c-b" data-mark="w30"/><rect x="206" y="480" width="580" height="15" class="c-hit" data-mark="w30" data-tip="#10069 findings view
+opened 3 Aug
+merged after 65 days"/><a href="https://github.com/omegaup/omegaup/pull/10149" class="d-link"><text x="196" y="505.5" class="c-label" text-anchor="end">findings dao <tspan class="c-label dim">#10149</tspan></text></a><rect x="608.2" y="498" width="4.0" height="9" rx="3" class="c-mark c-b" data-mark="w31"/><rect x="206" y="495" width="580" height="15" class="c-hit" data-mark="w31" data-tip="#10149 findings dao
+opened 29 Aug
+merged after 0 days"/><a href="https://github.com/omegaup/omegaup/pull/10150" class="d-link"><text x="196" y="520.5" class="c-label" text-anchor="end">model runs dao <tspan class="c-label dim">#10150</tspan></text></a><rect x="608.2" y="513" width="46.6" height="9" rx="3" class="c-mark c-b" data-mark="w32"/><rect x="206" y="510" width="580" height="15" class="c-hit" data-mark="w32" data-tip="#10150 model runs dao
+opened 29 Aug
+merged after 11 days"/><a href="https://github.com/omegaup/omegaup/pull/10153" class="d-link"><text x="196" y="535.5" class="c-label" text-anchor="end">findings api <tspan class="c-label dim">#10153</tspan></text></a><rect x="608.2" y="528" width="4.0" height="9" rx="3" class="c-mark c-wait" data-mark="w33"/><rect x="206" y="525" width="580" height="15" class="c-hit" data-mark="w33" data-tip="#10153 findings api
+opened 29 Aug
+closed, not merged after 0 days"/><a href="https://github.com/omegaup/omegaup/pull/10154" class="d-link"><text x="196" y="550.5" class="c-label" text-anchor="end">model api <tspan class="c-label dim">#10154</tspan></text></a><rect x="608.2" y="543" width="4.0" height="9" rx="3" class="c-mark c-wait" data-mark="w34"/><rect x="206" y="540" width="580" height="15" class="c-hit" data-mark="w34" data-tip="#10154 model api
+opened 29 Aug
+closed, not merged after 0 days"/><a href="https://github.com/omegaup/omegaup/pull/10155" class="d-link"><text x="196" y="565.5" class="c-label" text-anchor="end">request table <tspan class="c-label dim">#10155</tspan></text></a><rect x="608.2" y="558" width="80.4" height="9" rx="3" class="c-mark c-b" data-mark="w35"/><rect x="206" y="555" width="580" height="15" class="c-hit" data-mark="w35" data-tip="#10155 request table
+opened 29 Aug
+merged after 19 days"/><a href="https://github.com/omegaup/omegaup/pull/10156" class="d-link"><text x="196" y="580.5" class="c-label" text-anchor="end">request dao <tspan class="c-label dim">#10156</tspan></text></a><rect x="608.2" y="573" width="165.1" height="9" rx="3" class="c-mark c-b" data-mark="w36"/><rect x="206" y="570" width="580" height="15" class="c-hit" data-mark="w36" data-tip="#10156 request dao
+opened 29 Aug
+merged after 39 days"/><a href="https://github.com/omegaup/omegaup/pull/10157" class="d-link"><text x="196" y="595.5" class="c-label" text-anchor="end">rerun api <tspan class="c-label dim">#10157</tspan></text></a><rect x="608.2" y="588" width="4.0" height="9" rx="3" class="c-mark c-wait" data-mark="w37"/><rect x="206" y="585" width="580" height="15" class="c-hit" data-mark="w37" data-tip="#10157 rerun api
+opened 29 Aug
+closed, not merged after 0 days"/><a href="https://github.com/omegaup/omegaup/pull/10158" class="d-link"><text x="196" y="610.5" class="c-label" text-anchor="end">dispatcher <tspan class="c-label dim">#10158</tspan></text></a><rect x="608.2" y="603" width="4.0" height="9" rx="3" class="c-mark c-wait" data-mark="w38"/><rect x="206" y="600" width="580" height="15" class="c-hit" data-mark="w38" data-tip="#10158 dispatcher
+opened 29 Aug
+closed, not merged after 0 days"/><a href="https://github.com/omegaup/omegaup/pull/10159" class="d-link"><text x="196" y="625.5" class="c-label" text-anchor="end">enable api <tspan class="c-label dim">#10159</tspan></text></a><rect x="608.2" y="618" width="4.0" height="9" rx="3" class="c-mark c-wait" data-mark="w39"/><rect x="206" y="615" width="580" height="15" class="c-hit" data-mark="w39" data-tip="#10159 enable api
+opened 29 Aug
+closed, not merged after 0 days"/><a href="https://github.com/omegaup/omegaup/pull/10275" class="d-link"><text x="196" y="640.5" class="c-label" text-anchor="end">rerun api <tspan class="c-label dim">#10275</tspan></text></a><rect x="756.4" y="633" width="21.2" height="9" rx="3" class="c-mark c-open" data-mark="w40"/><rect x="206" y="630" width="580" height="15" class="c-hit" data-mark="w40" data-tip="#10275 rerun api
+opened 3 Oct
+still open after 5 days"/><a href="https://github.com/omegaup/omegaup/pull/10276" class="d-link"><text x="196" y="655.5" class="c-label" text-anchor="end">rerun button <tspan class="c-label dim">#10276</tspan></text></a><rect x="756.4" y="648" width="21.2" height="9" rx="3" class="c-mark c-open" data-mark="w41"/><rect x="206" y="645" width="580" height="15" class="c-hit" data-mark="w41" data-tip="#10276 rerun button
+opened 3 Oct
+still open after 5 days"/><a href="https://github.com/omegaup/omegaup/pull/10277" class="d-link"><text x="196" y="670.5" class="c-label" text-anchor="end">cypress <tspan class="c-label dim">#10277</tspan></text></a><rect x="756.4" y="663" width="21.2" height="9" rx="3" class="c-mark c-open" data-mark="w42"/><rect x="206" y="660" width="580" height="15" class="c-hit" data-mark="w42" data-tip="#10277 cypress
+opened 3 Oct
+still open after 5 days"/></svg></div><details class="as-table"><summary>show this as a table</summary><div class="table-container"><table><thead><tr><th>PR</th><th>What</th><th>Opened</th><th>Outcome</th><th>Days</th></tr></thead><tbody><tr><td><a href="https://github.com/omegaup/omegaup/pull/9871">#9871</a></td><td>NavbarItem</td><td>26 May 2026</td><td>merged</td><td>44</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9883">#9883</a></td><td>cron test infrastructure</td><td>2 Jun 2026</td><td>merged</td><td>83</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9889">#9889</a></td><td>update_ranks tests</td><td>7 Jun 2026</td><td>merged</td><td>79</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9900">#9900</a></td><td>parameterized queries</td><td>12 Jun 2026</td><td>merged</td><td>62</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9901">#9901</a></td><td>typed excepts</td><td>12 Jun 2026</td><td>merged</td><td>47</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9903">#9903</a></td><td>rank upsert</td><td>12 Jun 2026</td><td>merged</td><td>63</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9914">#9914</a></td><td>structured logs</td><td>19 Jun 2026</td><td>merged</td><td>67</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9919">#9919</a></td><td>view unavailable</td><td>21 Jun 2026</td><td>merged</td><td>18</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9920">#9920</a></td><td>assign_badges tests</td><td>21 Jun 2026</td><td>merged</td><td>66</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9940">#9940</a></td><td>named constants</td><td>26 Jun 2026</td><td>merged</td><td>7</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9967">#9967</a></td><td>other menus</td><td>4 Jul 2026</td><td>closed, not merged</td><td>35</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9968">#9968</a></td><td>menus from config</td><td>4 Jul 2026</td><td>merged</td><td>25</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9995">#9995</a></td><td>tables</td><td>13 Jul 2026</td><td>merged</td><td>15</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9996">#9996</a></td><td>data access</td><td>13 Jul 2026</td><td>merged</td><td>28</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/9998">#9998</a></td><td>runner</td><td>13 Jul 2026</td><td>merged</td><td>37</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10000">#10000</a></td><td>admin api</td><td>13 Jul 2026</td><td>merged</td><td>32</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10003">#10003</a></td><td>update_ranks</td><td>14 Jul 2026</td><td>merged</td><td>36</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10008">#10008</a></td><td>dashboard</td><td>14 Jul 2026</td><td>merged</td><td>46</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10009">#10009</a></td><td>badges, feedback</td><td>14 Jul 2026</td><td>merged</td><td>38</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10011">#10011</a></td><td>ranking audit</td><td>15 Jul 2026</td><td>merged</td><td>42</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10021">#10021</a></td><td>dispatcher</td><td>16 Jul 2026</td><td>still open</td><td>84</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10022">#10022</a></td><td>other jobs</td><td>16 Jul 2026</td><td>merged</td><td>37</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10023">#10023</a></td><td>dashboard e2e</td><td>16 Jul 2026</td><td>closed, not merged</td><td>44</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10025">#10025</a></td><td>generic entrypoint</td><td>16 Jul 2026</td><td>merged</td><td>1</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10048">#10048</a></td><td>dashboard v2</td><td>26 Jul 2026</td><td>still open</td><td>74</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10050">#10050</a></td><td>model runs table</td><td>27 Jul 2026</td><td>merged</td><td>33</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10051">#10051</a></td><td>guarded training</td><td>27 Jul 2026</td><td>merged</td><td>53</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10052">#10052</a></td><td>model quality view</td><td>27 Jul 2026</td><td>still open</td><td>73</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10065">#10065</a></td><td>findings table</td><td>31 Jul 2026</td><td>merged</td><td>14</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10066">#10066</a></td><td>health check job</td><td>1 Aug 2026</td><td>merged</td><td>47</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10069">#10069</a></td><td>findings view</td><td>3 Aug 2026</td><td>merged</td><td>65</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10149">#10149</a></td><td>findings dao</td><td>29 Aug 2026</td><td>merged</td><td>0</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10150">#10150</a></td><td>model runs dao</td><td>29 Aug 2026</td><td>merged</td><td>11</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10153">#10153</a></td><td>findings api</td><td>29 Aug 2026</td><td>closed, not merged</td><td>0</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10154">#10154</a></td><td>model api</td><td>29 Aug 2026</td><td>closed, not merged</td><td>0</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10155">#10155</a></td><td>request table</td><td>29 Aug 2026</td><td>merged</td><td>19</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10156">#10156</a></td><td>request dao</td><td>29 Aug 2026</td><td>merged</td><td>39</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10157">#10157</a></td><td>rerun api</td><td>29 Aug 2026</td><td>closed, not merged</td><td>0</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10158">#10158</a></td><td>dispatcher</td><td>29 Aug 2026</td><td>closed, not merged</td><td>0</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10159">#10159</a></td><td>enable api</td><td>29 Aug 2026</td><td>closed, not merged</td><td>0</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10275">#10275</a></td><td>rerun api</td><td>3 Oct 2026</td><td>still open</td><td>5</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10276">#10276</a></td><td>rerun button</td><td>3 Oct 2026</td><td>still open</td><td>5</td></tr><tr><td><a href="https://github.com/omegaup/omegaup/pull/10277">#10277</a></td><td>cypress</td><td>3 Oct 2026</td><td>still open</td><td>5</td></tr></tbody></table></div></details><figcaption>The same chart as on the summary page, because it is the most honest picture I have of the summer. The long bars are pull requests waiting in a queue.</figcaption></figure>
+
+<p>What I took from it is that on a project maintained by volunteers, how reviewable your work is matters as
+much as whether it is correct. A large correct change and a small correct change are not worth the same to
+the person who has to read them. I used to think a bigger pull request showed more work. It mostly shows
+less consideration for the reviewer.</p>
+<h2 id="small-prs">Small pull requests have a cost, and I pay it on purpose<a role="anchor" aria-hidden="true" tabindex="-1" href="#small-prs" class="anchor">#</a></h2>
+<p>Keeping pull requests small and ordered is right for reviewers and expensive for me. Every time one merges I
+rebase the next so its diff stands alone. When the first tables merged, the migration number had changed
+underneath me, so every later database change had to shift with it. That happened twice more. At one point a change to a shared file had to be carried across seventeen branches, because all of
+them descended from it.</p>
+<p>I would work the same way again. I would plan for the rebasing instead of treating it as something that
+happens to me.</p>
+<p>I also got the granularity wrong before I got it right. In late August I split the rerun feature into five
+pull requests and the same day folded three back, because a chain of drafts that could not be reviewed yet
+felt like clutter. In October the maintainer asked for it in six pieces. A draft that waits its turn is
+cheaper for a reviewer than one large pull request, and I should have left the split alone.</p>
+<h2 id="stacks">Stacks merge in whatever order they are approved<a role="anchor" aria-hidden="true" tabindex="-1" href="#stacks" class="anchor">#</a></h2>
+<p>Twice a pull request of mine was squash merged while the one underneath it was still open, which carried the
+lower one's changes into main and left it with nothing to merge. Both times the cause was the same. The
+upper one was not marked as a draft, so nothing about it said "not yet".</p>
+<p>Now every stacked pull request is a draft until its parent lands, and its description opens with which
+number it is in the stack and what has to merge first.</p>
+<h2 id="contradicting-checks">When two checks contradict each other<a role="anchor" aria-hidden="true" tabindex="-1" href="#contradicting-checks" class="anchor">#</a></h2>
+<p>One problem was purely mechanical and taught me something anyway. After the first tables merged, one
+required check insisted that a generated schema file match the main schema byte for byte, and another
+required check crashed trying to read that same file. Both were mandatory, so satisfying one broke the
+other.</p>
+<p>The crash was at one specific table, caused by a full text index clause another contributor had added that
+the schema parser did not understand. Nobody had hit it because main's copy of the generated file was out of
+date and did not contain that line yet. Mine was the first change to regenerate it. The fix was one line in
+the parser.</p>
+<p>When two automated checks contradict each other, the contradiction is usually pointing at something real.</p>
+<h2 id="skipped">Skipped is not passed<a role="anchor" aria-hidden="true" tabindex="-1" href="#skipped" class="anchor">#</a></h2>
+<p>On one pull request the PHP job showed as skipped, because it depends on another job that had died. The PHP
+tests for that change had never run. Nothing was red and nothing had been tested. I read the job list now
+instead of the summary.</p>
+<h2 id="checking-first">Checking before building<a role="anchor" aria-hidden="true" tabindex="-1" href="#checking-first" class="anchor">#</a></h2>
+<p>Several things I built before the summer are still open and unreviewed: an online code tester of nine
+hundred lines, a three part feature for saving code templates, a redesigned verification email. I opened
+them without first agreeing with a maintainer that the project wanted them.</p>
+<p>The pull requests of mine that merged quickly were either small or had been asked for. The fourteen ideas I
+sent Juan Pablo at the midterm, asking which one the organisation needed, were the same lesson applied on
+purpose. Asking first would have cost me a day on each of those.</p>
+<h2 id="claims">Three claims I will not round up<a role="anchor" aria-hidden="true" tabindex="-1" href="#claims" class="anchor">#</a></h2>
+<p>There are three things about this project I could phrase so they sound better than they are.</p>
+<p>The system can tell you a job ran and failed. It cannot tell you a job never started, which is the one
+failure that a run history cannot catch.</p>
+<p>The lock lives in the database, so it is only as available as the database is. It prevents wasted work. The
+correctness comes from the transaction underneath it.</p>
+<p>The model guardrail shows that a new model is not much worse than the last one on an offline number. It does
+not show that the model is better for the students using it.</p>
+<p>All three are fine for what they are, and none of them is more than that.</p>
+<div class="next-prev"><a class="card" href="alongside.html"><span class="k">previous</span><h4>&larr; Alongside the project</h4><p>Navigation menus, a view unavailable page, and system settings.</p></a><a class="card" href="before-gsoc.html"><span class="k">next</span><h4>Before the summer &rarr;</h4><p>August 2025 to May 2026: the first fifty seven pull requests.</p></a></div>
+  </article>
+  <footer class="site-footer">
+    <p>Written by Prasanna Mishra &middot; <a href="mailto:mishra.prasanna838@gmail.com">email</a> &middot; <a href="https://github.com/PrasannaMishra001">github</a> &middot; <a href="https://www.linkedin.com/in/prasanna-mishra-871269367">linkedin</a></p>
+    <p>This page was last built on 8 Oct 2026. The work is not finished, so it will change.</p>
+  </footer>
+</div>
+
+<div class="right sidebar">
+  <div class="graph desktop-only">
+    <div class="graph-head"><h3>Graph View</h3><button type="button" class="icon-btn" id="graph-open" aria-label="Open the full graph" title="Open the full graph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></button></div>
+    <div class="graph-container" id="graph-container"></div>
+  </div>
+  <div class="toc desktop-only"><button type="button" class="toc-toggle" data-fold="toc-content"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul class="toc-content" id="toc-content"><li class="depth-0"><a href="#break-it-first">I break my code before I trust a test</a></li><li class="depth-0"><a href="#agreeing-tests">My tests agreed with my code, and both were wrong</a></li><li class="depth-0"><a href="#the-promise">I withdrew a promise from my own proposal</a></li><li class="depth-0"><a href="#waiting">Nothing merged for weeks</a></li><li class="depth-0"><a href="#small-prs">Small pull requests have a cost, and I pay it on purpose</a></li><li class="depth-0"><a href="#stacks">Stacks merge in whatever order they are approved</a></li><li class="depth-0"><a href="#contradicting-checks">When two checks contradict each other</a></li><li class="depth-0"><a href="#skipped">Skipped is not passed</a></li><li class="depth-0"><a href="#checking-first">Checking before building</a></li><li class="depth-0"><a href="#claims">Three claims I will not round up</a></li></ul></div>
+</div>
+
+</div></div>
+<script src="graph-data.js"></script><script src="quartz.js"></script>
+</body>
+</html>
