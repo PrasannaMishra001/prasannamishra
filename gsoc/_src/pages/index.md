@@ -10,6 +10,7 @@ description: What Prasanna Mishra built for omegaUp during Google Summer of Code
 <div><span>mentors</span> <a href="https://github.com/pabo99">Juan Pablo G&oacute;mez Aguilar</a>, <a href="https://github.com/Ankitsinghsisodya">Ankit Sisodya</a></div>
 <div><span>project size</span> large, 350 hours</div>
 <div><span>coding period</span> 26 May 2026 to 24 August 2026</div>
+<div><span>result</span> passed both evaluations &middot; <a href="https://drive.google.com/file/d/1nUSmF8SteqWiQusMwfKkd1URJqCJ-4nx/view?usp=sharing">certificate</a> &middot; <a href="https://drive.google.com/file/d/1IvU8CoLtiptRZC3_CsNsfoSoWTJHl9D_/view?usp=sharing">verification letter</a></div>
 </div>
 
 <p class="lede">This is my summer with omegaUp: what was wrong with its background jobs, what I built, where
